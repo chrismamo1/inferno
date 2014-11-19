@@ -1,0 +1,18 @@
+inferno
+=======
+This is the README for inferno. I promise that it will include more in the
+future.
+
+briefly, what needs to be done is:
+ - finish implementing collision detection
+ - finish/maintain unit tests
+ - finish implementing the region-based coordinate system
+ - comment and document everything in sight
+ - develop detailed contracts and requirements for major components
+ - get a Windows/DirectX frontend working
+ - load 3D model files
+ - license everything under LGPL or GPL if feeling generous
+ - fix the extremely broken event system (this should be done before we add the
+   DirectX (or any other) frontends.
+ - fix the makefile (but I do get a feeling of satisfaction from seeing that
+   I've written so much code that GCC actually has to work to compile it).
