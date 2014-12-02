@@ -80,7 +80,11 @@ void frontend_initialize_viewspace(float x1, float x2, float y1, float y2, int n
         state->z_levels = num_z_levels;
         state->num_regions = 1;
         state->regions = malloc(state->num_regions * sizeof(iregion_t));
-
+        int i;
+        for (i = 0; i < 256; i++) {
+                state->onkeyup_handlers[i]   = inew_eventhandler(NULL, NULL, i);
+                state->onkeydown_handlers[i] = inew_eventhandler(NULL, NULL, i);
+        }
 }
 
 void frontend_reset_viewspace(ifrontendstate_t *state)
@@ -164,10 +168,12 @@ int step(ifrontendstate_t *state)
         if (xev.type == Expose)
                 frontend_update(state);
         else if(xev.type == KeyPress) {
-                (*ionkeydown[xev.xkey.keycode])(NULL, &(xev.xkey));
+                ievent_handler *h = state->onkeydown_handlers[xev.xkey.keycode];
+                *(h->handler)(h->args, (void*)&(xev.xkey));
         }
         else if (xev.type == KeyRelease) { 
-                (*ionkeyup[xev.xkey.keycode])(NULL, &(xev.xkey));
+                ievent_handler *h = state->onkeyup_handlers[xev.xkey.keycode];
+                *(h->handler)(h->args, (void*)&(xev.xkey));
         }
         else if (xev.type == ClientMessage) {
                 frontend_free();

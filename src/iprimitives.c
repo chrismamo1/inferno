@@ -145,7 +145,7 @@ iobject_t* iobject_add_triplet(iobject_t *object, icoloredtriplet_t *triplet)
 
 void iprint_object(iobject_t *object)
 {
-        printf("object at address %p.\n", object);
+        printf("object " KYEL "@%p" RESET ".\n", object);
         printf("Motion vector = ");
         iprint_vector(object->motion);
         printf("%d triplets:\n", object->num_triplets);

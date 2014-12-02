@@ -202,7 +202,7 @@ int main()
         ipoint_t *point3;
 
         point1 = inew_point(627.075, -51.4, 33);
-        point2 = inew_point(1000, -0.5, -6);
+        point2 = inew_point(1000, -0.5, 6);
         point3 = inew_point(-43.675, 12, 0);
 
         printf("Making sure that inew_point does not assign conflicting addresses... ");
@@ -215,7 +215,7 @@ int main()
         printf("Making sure that inew_point properly assigns accessible values, and");
         printf(" that that ipoint_t structure is functional... ");
         assert(point1->x == x1); assert(point1->y == y1); assert(point1->z == 33);
-        assert(point2->x == x2); assert(point2->y == y2); assert(point2->z == -6);
+        assert(point2->x == x2); assert(point2->y == y2); assert(point2->z == 6);
         assert(point3->x == x3); assert(point3->y == y3); assert(point3->z == 0);
 
         free(point1);

@@ -7,7 +7,7 @@ struct _ilinked_t {
         void *previous;
         void *data;
         void *next;
-} ;
+};
 
 typedef struct _ilinked_t ilinked_t;
 

@@ -1,10 +1,10 @@
-OBJ = frontend_opengl_linux.o iprimitives.o iutils.o icoordinates.o error.o igraphics.o isimulation.o
+OBJ = frontend_opengl_linux.o iprimitives.o iutils.o icoordinates.o error.o igraphics.o isimulation.o frontend.o
 
-OBJ_INC = obj/frontend_opengl_linux.o obj/iprimitives.o obj/iutils.o obj/icoordinates.o obj/error.o obj/igraphics.o obj/isimulation.o
+OBJ_INC = obj/frontend_opengl_linux.o obj/iprimitives.o obj/iutils.o obj/icoordinates.o obj/error.o obj/igraphics.o obj/isimulation.o obj/frontend.o
 
 HEADERS = src/frontend_opengl_linux.h src/icoordinates.h src/frontend.h src/iprimitives.h src/iutils.h src/error.h src/igraphics.h src/iprettyconsole.h src/isimulation.h
 
-DEPS = src/frontend_opengl_linux.c src/inferno.c src/iprimitives.c src/iutils.c src/icoordinates.c src/error.c src/igraphics.c src/isimulation.c
+DEPS = src/frontend_opengl_linux.c src/inferno.c src/iprimitives.c src/iutils.c src/icoordinates.c src/error.c src/igraphics.c src/isimulation.c src/frontend.c
 
 CFLAGS = -O3 -g -Wall
 
