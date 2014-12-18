@@ -68,7 +68,7 @@ struct ivector_t* iadd_vector(struct ivector_t *v1, struct ivector_t *v2);
 
 struct iregion_t* icreate_region(int x, int y, uint32 width, uint32 height, struct ifrontendstate_t *state);
 
-struct iregion_t* iget_region(
+//struct iregion_t* iget_region(
 
 void iprint_point(struct ipoint_t *point);
 

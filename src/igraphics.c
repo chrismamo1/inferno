@@ -4,7 +4,7 @@
 #include "iutils.h"
 #include "iprimitives.h"
 
-void draw_object(iobject_t *object)
+void draw_object(struct iobject_t *object)
 {
         struct ilinked_t *li = /*igetfirst_linked(*/object->triplets/*)*/;
         for ( ; li != NULL; li = li->next) {

@@ -11,11 +11,11 @@ typedef struct _aabb {
 
 int idetectcollision_aabb(aabb_t hb1, aabb_t hb2);
 
-int idetectcollision_object(iobject_t *o1, iobject_t *o2);
+int idetectcollision_object(struct iobject_t *o1, struct iobject_t *o2);
 
-aabb_t icomputeaabb_object(iobject_t *o);
+aabb_t icomputeaabb_object(struct iobject_t *o);
 
-aabb_t icomputeaabb_coloredtriplet(icoloredtriplet_t *t);
+aabb_t icomputeaabb_coloredtriplet(struct icoloredtriplet_t *t);
 
 void iprint_aabb(aabb_t aabb);
 

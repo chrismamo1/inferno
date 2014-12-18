@@ -132,12 +132,15 @@ HANDLE_NO_VALID_REGIONS:
         return rval;
 }
 
+/*
+ * @todo finish this
+ */
 struct iabsolutepoint_t* iget_absolutepoint(struct ipoint_t *rel, struct ifrontendstate_t *state)
 {
         struct iabsolutepoint_t *rval = malloc(sizeof(struct iabsolutepoint_t));
         rval->x = rel->x;
         rval->y = rel->y;
-        rval->x += (long double)
+        //rval->x += (long double)
 }
 
 struct ivector_t* inew_vector(double x, double y)

@@ -6,5 +6,5 @@
 #include "icoordinates.h"
 #include "iprimitives.h"
 
-void draw_object(iobject_t *object);
+void draw_object(struct iobject_t *object);
 #endif

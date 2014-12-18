@@ -146,7 +146,7 @@ void frontend_draw_point(struct ipoint_t *point, struct icolor_t color)
         glEnd();
 }
 
-void frontend_draw_coloredtriplet(icoloredtriplet_t *triplet)
+void frontend_draw_coloredtriplet(struct icoloredtriplet_t *triplet)
 {
         glBegin(GL_TRIANGLES);
                 glColor3ub((triplet->colors[0]->r),
@@ -173,11 +173,11 @@ int step(struct ifrontendstate_t *state)
         if (xev.type == Expose)
                 frontend_update(state);
         else if(xev.type == KeyPress) {
-                ievent_handler *h = state->onkeydown_handlers[xev.xkey.keycode];
+                struct ievent_handler *h = state->onkeydown_handlers[xev.xkey.keycode];
                 *(h->handler)(h->args, (void*)&(xev.xkey));
         }
         else if (xev.type == KeyRelease) { 
-                ievent_handler *h = state->onkeyup_handlers[xev.xkey.keycode];
+                struct ievent_handler *h = state->onkeyup_handlers[xev.xkey.keycode];
                 *(h->handler)(h->args, (void*)&(xev.xkey));
         }
         else if (xev.type == ClientMessage) {

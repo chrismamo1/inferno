@@ -335,6 +335,8 @@ int main()
         assert(point3->region == ((struct iregion_t*)(state->regions->next->next->data))->id);
         assert(point3->x == 13.0); assert(point3->y == 23.0); assert(point3->z == 4);
 
+        free(point1); free(point2); free(point3);
+
         printf(KGRN "Success.\n" KWHT);
 
         printf(RESET);

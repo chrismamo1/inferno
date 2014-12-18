@@ -6,11 +6,6 @@
 #include <assert.h>
 #include <stdio.h>
 
-ibytepair_t make_bytepair(char zero, char one)
-{
-        return (short)one + ((short)zero << 8);
-}
-
 unsigned char red(struct icolor_t color)
 {
         return color.r;
@@ -26,17 +21,17 @@ unsigned char blue(struct icolor_t color)
         return color.b;
 }
 
-float redf(icolorf_t color)
+float redf(struct icolorf_t color)
 {
         return color.data[0];
 }
 
-float greenf(icolorf_t color)
+float greenf(struct icolorf_t color)
 {
         return color.data[1];
 }
 
-float bluef(icolorf_t color)
+float bluef(struct icolorf_t color)
 {
         return color.data[2];
 }
@@ -49,15 +44,15 @@ struct icolor_t* inew_color(struct icolor_t *rval, unsigned char r, unsigned cha
         return rval;
 }
 
-icoloredtriplet_t* inew_coloredtriplet(struct ipoint_t *p1, struct icolor_t *c1, struct ipoint_t *p2, struct icolor_t *c2, struct ipoint_t *p3, struct icolor_t *c3)
+struct icoloredtriplet_t* inew_coloredtriplet(struct ipoint_t *p1, struct icolor_t *c1, struct ipoint_t *p2, struct icolor_t *c2, struct ipoint_t *p3, struct icolor_t *c3)
 {
-        icoloredtriplet_t *rval = malloc(sizeof(icoloredtriplet_t));
+        struct icoloredtriplet_t *rval = malloc(sizeof(struct icoloredtriplet_t));
         rval->vertices[0] = p1; rval->vertices[1] = p2; rval->vertices[2] = p3;
         rval->colors[0] = c1; rval->colors[1] = c2; rval->colors[2] = c3;
         return rval;
 }
 
-void iobject_step(iobject_t *obj)
+void iobject_step(struct iobject_t *obj)
 {
         struct ilinkedpoint_t *point = obj->points;
         for ( ; point != NULL; point = point->next) {
@@ -68,9 +63,9 @@ void iobject_step(iobject_t *obj)
         return;
 }
 
-iobject_t* init_iobject(iobject_t *object)
+struct iobject_t* init_iobject(struct iobject_t *object)
 {
-        object = malloc(sizeof(iobject_t));
+        object = malloc(sizeof(struct iobject_t));
         object->triplets = NULL;
         object->num_triplets = 0;
         object->points   = NULL;
@@ -84,7 +79,7 @@ iobject_t* init_iobject(iobject_t *object)
  * @param *object a pointer to an iobject
  * @param *triplet a pointer to an inferno colored triplet
  */
-iobject_t* iobject_add_triplet(iobject_t *object, icoloredtriplet_t *triplet)
+struct iobject_t* iobject_add_triplet(struct iobject_t *object, struct icoloredtriplet_t *triplet)
 {
         float epsilon = 0.001;
         object->num_triplets = object->num_triplets + 1;///Tell the data structure that
@@ -95,7 +90,7 @@ iobject_t* iobject_add_triplet(iobject_t *object, icoloredtriplet_t *triplet)
                 iadd_linked( object->triplets, inew_linked(triplet) );
 
         if (object->points == NULL) {
-                struct ipoint_t **points = ((icoloredtriplet_t*)(igetlast_linked(object->triplets)->data))->vertices;
+                struct ipoint_t **points = ((struct icoloredtriplet_t*)(igetlast_linked(object->triplets)->data))->vertices;
                 object->points = inew_linkedpoint(points[0]);
                 iadd_linkedpoint(object->points,
                                         inew_linkedpoint(points[1]));
@@ -103,7 +98,7 @@ iobject_t* iobject_add_triplet(iobject_t *object, icoloredtriplet_t *triplet)
                                         inew_linkedpoint(points[2]));
                 object->num_points = 3;
         } else {
-                struct ipoint_t **points = ((icoloredtriplet_t*)(igetlast_linked(object->triplets)->data))->vertices;
+                struct ipoint_t **points = ((struct icoloredtriplet_t*)(igetlast_linked(object->triplets)->data))->vertices;
                 int i;
                 for ( i = 0; i < 3; i++) {
                         struct ilinkedpoint_t *iterator = object->points;
@@ -143,7 +138,7 @@ iobject_t* iobject_add_triplet(iobject_t *object, icoloredtriplet_t *triplet)
         return object;
 }
 
-void iprint_object(iobject_t *object)
+void iprint_object(struct iobject_t *object)
 {
         printf("object " KYEL "@%p" RESET ".\n", object);
         printf("Motion vector = ");
@@ -153,7 +148,7 @@ void iprint_object(iobject_t *object)
         for ( ; trp != NULL; trp=trp->next) {
                 printf("\ttriplet at address %p.\n", trp->data);
                 printf("\t L > points:\n");
-                icoloredtriplet_t *colored = (icoloredtriplet_t*)(trp->data);
+                struct icoloredtriplet_t *colored = (struct icoloredtriplet_t*)(trp->data);
                 struct ipoint_t *pnt = colored->vertices[0];
                 struct icolor_t **colors = colored->colors;
                 printf("\t      | > @%p(%.3f, %.3f, %d)", pnt, pnt->x, pnt->y, pnt->z);
@@ -172,7 +167,7 @@ void iprint_object(iobject_t *object)
         }
 }
 
-void idelete_object(iobject_t **object)
+void idelete_object(struct iobject_t **object)
 {
         ifree_linked((*object)->triplets, 'y');
         ifree_linkedpoints((*object)->points, 'y');
@@ -181,7 +176,7 @@ void idelete_object(iobject_t **object)
         free((*object)->motion);
 }
 
-void idelete_coloredtriplet(icoloredtriplet_t *triplet)
+void idelete_coloredtriplet(struct icoloredtriplet_t *triplet)
 {
         free(triplet);
 }

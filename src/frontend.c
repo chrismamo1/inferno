@@ -19,16 +19,16 @@
 };*/
 
 
-ievent_handler* inew_eventhandler(void* (*handler)(void *args, void *event), void *args, unsigned short key_code)
+struct ievent_handler* inew_eventhandler(void* (*handler)(void *args, void *event), void *args, unsigned short key_code)
 {
-        ievent_handler *rval = malloc(sizeof(ievent_handler));
+        struct ievent_handler *rval = malloc(sizeof(struct ievent_handler));
         rval->handler = handler;
         rval->args = args;
         rval->key_code = key_code;
         return rval;
 }
 
-void frontend_set_eventhandler(unsigned short i, char down, ievent_handler *h, struct ifrontendstate_t *state)
+void frontend_set_eventhandler(unsigned short i, char down, struct ievent_handler *h, struct ifrontendstate_t *state)
 {
         if (down)
                 state->onkeydown_handlers[i] = h;

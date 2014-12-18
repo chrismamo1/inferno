@@ -1,4 +1,4 @@
-struct _ievent_handler;
+struct ievent_handler;
 struct ifrontendstate_t;
 
 #ifndef _FRONTEND_H
@@ -10,13 +10,11 @@ struct ifrontendstate_t;
 #include <X11/X.h>
 #include <X11/Xlib.h>
 
-struct _ievent_handler {
+struct ievent_handler {
         void* (*handler)(void *args, void *event);
         void *args;
         unsigned short key_code;
-};
-
-typedef struct _ievent_handler ievent_handler;
+} ;
 
 struct ifrontendstate_t {
         struct icolor_t *background_color;
@@ -27,18 +25,18 @@ struct ifrontendstate_t {
         float bottom;
         float top;
 
-        ievent_handler *onkeydown_handlers[256];
-        ievent_handler *onkeyup_handlers[256];
+        struct ievent_handler *onkeydown_handlers[256];
+        struct ievent_handler *onkeyup_handlers[256];
 
         struct ilinked_t *regions;
         unsigned short num_regions;
 } ;
 
-ievent_handler* inew_eventhandler(void* (*handler)(void *args, void *event), void *args, unsigned short key_code);
+struct ievent_handler* inew_eventhandler(void* (*handler)(void *args, void *event), void *args, unsigned short key_code);
 
 void frontend_initialize();
 
-void frontend_set_eventhandler(unsigned short i, char down, ievent_handler *h, struct ifrontendstate_t *state);
+void frontend_set_eventhandler(unsigned short i, char down, struct ievent_handler *h, struct ifrontendstate_t *state);
 
 void frontend_initialize_viewspace(float x1, float x2, float y1, float y2, int num_z_levels, struct ifrontendstate_t *state);
 
@@ -54,7 +52,7 @@ void frontend_draw_rectangle(struct ipoint_t *p1, struct ipoint_t *p2, struct ic
 
 void frontend_draw_point(struct ipoint_t *point, struct icolor_t color);
 
-void frontend_draw_coloredtriplet(icoloredtriplet_t *triplet);
+void frontend_draw_coloredtriplet(struct icoloredtriplet_t *triplet);
 
 int step(); /* Redraw frames, fetch the next event and handle it, etc. */
 
