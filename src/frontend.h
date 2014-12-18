@@ -1,3 +1,6 @@
+struct _ievent_handler;
+struct ifrontendstate_t;
+
 #ifndef _FRONTEND_H
 #define _FRONTEND_H
 
@@ -15,9 +18,9 @@ struct _ievent_handler {
 
 typedef struct _ievent_handler ievent_handler;
 
-typedef struct _frontend_state_t {
-        icolor_t background_color;
-        icolor_t drawing_color;
+struct ifrontendstate_t {
+        struct icolor_t *background_color;
+        struct icolor_t *drawing_color;
         char z_levels;
         float left;
         float right;
@@ -27,29 +30,29 @@ typedef struct _frontend_state_t {
         ievent_handler *onkeydown_handlers[256];
         ievent_handler *onkeyup_handlers[256];
 
-        iregion_t *regions; /* a dynamic array of pointers to regions */
+        struct ilinked_t *regions;
         unsigned short num_regions;
-} ifrontendstate_t;
+} ;
 
 ievent_handler* inew_eventhandler(void* (*handler)(void *args, void *event), void *args, unsigned short key_code);
 
 void frontend_initialize();
 
-void frontend_set_eventhandler(unsigned short i, char down, ievent_handler *h, ifrontendstate_t *state);
+void frontend_set_eventhandler(unsigned short i, char down, ievent_handler *h, struct ifrontendstate_t *state);
 
-void frontend_initialize_viewspace(float x1, float x2, float y1, float y2, int num_z_levels, ifrontendstate_t *state);
+void frontend_initialize_viewspace(float x1, float x2, float y1, float y2, int num_z_levels, struct ifrontendstate_t *state);
 
-void frontend_reset_viewspace(ifrontendstate_t *state);
+void frontend_reset_viewspace(struct ifrontendstate_t *state);
 
 void frontend_free();
 
-void frontend_update(ifrontendstate_t *state);
+void frontend_update(struct ifrontendstate_t *state);
 
-void frontend_draw_line(float x1, float y1, float x2, float y2, icolor_t color, int z_level);
+void frontend_draw_line(float x1, float y1, float x2, float y2, struct icolor_t color, int z_level);
 
-void frontend_draw_rectangle(ipoint_t *p1, ipoint_t *p2, icolor_t color);
+void frontend_draw_rectangle(struct ipoint_t *p1, struct ipoint_t *p2, struct icolor_t color);
 
-void frontend_draw_point(ipoint_t *point, icolor_t color);
+void frontend_draw_point(struct ipoint_t *point, struct icolor_t color);
 
 void frontend_draw_coloredtriplet(icoloredtriplet_t *triplet);
 

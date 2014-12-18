@@ -7,8 +7,10 @@
 #include <GL/glu.h>
 
 #include "frontend.h"
+#include "icoordinates.h"
 #include "frontend_opengl_linux.h"
 #include "iprimitives.h"
+#include "icoordinates.h"
 
 
 void DrawAQuad() {
@@ -71,15 +73,18 @@ void frontend_initialize()
 /**
  * @return a bitmap with the 0 byte being the number of "near" z-levels and the 1 byte being the number of "far" z-levels
  */
-void frontend_initialize_viewspace(float x1, float x2, float y1, float y2, int num_z_levels, ifrontendstate_t *state)
+void frontend_initialize_viewspace(float x1, float x2, float y1, float y2, int num_z_levels, struct ifrontendstate_t *state)
 {
+        state->background_color = malloc(sizeof(struct icolor_t));
+        state->drawing_color = malloc(sizeof(struct icolor_t));
         state->left = x1;
         state->right = x2;
         state->bottom = y1;
         state->top = y2;
         state->z_levels = num_z_levels;
-        state->num_regions = 1;
-        state->regions = malloc(state->num_regions * sizeof(iregion_t));
+        state->num_regions = 0;
+        state->regions = NULL;
+        icreate_region(0, 0, 100, 100, state);
         int i;
         for (i = 0; i < 256; i++) {
                 state->onkeyup_handlers[i]   = inew_eventhandler(NULL, NULL, i);
@@ -87,11 +92,11 @@ void frontend_initialize_viewspace(float x1, float x2, float y1, float y2, int n
         }
 }
 
-void frontend_reset_viewspace(ifrontendstate_t *state)
+void frontend_reset_viewspace(struct ifrontendstate_t *state)
 {
-        glClearColor((float)red(state->background_color)/256.,
-                     (float)green(state->background_color)/256.,
-                     (float)blue(state->background_color)/256., 1.0);
+        glClearColor((float)red(*state->background_color)/256.,
+                     (float)green(*state->background_color)/256.,
+                     (float)blue(*state->background_color)/256., 1.0);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         glMatrixMode(GL_PROJECTION);
@@ -113,7 +118,7 @@ void frontend_free()
         XCloseDisplay(dpy);
 }
 
-void frontend_update(ifrontendstate_t *state)
+void frontend_update(struct ifrontendstate_t *state)
 {
         XGetWindowAttributes(dpy, win, &gwa);
         glViewport(0, 0, gwa.width, gwa.height);
@@ -121,7 +126,7 @@ void frontend_update(ifrontendstate_t *state)
         glXSwapBuffers(dpy, win);
 }
 
-void frontend_draw_rectangle(ipoint_t *p1, ipoint_t *p2, icolor_t color)
+void frontend_draw_rectangle(struct ipoint_t *p1, struct ipoint_t *p2, struct icolor_t color)
 {
         float z = (float) p1->z;
         glBegin(GL_QUADS);
@@ -133,7 +138,7 @@ void frontend_draw_rectangle(ipoint_t *p1, ipoint_t *p2, icolor_t color)
         glEnd();
 }
 
-void frontend_draw_point(ipoint_t *point, icolor_t color)
+void frontend_draw_point(struct ipoint_t *point, struct icolor_t color)
 {
         glBegin(GL_POINTS);
                 glColor3f((float)color.r, (float)color.g, (float)color.b);
@@ -162,7 +167,7 @@ void frontend_draw_coloredtriplet(icoloredtriplet_t *triplet)
         glEnd();
 }
 
-int step(ifrontendstate_t *state)
+int step(struct ifrontendstate_t *state)
 {
         XNextEvent(dpy, &xev);
         if (xev.type == Expose)

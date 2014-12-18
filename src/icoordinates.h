@@ -1,59 +1,79 @@
-#include "frontend.h"
-#include "frontend_opengl_linux.h"
-
+struct iregion_t;
+struct ipoint_t;
+struct iabsolutepoint_t;
+struct ilinkedpoint_t;
+struct ivector_t;
 
 #ifndef _ICOORDINATES_H
 #define _ICOORDINATES_H
 
-typedef struct _iregion_t {
+#define DEFAULT_REGION_WIDTH 128
+#define DEFAULT_REGION_HEIGHT 128
+
+#include "frontend.h"
+#include "itypes.h"
+
+//typedef struct _ifrontendstate_t ifrontendstate_t;
+
+struct iregion_t {
         unsigned short id;
         int x;
         int y;
-        int width;
-        int height;
-} iregion_t;
+        uint32 width;
+        uint32 height;
+} ;
 
-typedef struct _ipoint_t {
+struct ipoint_t {
         float x;
         float y;
-        unsigned char z;
+        uint8 z;
         unsigned short region;
-} ipoint_t;
+} ;
 
-typedef struct _ilinkedpoint_t ilinkedpoint_t;
+struct iabsolutepoint_t {
+        long double x;
+        long double y;
+        uint8 z;
+} ;
 
-struct _ilinkedpoint_t {
-        ipoint_t *point;
-        ilinkedpoint_t *next;
+struct ilinkedpoint_t {
+        struct ipoint_t *point;
+        struct ilinkedpoint_t *next;
 };
 
-ilinkedpoint_t* inew_linkedpoint(ipoint_t *point);
+struct ilinkedpoint_t* inew_linkedpoint(struct ipoint_t *point);
 
-ilinkedpoint_t* iadd_linkedpoint(ilinkedpoint_t *head, ilinkedpoint_t *point);
+struct ilinkedpoint_t* iadd_linkedpoint(struct ilinkedpoint_t *head, struct ilinkedpoint_t *point);
 
-ilinkedpoint_t* icontains_linkedpoint(ilinkedpoint_t *head, ilinkedpoint_t *lookfor);
+struct ilinkedpoint_t* icontains_linkedpoint(struct ilinkedpoint_t *head, struct ilinkedpoint_t *lookfor);
 
-void ifree_linkedpoints(ilinkedpoint_t *head, char contents);
+void ifree_linkedpoints(struct ilinkedpoint_t *head, char contents);
 
-typedef struct _ivector_t {
+struct ivector_t {
         double x;
         double y;
-} ivector_t;
+} ;
 
-ipoint_t* inew_point(double x, double y, int z/*, ifrontendstate_t *state*/);
+struct ipoint_t* inew_point(long double x, long double y, uint8 z, struct ifrontendstate_t *state);
 
-ivector_t* inew_vector(double x, double y);
+struct iabsolutepoint_t* iget_absolutepoint(struct ipoint_t *rel, struct ifrontendstate_t *state);
 
-ivector_t* inormalize_vector(ivector_t *vector);
+struct ivector_t* inew_vector(double x, double y);
 
-ivector_t* ipush_vector(ivector_t *vector, ivector_t *direction, float magnitude);
+struct ivector_t* inormalize_vector(struct ivector_t *vector);
 
-ivector_t* iadd_vector(ivector_t *v1, ivector_t *v2);
+struct ivector_t* ipush_vector(struct ivector_t *vector, struct ivector_t *direction, float magnitude);
 
-void iprint_point(ipoint_t *point);
+struct ivector_t* iadd_vector(struct ivector_t *v1, struct ivector_t *v2);
 
-void iprint_vector(ivector_t *vec);
+struct iregion_t* icreate_region(int x, int y, uint32 width, uint32 height, struct ifrontendstate_t *state);
 
-char* iprints_point(ipoint_t *point);
+struct iregion_t* iget_region(
+
+void iprint_point(struct ipoint_t *point);
+
+void iprint_vector(struct ivector_t *vec);
+
+char* iprints_point(struct ipoint_t *point);
 
 #endif

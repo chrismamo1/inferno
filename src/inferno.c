@@ -27,10 +27,19 @@ void* random_function(void *args, void *ev)
 
 int main(int argc, char *argv[])
 {
+        frontend_initialize();
+        struct ifrontendstate_t state;
+        frontend_initialize_viewspace(0, 2, 0, 2, 11, &state);
+        state.background_color->r = 255;
+        state.background_color->g = 255;
+        state.background_color->b = 255;
+        frontend_reset_viewspace(&state);
+
+
         /*iobject_t *obj = NULL;
         obj = init_iobject(obj);*/
 
-        icolor_t *neon_green = NULL;
+        struct icolor_t *neon_green = NULL;
         neon_green = inew_color(neon_green, 100, 255, 100);
 
         /*iobject_add_triplet(obj, inew_coloredtriplet( inew_point(0., 0., 0), neon_green,
@@ -41,29 +50,29 @@ int main(int argc, char *argv[])
                                                        inew_point(5., 0., 3.), neon_green,
                                                        inew_point(1., 1., 0.01), neon_green));*/
 
-        icolor_t *black = NULL;
+        struct icolor_t *black = NULL;
         black = inew_color(black, 0, 0, 0);
 
-        icolor_t *purple = NULL;
+        struct icolor_t *purple = NULL;
         purple = inew_color(purple, 153, 0, 153);
 
         iobject_t *corners = NULL;
         corners = init_iobject(corners);
-        iobject_add_triplet(corners, inew_coloredtriplet( inew_point(0., 1.9, 0), black,
-                                                           inew_point(0., 2.0, 0), black,
-                                                           inew_point(0.1, 2.0, 0), black));
+        iobject_add_triplet(corners, inew_coloredtriplet( inew_point(0., 1.9, 0, &state), black,
+                                                           inew_point(0., 2.0, 0, &state), black,
+                                                           inew_point(0.1, 2.0, 0, &state), black));
 
-        iobject_add_triplet(corners, inew_coloredtriplet( inew_point(2., 1.9, 0), black,
-                                                           inew_point(2., 2.0, 0), black,
-                                                           inew_point(1.9, 2.0, 0), black));
+        iobject_add_triplet(corners, inew_coloredtriplet( inew_point(2., 1.9, 0, &state), black,
+                                                           inew_point(2., 2.0, 0, &state), black,
+                                                           inew_point(1.9, 2.0, 0, &state), black));
 
-        iobject_add_triplet(corners, inew_coloredtriplet( inew_point(0., .1, 0), black,
-                                                           inew_point(0., 0.0, 0), black,
-                                                           inew_point(.1, 0., 0), black));
+        iobject_add_triplet(corners, inew_coloredtriplet( inew_point(0., .1, 0, &state), black,
+                                                           inew_point(0., 0.0, 0, &state), black,
+                                                           inew_point(.1, 0., 0, &state), black));
 
-        iobject_add_triplet(corners, inew_coloredtriplet( inew_point(1.9, 0., 0), black,
-                                                           inew_point(2., 0., 0), black,
-                                                           inew_point(2., .1, 0), black));
+        iobject_add_triplet(corners, inew_coloredtriplet( inew_point(1.9, 0., 0, &state), black,
+                                                           inew_point(2., 0., 0, &state), black,
+                                                           inew_point(2., .1, 0, &state), black));
 
         /*iobject_t *triangle = NULL;
         triangle = init_iobject(triangle);
@@ -73,20 +82,13 @@ int main(int argc, char *argv[])
 
         iobject_t *box = NULL;
         box = init_iobject(box);
-        iobject_add_triplet(box, inew_coloredtriplet( inew_point(0.25, 1.25, 0), black,
-                                                           inew_point(0.25, 1.75, 0), black,
-                                                           inew_point(0.75, 1.75, 0), black));
-        iobject_add_triplet(box, inew_coloredtriplet( inew_point(0.25, 1.25, 0), purple,
-                                                           inew_point(0.75, 1.25, 0), purple,
-                                                           inew_point(0.75, 1.75, 0), purple));
+        iobject_add_triplet(box, inew_coloredtriplet( inew_point(0.25, 1.25, 0, &state), black,
+                                                           inew_point(0.25, 1.75, 0, &state), black,
+                                                           inew_point(0.75, 1.75, 0, &state), black));
+        iobject_add_triplet(box, inew_coloredtriplet( inew_point(0.25, 1.25, 0, &state), purple,
+                                                           inew_point(0.75, 1.25, 0, &state), purple,
+                                                           inew_point(0.75, 1.75, 0, &state), purple));
 
-        frontend_initialize();
-        ifrontendstate_t state;
-        frontend_initialize_viewspace(0, 2, 0, 2, 11, &state);
-        state.background_color.r = 255;
-        state.background_color.g = 255;
-        state.background_color.b = 255;
-        frontend_reset_viewspace(&state);
         iprint_object(box);
 
         ievent_handler *default_handler;

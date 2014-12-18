@@ -7,6 +7,9 @@
 #include <GL/glx.h>
 #include <GL/glu.h>
 
+#include "frontend.h"
+#include "icoordinates.h"
+
 Display                 *dpy;
 Window                  root;
 GLint                   att[5];

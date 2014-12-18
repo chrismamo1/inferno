@@ -7,25 +7,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "icoordinates.h"
 #include "iutils.h"
+#include "icoordinates.h"
 #include "error.h"
+#include "itypes.h"
 
-float ipercent_error(float rough, float expected)
+/*float ipercent_error(float rough, float expected)
 {
         if (expected == 0.f) return rough == 0 ? 0 : 100;
         return ifabs(100. * ifabs(expected - rough)/expected);
-}
-
-char ifast_epsilon_cmp(float f1, float f2, float epsilon)
-{
-        if (ifabs(f1 - f2) < epsilon)
-                return 0;
-        if (f1 < f2)
-                return -1;
-        else
-                return 1;
-}
+}*/
 
 float ifast_bigpow(float base, float power)
 {
@@ -102,23 +93,6 @@ float ifast_sqrt(float x)
         return data.f;
 }
 
-int inabs(int x)
-{
-        int mask = x >> (sizeof(int) * 8 - 1); // what the fuck?
-        return (x + mask) ^ mask; // seriously, this is almost as bad as the exponentiation functions
-}
-
-float ifabs(float x)
-{
-        union {
-                int i;
-                float f;
-        } data = { .f = x };
-        //int i = *(int*)&x;  // interpret the bits as an integer
-        data.i = data.i & 0x7fffffff; // because FUCK you, that's why
-        return data.f; // reinterpret as a single-precision float for the return
-}
-
 int inmin(int *arr, unsigned int length) // pretty much the only optimization here is the hard coded loop.
                                          // this is only efficient for very large arrays
 {
@@ -182,8 +156,7 @@ int inmax(int *arr, unsigned int length)
         return rval;
 }
 
-/// LOCAL
-void nquicksort(int *arr, unsigned int low, unsigned int high)
+/*static void nquicksort(int *arr, unsigned int low, unsigned int high)
 {
         if (low < high) {
                 int pivot = (high + low) / 2;
@@ -205,7 +178,7 @@ void nquicksort(int *arr, unsigned int low, unsigned int high)
                 arr[pivot] = tmp;
         }
         return;
-}
+}*/
 
 int* infastsort(int *arr, unsigned int len)
 {
@@ -273,7 +246,7 @@ int* infastsort(int *arr, unsigned int len)
         return arr;
 }
 
-float iget_distance(ipoint_t *p1, ipoint_t *p2)
+float iget_distance(struct ipoint_t *p1, struct ipoint_t *p2)
 {
         float dx = p1->x - p2->x;
         float dy = p1->y - p2->y;
@@ -281,11 +254,11 @@ float iget_distance(ipoint_t *p1, ipoint_t *p2)
         return ifast_sqrt(dx*dx + dy*dy + (float) (dz*dz));
 }
 
-ipoint_t* igetclosest_point_linked(ipoint_t *p, ilinked_t *list, float epsilon)
+struct ipoint_t* igetclosest_point_linked(struct ipoint_t *p, struct ilinked_t *list, float epsilon)
 {
         float cdist = epsilon + 1;
         list = igetfirst_linked(list);
-        ipoint_t *rval = NULL;
+        struct ipoint_t *rval = NULL;
         do {
                 if (list->data == NULL)
                         continue;
@@ -302,9 +275,9 @@ ipoint_t* igetclosest_point_linked(ipoint_t *p, ilinked_t *list, float epsilon)
         return NULL;
 }
 
-ilinked_t* inew_linked(void *data)
+struct ilinked_t* inew_linked(void *data)
 {
-        ilinked_t *rval = malloc(sizeof(ilinked_t));
+        struct ilinked_t *rval = malloc(sizeof(struct ilinked_t));
         if (rval == NULL) {
                 ierror(I_INITIALIZATION_ERROR);
         }
@@ -314,7 +287,7 @@ ilinked_t* inew_linked(void *data)
         return rval;
 }
 
-ilinked_t* iget_linked(ilinked_t *list, int index)
+struct ilinked_t* iget_linked(struct ilinked_t *list, int index)
 {
         for ( ; list->previous != NULL; list = list->previous) ;
         int i;
@@ -325,20 +298,20 @@ ilinked_t* iget_linked(ilinked_t *list, int index)
         return list;
 }
 
-ilinked_t* iset_linked(ilinked_t *list, int index, void *data)
+struct ilinked_t* iset_linked(struct ilinked_t *list, int index, void *data)
 {
         if (list == NULL) {
                 ierror(I_NULL_LINKED_ERROR);
                 return NULL;
         }
-        ilinked_t *get = iget_linked(list, index);
+        struct ilinked_t *get = iget_linked(list, index);
         get->data = data;
         return get;
 }
 
-ilinked_t* iadd_linked(ilinked_t *list, ilinked_t *n)
+struct ilinked_t* iadd_linked(struct ilinked_t *list, struct ilinked_t *n)
 {
-        ilinked_t *rval = list;
+        struct ilinked_t *rval = list;
         if (n == NULL) {
                 ierror(I_NULL_LINKED_ERROR);
                 return list;
@@ -358,7 +331,7 @@ ilinked_t* iadd_linked(ilinked_t *list, ilinked_t *n)
         return rval;
 }
 
-ilinked_t* igetfirst_linked(ilinked_t *list)
+struct ilinked_t* igetfirst_linked(struct ilinked_t *list)
 {
         if (list == NULL) {
                 ierror(I_NULL_LINKED_ERROR);
@@ -368,7 +341,7 @@ ilinked_t* igetfirst_linked(ilinked_t *list)
         return list;
 }
 
-ilinked_t* igetlast_linked(ilinked_t *list)
+struct ilinked_t* igetlast_linked(struct ilinked_t *list)
 {
         if (list == NULL) {
                 ierror(I_NULL_LINKED_ERROR);
@@ -378,7 +351,7 @@ ilinked_t* igetlast_linked(ilinked_t *list)
         return list;
 }
 
-ilinked_t* igetnext_linked(ilinked_t *list)
+struct ilinked_t* igetnext_linked(struct ilinked_t *list)
 {
         if (list == NULL) {
                 ierror(I_NULL_LINKED_ERROR);
@@ -387,22 +360,22 @@ ilinked_t* igetnext_linked(ilinked_t *list)
         return list->next;
 }
 
-ilinked_t* iremove_linked(ilinked_t *list)
+struct ilinked_t* iremove_linked(struct ilinked_t *list)
 {
         if (list == NULL) {
                 ierror(I_NULL_LINKED_ERROR);
                 return NULL;
         }
         if (list->previous != NULL)
-                ((ilinked_t*)(list->previous))->next = list->next;
+                ((struct ilinked_t*)(list->previous))->next = list->next;
         if (list->next != NULL)
-                ((ilinked_t*)(list->next))->previous = list->previous;
-        ilinked_t *rval = list->next;
+                ((struct ilinked_t*)(list->next))->previous = list->previous;
+        struct ilinked_t *rval = list->next;
         free(list);
         return rval;
 }
 
-int icontains_linked(ilinked_t *list, void *data)
+int icontains_linked(struct ilinked_t *list, void *data)
 {
         list = igetfirst_linked(list);
         for ( ; list != NULL; list=list->next)
@@ -411,7 +384,7 @@ int icontains_linked(ilinked_t *list, void *data)
         return 0;
 }
 
-ilinked_t* iaddunique_linked(ilinked_t *list, ilinked_t *n)
+struct ilinked_t* iaddunique_linked(struct ilinked_t *list, struct ilinked_t *n)
 {
         if (!icontains_linked(list, n->data))
                 iadd_linked(list, n);
@@ -420,9 +393,9 @@ ilinked_t* iaddunique_linked(ilinked_t *list, ilinked_t *n)
         return list;
 }
 
-void ifree_linked(ilinked_t *list, char free_contents)
+void ifree_linked(struct ilinked_t *list, char free_contents)
 {
-        ilinked_t *tmp = NULL;
+        struct ilinked_t *tmp = NULL;
         do {
                 tmp = list->next;
                 if (free_contents == 1 || free_contents == 'y')

@@ -197,13 +197,13 @@ int main()
         printf(KGRN "Success.\n" KWHT);
 
         /* start with tests of icoordinates */
-        ipoint_t *point1;
-        ipoint_t *point2;
-        ipoint_t *point3;
+        struct ipoint_t *point1;
+        struct ipoint_t *point2;
+        struct ipoint_t *point3;
 
-        point1 = inew_point(627.075, -51.4, 33);
-        point2 = inew_point(1000, -0.5, 6);
-        point3 = inew_point(-43.675, 12, 0);
+        point1 = inew_point(627.075, -51.4, 33.0, NULL);
+        point2 = inew_point(1000.0, -0.5, 6.0, NULL);
+        point3 = inew_point(-43.675, 12.0, 0.0, NULL);
 
         printf("Making sure that inew_point does not assign conflicting addresses... ");
         assert( point1 != point2); assert( point2 != point3); assert( point1 != point3);
@@ -226,7 +226,7 @@ int main()
 
         /* tests of linked lists */
         printf(KWHT "Doing tests of ilinked_t... ");
-        ilinked_t *lp1 = NULL, *lp2 = NULL, *lp3 = NULL;
+        struct ilinked_t *lp1 = NULL, *lp2 = NULL, *lp3 = NULL;
         int *arr1 = malloc(10 * sizeof(int));
         arr1[8] = -3; arr1[1] = -2; arr1[5] = -1; arr1[9] = 0; arr1[6] = 1; arr1[2] = 2; arr1[4] = 3; arr1[7] = 4; arr1[0] = 5; arr1[3] = 6;
         int *arr2 = malloc(10 * sizeof(int));
@@ -306,6 +306,34 @@ int main()
 
         assert(inmin(arr1, 10) == -3); assert(inmin(arr2, 10) == -4);
         assert(inmax(arr1, 10) ==  6); assert(inmax(arr2, 10) ==  5);
+
+        printf(KGRN "Success.\n" KWHT);
+
+        /* test the region system */
+        printf(KWHT "Testing the new region system and the frontend state system as a bonus... ");
+
+        struct ifrontendstate_t *state = malloc(sizeof(struct ifrontendstate_t));
+        state->num_regions = 0;
+        state->regions =  NULL;
+
+        assert(DEFAULT_REGION_WIDTH >= 50); assert(DEFAULT_REGION_HEIGHT >= 50);
+        point1 = inew_point(13.0, 23.0, 4, state);
+        
+        assert(state->num_regions == 1);
+        assert(point1->region == ((struct iregion_t*)(state->regions->data))->id);
+        assert(point1->x == 13.0); assert(point1->y == 23.0); assert(point1->z == 4);
+
+        point2 = inew_point(DEFAULT_REGION_WIDTH + 13.0, DEFAULT_REGION_HEIGHT + 23.0, 4, state);
+        
+        assert(state->num_regions == 2);
+        assert(point2->region == ((struct iregion_t*)(state->regions->next->data))->id);
+        assert(point2->x == 13.0); assert(point2->y == 23.0); assert(point2->z == 4);
+
+        point3 = inew_point(-DEFAULT_REGION_WIDTH + 13.0, -DEFAULT_REGION_HEIGHT + 23.0, 4, state);
+        
+        assert(state->num_regions == 3);
+        assert(point3->region == ((struct iregion_t*)(state->regions->next->next->data))->id);
+        assert(point3->x == 13.0); assert(point3->y == 23.0); assert(point3->z == 4);
 
         printf(KGRN "Success.\n" KWHT);
 

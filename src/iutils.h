@@ -1,19 +1,25 @@
+struct ilinked_t;
+
 #ifndef _IUTILS_H
 #define _IUTILS_H
 
+//#include "frontend.h"
 #include "icoordinates.h"
+#include "itypes.h"
 
-struct _ilinked_t {
-        void *previous;
+struct ilinked_t {
+        struct ilinked_t *previous;
         void *data;
-        void *next;
-};
+        struct ilinked_t *next;
+} ;
 
-typedef struct _ilinked_t ilinked_t;
+//float ipercent_error(float rough, float expected);
 
-float ipercent_error(float rough, float expected);
+#define ifabs(x) ((float)((x) < 0.0 ? (0.0 - (x)) : (x)))
 
-char ifast_epsilon_cmp(float f1, float f2, float epsilon);
+#define ipercent_error(r, e) ((e) == 0.f ? ((r) == 0 ? 0 : 100) : ifabs(100.f * ifabs((e)-(r))/(e)))
+#define ifast_epsilon_cmp(f1, f2, e) ((ifabs((f1) - (f2)) < e) ? 0 : ((f1) < (f2) ? -1 : 1))
+#define inabs(x) (((x) + ((x) >> (sizeof(int) * 8 - 1))) ^ ((x) >> (sizeof(int) * 8 - 1)))
 
 float ifast_bigpow(float base, float power);
 
@@ -23,13 +29,9 @@ float ifast_rsqrt(float x);
 
 float ifast_sqrt(float x);
 
-float iget_distance(ipoint_t *p1, ipoint_t *p2);
+float iget_distance(struct ipoint_t *p1, struct ipoint_t *p2);
 
-ipoint_t* igetclosest_point_linked(ipoint_t *p, ilinked_t *list, float epsilon);
-
-int inabs(int x);
-
-float ifabs(float x);
+struct ipoint_t* igetclosest_point_linked(struct ipoint_t *p, struct ilinked_t *list, float epsilon);
 
 int inmin(int *arr, unsigned int len);
 
@@ -37,26 +39,26 @@ int inmax(int *arr, unsigned int len);
 
 int* infastsort(int *arr, unsigned int len);
 
-ilinked_t* inew_linked(void *data);
+struct ilinked_t* inew_linked(void *data);
 
-ilinked_t* iget_linked(ilinked_t *list, int index);
+struct ilinked_t* iget_linked(struct ilinked_t *list, int index);
 
-ilinked_t* iset_linked(ilinked_t *list, int index, void *data);
+struct ilinked_t* iset_linked(struct ilinked_t *list, int index, void *data);
 
-ilinked_t* iadd_linked(ilinked_t *list, ilinked_t *n);
+struct ilinked_t* iadd_linked(struct ilinked_t *list, struct ilinked_t *n);
 
-ilinked_t* igetfirst_linked(ilinked_t *list);
+struct ilinked_t* igetfirst_linked(struct ilinked_t *list);
 
-ilinked_t* igetlast_linked(ilinked_t *list);
+struct ilinked_t* igetlast_linked(struct ilinked_t *list);
 
-ilinked_t* igetnext_linked(ilinked_t *list);
+struct ilinked_t* igetnext_linked(struct ilinked_t *list);
 
-ilinked_t* iremove_linked(ilinked_t *list);
+struct ilinked_t* iremove_linked(struct ilinked_t *list);
 
-int icontains_linked(ilinked_t *list, void *data);
+int icontains_linked(struct ilinked_t *list, void *data);
 
-ilinked_t* iaddunique_linked(ilinked_t *list, ilinked_t *n);
+struct ilinked_t* iaddunique_linked(struct ilinked_t *list, struct ilinked_t *n);
 
-void ifree_linked(ilinked_t *list, char free_contents);
+void ifree_linked(struct ilinked_t *list, char free_contents);
 
 #endif

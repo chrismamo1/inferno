@@ -6,7 +6,7 @@
 
 void draw_object(iobject_t *object)
 {
-        ilinked_t *li = /*igetfirst_linked(*/object->triplets/*)*/;
+        struct ilinked_t *li = /*igetfirst_linked(*/object->triplets/*)*/;
         for ( ; li != NULL; li = li->next) {
                 frontend_draw_coloredtriplet(li->data);
         }

@@ -21,13 +21,13 @@ int idetectcollision_aabb(aabb_t hb1, aabb_t hb2)
 
 int idetectcollision_object(iobject_t *o1, iobject_t *o2)
 {
-        if (((ipoint_t*)(o1->points->point))->z != ((ipoint_t*)(o2->points->point))->z)
+        if (((struct ipoint_t*)(o1->points->point))->z != ((struct ipoint_t*)(o2->points->point))->z)
                 return 0;
         aabb_t hb_o1 = icomputeaabb_object(o1);
         aabb_t hb_o2 = icomputeaabb_object(o2);
         
         if (idetectcollision_aabb(hb_o1, hb_o2)) {
-                ilinked_t *triplets = o1->triplets; /// TODO: Finish implementing this.
+                struct ilinked_t *triplets = o1->triplets; /// TODO: Finish implementing this.
                 aabb_t *hbs_o1 = malloc(o1->num_triplets * sizeof(aabb_t));
                 int i;
                 for (i = 0; triplets != NULL; triplets = triplets->next, ++i) { /// generate recursive AABB's for
@@ -59,8 +59,8 @@ aabb_t icomputeaabb_object(iobject_t *o)
 {
         aabb_t hb;
 
-        ilinkedpoint_t *pts = o->points;
-        ipoint_t *pnt = pts->point;
+        struct ilinkedpoint_t *pts = o->points;
+        struct ipoint_t *pnt = pts->point;
         hb.x = pnt->x;
         hb.y = pnt->y;
         hb.width = pnt->x;
@@ -86,8 +86,8 @@ aabb_t icomputeaabb_coloredtriplet(icoloredtriplet_t *t)
 {
         aabb_t hb;
 
-        ipoint_t **pts = t->vertices;
-        ipoint_t *pnt = pts[0];
+        struct ipoint_t **pts = t->vertices;
+        struct ipoint_t *pnt = pts[0];
         hb.x = pnt->x;
         hb.y = pnt->y;
         hb.width = pnt->x;
