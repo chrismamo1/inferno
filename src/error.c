@@ -11,9 +11,9 @@ int idie(int error);
 void print_error(int error, char *message, int iswarning)
 {
         if (iswarning)
-                fprintf(stdout, KYEL "WARNING %d" RESET, error);
+                fprintf(stderr, KYEL "WARNING %d" RESET, error);
         else
-                fprintf(stdout, KRED "ERROR %d" RESET, error);
+                fprintf(stderr, KRED "ERROR %d" RESET, error);
         fprintf(stdout, ": %s\n", message);
         return;
 }

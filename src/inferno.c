@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
         struct icolor_t *purple = NULL;
         purple = inew_color(purple, 153, 0, 153);
 
-        iobject_t *corners = NULL;
+        struct iobject_t *corners = NULL;
         corners = init_iobject(corners);
         iobject_add_triplet(corners, inew_coloredtriplet( inew_point(0., 1.9, 0, &state), black,
                                                            inew_point(0., 2.0, 0, &state), black,
@@ -80,7 +80,7 @@ int main(int argc, char *argv[])
                                                            inew_point(1.1, 1.5, 0), black,
                                                            inew_point(1.25, 0.7, 0), black));*/
 
-        iobject_t *box = NULL;
+        struct iobject_t *box = NULL;
         box = init_iobject(box);
         iobject_add_triplet(box, inew_coloredtriplet( inew_point(0.25, 1.25, 0, &state), black,
                                                            inew_point(0.25, 1.75, 0, &state), black,
@@ -91,7 +91,7 @@ int main(int argc, char *argv[])
 
         iprint_object(box);
 
-        ievent_handler *default_handler;
+        struct ievent_handler *default_handler;
 
         int i;
         for (i = 8; i < 256; i++) {

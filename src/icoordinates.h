@@ -70,10 +70,10 @@ struct iregion_t* icreate_region(int x, int y, uint32 width, uint32 height, stru
 
 //struct iregion_t* iget_region(
 
-void iprint_point(struct ipoint_t *point);
+void iprint_point(struct ipoint_t *restrict point);
 
-void iprint_vector(struct ivector_t *vec);
+void iprint_vector(struct ivector_t *restrict vec);
 
-char* iprints_point(struct ipoint_t *point);
+char* iprints_point(struct ipoint_t *restrict point);
 
 #endif

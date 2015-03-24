@@ -18,6 +18,11 @@
         return ifabs(100. * ifabs(expected - rough)/expected);
 }*/
 
+/** Computes the approximate result of the expression base ^ power where power > 1
+ * @param base the base of the operation
+ * @param power the exponent in the expression
+ * @return float
+ */
 float ifast_bigpow(float base, float power)
 {
         if (power == 0.) return 1.;
@@ -35,7 +40,13 @@ float ifast_bigpow(float base, float power)
         return big_part;
 }
 
+/** Computes the approximates result of the expression base ^ power where power is between 1 and -1.
+ * @param base the base of the expression
+ * @param power the power of the expression
+ * @return float
+ */
 float ifast_smallpow(float base, float power)
+        //__attribute__ ((const))
 {
         if (power == 0) return 1;
         if (power < 0) {
@@ -51,6 +62,10 @@ float ifast_smallpow(float base, float power)
         return data.f;
 }
 
+/** A fast reverse square root hack based on the public Quake II Source.
+ * @param x the value to be reverse root-ing.
+ * @return float
+ */
 float ifast_rsqrt(float x) /// All credit the the authors of the Quake engine
 {
         float xhalf = 0.5f * x;
@@ -93,8 +108,9 @@ float ifast_sqrt(float x)
         return data.f;
 }
 
-int inmin(int *arr, unsigned int length) // pretty much the only optimization here is the hard coded loop.
+int inmin(int *restrict arr, unsigned int length) // pretty much the only optimization here is the hard coded loop.
                                          // this is only efficient for very large arrays
+        //__attribute__ ((pure))
 {
         int len = length;
         int rval = arr[--len];
@@ -126,7 +142,8 @@ int inmin(int *arr, unsigned int length) // pretty much the only optimization he
         return rval;
 }
 
-int inmax(int *arr, unsigned int length)
+int inmax(int *restrict arr, unsigned int length)
+        //__attribute__ ((pure))
 {
         int len = length;
         int rval = arr[--len];
@@ -180,7 +197,7 @@ int inmax(int *arr, unsigned int length)
         return;
 }*/
 
-int* infastsort(int *arr, unsigned int len)
+int* infastsort(int *restrict arr, unsigned int len)
 {
         if (len > 3) {
                 /// do a sane sorting algorithm
@@ -246,7 +263,8 @@ int* infastsort(int *arr, unsigned int len)
         return arr;
 }
 
-float iget_distance(struct ipoint_t *p1, struct ipoint_t *p2)
+float iget_distance(struct ipoint_t *restrict p1, struct ipoint_t *restrict p2)
+        //__attribute__ ((nonnull))
 {
         float dx = p1->x - p2->x;
         float dy = p1->y - p2->y;
@@ -276,6 +294,7 @@ struct ipoint_t* igetclosest_point_linked(struct ipoint_t *p, struct ilinked_t *
 }
 
 struct ilinked_t* inew_linked(void *data)
+        //__attribute__ ((returns_nonnull))
 {
         struct ilinked_t *rval = malloc(sizeof(struct ilinked_t));
         if (rval == NULL) {
@@ -288,6 +307,7 @@ struct ilinked_t* inew_linked(void *data)
 }
 
 struct ilinked_t* iget_linked(struct ilinked_t *list, int index)
+        //__attribute__ ((nonnull))
 {
         for ( ; list->previous != NULL; list = list->previous) ;
         int i;
@@ -298,7 +318,7 @@ struct ilinked_t* iget_linked(struct ilinked_t *list, int index)
         return list;
 }
 
-struct ilinked_t* iset_linked(struct ilinked_t *list, int index, void *data)
+struct ilinked_t* iset_linked(struct ilinked_t *restrict list, int index, void *data)
 {
         if (list == NULL) {
                 ierror(I_NULL_LINKED_ERROR);
@@ -351,7 +371,7 @@ struct ilinked_t* igetlast_linked(struct ilinked_t *list)
         return list;
 }
 
-struct ilinked_t* igetnext_linked(struct ilinked_t *list)
+struct ilinked_t* igetnext_linked(struct ilinked_t *restrict list)
 {
         if (list == NULL) {
                 ierror(I_NULL_LINKED_ERROR);
@@ -376,6 +396,7 @@ struct ilinked_t* iremove_linked(struct ilinked_t *list)
 }
 
 int icontains_linked(struct ilinked_t *list, void *data)
+        //__attribute__ ((nonnull (1)))
 {
         list = igetfirst_linked(list);
         for ( ; list != NULL; list=list->next)
@@ -394,6 +415,7 @@ struct ilinked_t* iaddunique_linked(struct ilinked_t *list, struct ilinked_t *n)
 }
 
 void ifree_linked(struct ilinked_t *list, char free_contents)
+        //__attribute__ ((nonnull))
 {
         struct ilinked_t *tmp = NULL;
         do {

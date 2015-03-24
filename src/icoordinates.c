@@ -3,6 +3,7 @@
 #include "error.h"
 #include "iutils.h"
 #include "itypes.h"
+#include "iprettyconsole.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -11,11 +12,17 @@
         ilinkedpoint_t *next;
 };*/
 
+/** allocate and initialize a new ilinkedpoint structure, a type of singly
+ * linked list specialized for holding ipoints
+ * @param *point the ipoint structure the be "contained" the the link
+ * @return the new ilinkedpoint, or NULL on failure
+ */
 struct ilinkedpoint_t* inew_linkedpoint(struct ipoint_t *point)
 {
         if (point) {
                 struct ilinkedpoint_t *rval = malloc(sizeof(struct ilinkedpoint_t));
                 if (rval) {
+                        rval->next = NULL;
                         rval->point = point;
                         return rval;
                 }
@@ -26,6 +33,11 @@ struct ilinkedpoint_t* inew_linkedpoint(struct ipoint_t *point)
         return NULL;
 }
 
+/** add a new point to a linked points structure
+ * @param *head the structure we want to append to
+ * @param *point the point to be appended
+ * @return a pointer to the new head of the list
+ */
 struct ilinkedpoint_t* iadd_linkedpoint(struct ilinkedpoint_t *head, struct ilinkedpoint_t *point)
 {
         if (head) {
@@ -49,21 +61,42 @@ struct ilinkedpoint_t* iadd_linkedpoint(struct ilinkedpoint_t *head, struct ilin
         return point;
 }
 
+/** See if an ilinkedpoint list contains a point at the same location or with
+ * the same value as a given argument.
+ * @param *head The presumed "head" of the list
+ * @param *lookfor A pointer to the point to search for
+ * @return a pointer to the linked list element containing *lookfor, or NULL if
+ * *lookfor can't be found in the list
+ */
 struct ilinkedpoint_t* icontains_linkedpoint(struct ilinkedpoint_t *head, struct ilinkedpoint_t *lookfor)
 {
+        if (lookfor == NULL || head == NULL)
+                return NULL;
+        struct ilinkedpoint_t *hd = head;
         struct ipoint_t *point = lookfor->point;
-        while (head) {
-                if (head == lookfor)
-                        return head;
-                if (point->x == head->point->x
-                        && point->y == head->point->y
-                        && point->z == head->point->z)
-                        return head;
-                head = head->next;
+        if (point == NULL)
+                return NULL;
+        while (hd) {
+                if (hd == lookfor)
+                        return hd;
+                if (hd == NULL)
+                        return NULL;
+                if (hd->point == NULL)
+                        return NULL;
+                if (point->x == ((struct ipoint_t*)(hd->point))->x
+                        && point->y == hd->point->y
+                        && point->z == hd->point->z)
+                        return hd;
+                hd = hd->next;
         }
         return NULL;
 }
 
+/** free a linkedpoint list
+ * @param *head The head of the list
+ * @param contents determine if the points "contained" in the list should be
+ * freed as well. 'y' or 1 mean "yes" and 'n' or '0' mean "no".
+ */
 void ifree_linkedpoints(struct ilinkedpoint_t *head, char contents)
 {
         struct ilinkedpoint_t *tmp = head->next;
@@ -77,6 +110,9 @@ void ifree_linkedpoints(struct ilinkedpoint_t *head, char contents)
         }
 }
 
+/** Allocates and initializes a new point using the new region system
+ * 
+ */
 struct ipoint_t* inew_point(long double x, long double y, uint8 z, struct ifrontendstate_t *state)
 {
         struct ipoint_t *rval = malloc(sizeof(struct ipoint_t));
@@ -87,8 +123,8 @@ struct ipoint_t* inew_point(long double x, long double y, uint8 z, struct ifront
                 rval->region = -1;
                 return rval;
         }
-        struct ilinked_t *list = igetfirst_linked(state->regions);
-        struct iregion_t *region;
+        volatile struct ilinked_t *list = igetfirst_linked(state->regions);
+        volatile struct iregion_t *region;
 
         long int _x = (long int)x, _y = (long int)y;
 
@@ -141,6 +177,8 @@ struct iabsolutepoint_t* iget_absolutepoint(struct ipoint_t *rel, struct ifronte
         rval->x = rel->x;
         rval->y = rel->y;
         //rval->x += (long double)
+        //
+        return rval;
 }
 
 struct ivector_t* inew_vector(double x, double y)
@@ -172,9 +210,9 @@ struct ivector_t* iadd_vector(struct ivector_t *v1, struct ivector_t *v2)
         return v1;
 }
 
-void iprint_point(struct ipoint_t *point)
+void iprint_point(struct ipoint_t *restrict point)
 {
-        printf("ipoint_t at %p, coordinates(%f, %f, %d)", point,
+        printf("point " KYEL "@@%p" RESET ", coordinates(%f, %f, %d)\n", (void*)point,
                         point->x,
                         point->y,
                         point->z
@@ -208,12 +246,13 @@ struct iregion_t* icreate_region(int x, int y, uint32 width, uint32 height, stru
         return region;
 }
 
-void iprint_vector(struct ivector_t *vec)
+void iprint_vector(struct ivector_t *restrict vec)
 {
-        printf("ivector_t @%p, (x, y) = (%lf, %lf)\n", vec, vec->x, vec->y);
+        printf("ivector_t @%p, (x, y) = (%lf, %lf)\n", (void*)vec, vec->x, vec->y);
 }
 
-size_t str_len(char *string) // homebrew strlen function, because
+static inline size_t str_len(char *string)
+                             // homebrew strlen function, because
                              // we really don't need the entire
                              // standard library string.h
 {
@@ -222,11 +261,11 @@ size_t str_len(char *string) // homebrew strlen function, because
         return i - 1;
 }
 
-char* iprints_point(struct ipoint_t *point)
+char* iprints_point(struct ipoint_t *restrict point)
 {
         char *buffer = malloc(64 * sizeof(char));
         sprintf(buffer, "ipoint_t at %p, coordinates(%f, %f, %d)",
-                        point,
+                        (void*)point,
                         point->x,
                         point->y,
                         point->z

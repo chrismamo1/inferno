@@ -81,7 +81,7 @@ struct iobject_t* init_iobject(struct iobject_t *object)
  */
 struct iobject_t* iobject_add_triplet(struct iobject_t *object, struct icoloredtriplet_t *triplet)
 {
-        float epsilon = 0.001;
+        float epsilon = 0.0001;
         object->num_triplets = object->num_triplets + 1;///Tell the data structure that
                                                         ///there is one more triplet in the house.
         if (object->triplets == NULL)
@@ -91,11 +91,11 @@ struct iobject_t* iobject_add_triplet(struct iobject_t *object, struct icoloredt
 
         if (object->points == NULL) {
                 struct ipoint_t **points = ((struct icoloredtriplet_t*)(igetlast_linked(object->triplets)->data))->vertices;
-                object->points = inew_linkedpoint(points[0]);
+                object->points = inew_linkedpoint(triplet->vertices[0]);
                 iadd_linkedpoint(object->points,
-                                        inew_linkedpoint(points[1]));
+                                        inew_linkedpoint(triplet->vertices[1]));
                 iadd_linkedpoint(object->points,
-                                        inew_linkedpoint(points[2]));
+                                        inew_linkedpoint(triplet->vertices[2]));
                 object->num_points = 3;
         } else {
                 struct ipoint_t **points = ((struct icoloredtriplet_t*)(igetlast_linked(object->triplets)->data))->vertices;
@@ -110,7 +110,10 @@ struct iobject_t* iobject_add_triplet(struct iobject_t *object, struct icoloredt
                                                                               incumbent point is within epsilon of
                                                                               zero */
                                         printf(KWHT "INFO: found incumbent vertex within EPSILON, swapping reference.\n" RESET);
-                                        printf(KWHT "INFO: incumbent @%p, new @%p.\n" RESET, iterator->point, points[i]);
+                                        printf(KWHT "INFO: incumbent @%p, new @%p.\n" RESET,
+                                                        (void*)iterator->point,
+                                                        (void*)points[i]
+                                        );
                                         struct ipoint_t *incumbent = iterator->point; /* fetch the address of the current incumbent
                                                                                   point */
                                         incumbent->x = (float)(incumbent->x + points[i]->x)/2.; /* average the two points to minimize
@@ -126,7 +129,7 @@ struct iobject_t* iobject_add_triplet(struct iobject_t *object, struct icoloredt
                                         continue;
                                 } // else {
                                 struct ilinkedpoint_t *test_point = inew_linkedpoint(points[i]);
-                                if (!icontains_linkedpoint(object->points, test_point)) {
+                                if (icontains_linkedpoint(object->points, test_point) == NULL) {
                                         iadd_linkedpoint(object->points, test_point);
                                         object->num_points++;
                                 }
@@ -140,30 +143,35 @@ struct iobject_t* iobject_add_triplet(struct iobject_t *object, struct icoloredt
 
 void iprint_object(struct iobject_t *object)
 {
-        printf("object " KYEL "@%p" RESET ".\n", object);
+        printf("object " KYEL "@%p" RESET ".\n", (void*)object);
         printf("Motion vector = ");
         iprint_vector(object->motion);
         printf("%d triplets:\n", object->num_triplets);
         struct ilinked_t *trp = igetfirst_linked(object->triplets);
         for ( ; trp != NULL; trp=trp->next) {
-                printf("\ttriplet at address %p.\n", trp->data);
+                printf("\ttriplet at address %p.\n", (void*)trp->data);
                 printf("\t L > points:\n");
                 struct icoloredtriplet_t *colored = (struct icoloredtriplet_t*)(trp->data);
                 struct ipoint_t *pnt = colored->vertices[0];
                 struct icolor_t **colors = colored->colors;
-                printf("\t      | > @%p(%.3f, %.3f, %d)", pnt, pnt->x, pnt->y, pnt->z);
-                 printf(" rgb(%d, %d, %d) @%p\n", colors[0]->r, colors[0]->g, colors[0]->b, colors[0]);
+                printf("\t      | > @%p(%.3f, %.3f, %d)", (void*)pnt, pnt->x, pnt->y, pnt->z);
+                 printf(" rgb(%d, %d, %d) @%p\n", colors[0]->r, colors[0]->g, colors[0]->b, (void*)colors[0]);
                 pnt = colored->vertices[1];
-                printf("\t      | > @%p(%.3f, %.3f, %d)", pnt, pnt->x, pnt->y, pnt->z);
-                 printf(" rgb(%d, %d, %d) @%p\n", colors[1]->r, colors[1]->g, colors[1]->b, colors[1]);
+                printf("\t      | > @%p(%.3f, %.3f, %d)", (void*)pnt, pnt->x, pnt->y, pnt->z);
+                 printf(" rgb(%d, %d, %d) @%p\n", colors[1]->r, colors[1]->g, colors[1]->b, (void*)colors[1]);
                 pnt = colored->vertices[2];
-                printf("\t      L > @%p(%.3f, %.3f, %d)", pnt, pnt->x, pnt->y, pnt->z);
-                 printf(" rgb(%d, %d, %d) @%p\n", colors[2]->r, colors[2]->g, colors[2]->b, colors[2]);
+                printf("\t      L > @%p(%.3f, %.3f, %d)", (void*)pnt, pnt->x, pnt->y, pnt->z);
+                 printf(" rgb(%d, %d, %d) @%p\n", colors[2]->r, colors[2]->g, colors[2]->b, (void*)colors[2]);
         }
         printf("%d points are in the global points register:\n", object->num_points);
         struct ilinkedpoint_t *pnt = object->points;
         for ( ; pnt != NULL; pnt=pnt->next) {
-                printf("\tpoint at address %p.\n", pnt->point);
+                printf("\t");
+                iprint_point(pnt->point);
+                /*printf("\tpoint at address %p. (%.3f, %.3f, %d)\n", (void*)pnt->point,
+                                pnt->point->x,
+                                pnt->point->y,
+                                pnt->point->z);*/
         }
 }
 
