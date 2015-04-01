@@ -1,6 +1,6 @@
 #include "../error.h"
-#include "../frontend.h"
-#include "../frontend_opengl_linux.h"
+#include "frontend.h"
+#include "frontend_opengl_linux.h"
 #include "../icoordinates.h"
 #include "../igraphics.h"
 #include "../iprimitives.h"
