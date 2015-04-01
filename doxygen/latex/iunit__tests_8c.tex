@@ -1,0 +1,484 @@
+\hypertarget{iunit__tests_8c}{\section{src/tests/iunit\-\_\-tests.c File Reference}
+\label{iunit__tests_8c}\index{src/tests/iunit\-\_\-tests.\-c@{src/tests/iunit\-\_\-tests.\-c}}
+}
+{\ttfamily \#include \char`\"{}../error.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}frontend.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}frontend\-\_\-opengl\-\_\-linux.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../icoordinates.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../igraphics.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../iprimitives.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../iutils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../iprettyconsole.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$assert.\-h$>$}\\*
+Include dependency graph for iunit\-\_\-tests.\-c\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{iunit__tests_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{E\-P\-S}~0.\-000005
+\item 
+\#define \hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{E\-R\-R}~\hyperlink{iutils_8h_a123333bd89a1f383b949ebcf4ed09788}{ipercent\-\_\-error}
+\item 
+\#define \hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{P\-O\-W}~\hyperlink{iutils_8h_a94dc2e6f0ae053cea8122916de3c000e}{ifast\-\_\-bigpow}
+\item 
+\#define \hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{E\-P\-S}~4.\-763f
+\item 
+\#define \hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{E\-R\-R}~\hyperlink{iutils_8h_a123333bd89a1f383b949ebcf4ed09788}{ipercent\-\_\-error}
+\item 
+\#define \hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{P\-O\-W}~\hyperlink{iutils_8h_a476267e7df21d0529e81adb3909d9854}{ifast\-\_\-smallpow}
+\item 
+\#define \hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{E\-P\-S}~5.\-1f
+\item 
+\#define \hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{E\-R\-R}~\hyperlink{iutils_8h_a123333bd89a1f383b949ebcf4ed09788}{ipercent\-\_\-error}
+\item 
+\#define \hyperlink{iunit__tests_8c_a095e93222540fb38e433670cf08b5a46}{S\-Q\-R\-T}~\hyperlink{iutils_8h_a99799aeb9cb7fb340a3cec124d429764}{ifast\-\_\-sqrt}
+\item 
+\#define \hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{E\-P\-S}~2.\-0f
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{iunit__tests_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\item 
+void \hyperlink{iunit__tests_8c_a2915702dcacec3bc4ccec3d828ec0e10}{iassert} (int val)
+\item 
+void \hyperlink{iunit__tests_8c_af0f064a46e42e36218f6b404c042383d}{iassert\-\_\-setmsg} (char $\ast$msg)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{\index{iunit\-\_\-tests.\-c@{iunit\-\_\-tests.\-c}!E\-P\-S@{E\-P\-S}}
+\index{E\-P\-S@{E\-P\-S}!iunit_tests.c@{iunit\-\_\-tests.\-c}}
+\subsubsection[{E\-P\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-P\-S~0.\-000005}}\label{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}
+\hypertarget{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{\index{iunit\-\_\-tests.\-c@{iunit\-\_\-tests.\-c}!E\-P\-S@{E\-P\-S}}
+\index{E\-P\-S@{E\-P\-S}!iunit_tests.c@{iunit\-\_\-tests.\-c}}
+\subsubsection[{E\-P\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-P\-S~4.\-763f}}\label{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}
+\hypertarget{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{\index{iunit\-\_\-tests.\-c@{iunit\-\_\-tests.\-c}!E\-P\-S@{E\-P\-S}}
+\index{E\-P\-S@{E\-P\-S}!iunit_tests.c@{iunit\-\_\-tests.\-c}}
+\subsubsection[{E\-P\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-P\-S~5.\-1f}}\label{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}
+\hypertarget{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{\index{iunit\-\_\-tests.\-c@{iunit\-\_\-tests.\-c}!E\-P\-S@{E\-P\-S}}
+\index{E\-P\-S@{E\-P\-S}!iunit_tests.c@{iunit\-\_\-tests.\-c}}
+\subsubsection[{E\-P\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-P\-S~2.\-0f}}\label{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}
+\hypertarget{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{\index{iunit\-\_\-tests.\-c@{iunit\-\_\-tests.\-c}!E\-R\-R@{E\-R\-R}}
+\index{E\-R\-R@{E\-R\-R}!iunit_tests.c@{iunit\-\_\-tests.\-c}}
+\subsubsection[{E\-R\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R~{\bf ipercent\-\_\-error}}}\label{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}
+\hypertarget{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{\index{iunit\-\_\-tests.\-c@{iunit\-\_\-tests.\-c}!E\-R\-R@{E\-R\-R}}
+\index{E\-R\-R@{E\-R\-R}!iunit_tests.c@{iunit\-\_\-tests.\-c}}
+\subsubsection[{E\-R\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R~{\bf ipercent\-\_\-error}}}\label{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}
+\hypertarget{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{\index{iunit\-\_\-tests.\-c@{iunit\-\_\-tests.\-c}!E\-R\-R@{E\-R\-R}}
+\index{E\-R\-R@{E\-R\-R}!iunit_tests.c@{iunit\-\_\-tests.\-c}}
+\subsubsection[{E\-R\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R~{\bf ipercent\-\_\-error}}}\label{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}
+\hypertarget{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{\index{iunit\-\_\-tests.\-c@{iunit\-\_\-tests.\-c}!P\-O\-W@{P\-O\-W}}
+\index{P\-O\-W@{P\-O\-W}!iunit_tests.c@{iunit\-\_\-tests.\-c}}
+\subsubsection[{P\-O\-W}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-O\-W~{\bf ifast\-\_\-bigpow}}}\label{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}
+\hypertarget{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{\index{iunit\-\_\-tests.\-c@{iunit\-\_\-tests.\-c}!P\-O\-W@{P\-O\-W}}
+\index{P\-O\-W@{P\-O\-W}!iunit_tests.c@{iunit\-\_\-tests.\-c}}
+\subsubsection[{P\-O\-W}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-O\-W~{\bf ifast\-\_\-smallpow}}}\label{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}
+\hypertarget{iunit__tests_8c_a095e93222540fb38e433670cf08b5a46}{\index{iunit\-\_\-tests.\-c@{iunit\-\_\-tests.\-c}!S\-Q\-R\-T@{S\-Q\-R\-T}}
+\index{S\-Q\-R\-T@{S\-Q\-R\-T}!iunit_tests.c@{iunit\-\_\-tests.\-c}}
+\subsubsection[{S\-Q\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-Q\-R\-T~{\bf ifast\-\_\-sqrt}}}\label{iunit__tests_8c_a095e93222540fb38e433670cf08b5a46}
+
+
+\subsection{Function Documentation}
+\hypertarget{iunit__tests_8c_a2915702dcacec3bc4ccec3d828ec0e10}{\index{iunit\-\_\-tests.\-c@{iunit\-\_\-tests.\-c}!iassert@{iassert}}
+\index{iassert@{iassert}!iunit_tests.c@{iunit\-\_\-tests.\-c}}
+\subsubsection[{iassert}]{\setlength{\rightskip}{0pt plus 5cm}void iassert (
+\begin{DoxyParamCaption}
+\item[{int}]{val}
+\end{DoxyParamCaption}
+)}}\label{iunit__tests_8c_a2915702dcacec3bc4ccec3d828ec0e10}
+
+
+Definition at line 349 of file iunit\-\_\-tests.\-c.
+
+
+\begin{DoxyCode}
+350 \{
+351         
+352 \}
+\end{DoxyCode}
+\hypertarget{iunit__tests_8c_af0f064a46e42e36218f6b404c042383d}{\index{iunit\-\_\-tests.\-c@{iunit\-\_\-tests.\-c}!iassert\-\_\-setmsg@{iassert\-\_\-setmsg}}
+\index{iassert\-\_\-setmsg@{iassert\-\_\-setmsg}!iunit_tests.c@{iunit\-\_\-tests.\-c}}
+\subsubsection[{iassert\-\_\-setmsg}]{\setlength{\rightskip}{0pt plus 5cm}void iassert\-\_\-setmsg (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{msg}
+\end{DoxyParamCaption}
+)}}\label{iunit__tests_8c_af0f064a46e42e36218f6b404c042383d}
+
+
+Definition at line 354 of file iunit\-\_\-tests.\-c.
+
+
+\begin{DoxyCode}
+355 \{
+356         
+357 \}
+\end{DoxyCode}
+\hypertarget{iunit__tests_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{\index{iunit\-\_\-tests.\-c@{iunit\-\_\-tests.\-c}!main@{main}}
+\index{main@{main}!iunit_tests.c@{iunit\-\_\-tests.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{iunit__tests_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}
+1 2 3
+
+2 3
+
+2 3 1
+
+2 1
+
+2 1 3
+
+2 3 
+
+Definition at line 79 of file iunit\-\_\-tests.\-c.
+
+
+\begin{DoxyCode}
+80 \{
+81         
+82         \textcolor{comment}{/*int rt = 3;}
+83 \textcolor{comment}{        float l = 1;}
+84 \textcolor{comment}{        float h = 1000000;}
+85 \textcolor{comment}{        printf("Average percent error of smallpow for %dth root from %f to %f: %f%%\(\backslash\)n", rt, l, h,
+       get\_average\_accuracy(l, h, rt));*/}
+86         
+87 
+88         \hyperlink{error_8c_a115185aff727ba2ac3079ebef145354d}{ishowerrors} = 0;
+89 
+90         \textcolor{comment}{/* move on to tests of iutils */}
+91         printf(\hyperlink{iprettyconsole_8h_af0036c8022c9980079ab17e5c87fd478}{KWHT} \textcolor{stringliteral}{"Making sure that ifast\_epsilon\_cmp works for all possible test situations... "});
+92         \textcolor{comment}{/*test situations:}
+93 \textcolor{comment}{         * = - -}
+94 \textcolor{comment}{         * = + +}
+95 \textcolor{comment}{         * < - -}
+96 \textcolor{comment}{         * < - +}
+97 \textcolor{comment}{         * < + +}
+98 \textcolor{comment}{         * > - -}
+99 \textcolor{comment}{         * > + -}
+100 \textcolor{comment}{         * > + +}
+101 \textcolor{comment}{         */}
+102         \textcolor{comment}{// =}
+103         assert(!\hyperlink{iutils_8h_a74d40be9859adc91fa9ddcdbf8dcebc3}{ifast\_epsilon\_cmp}(-675.02, -675.013, 0.011)); assert(!
+      \hyperlink{iutils_8h_a74d40be9859adc91fa9ddcdbf8dcebc3}{ifast\_epsilon\_cmp}(-675.013, -675.02, 0.011));
+104         assert(!\hyperlink{iutils_8h_a74d40be9859adc91fa9ddcdbf8dcebc3}{ifast\_epsilon\_cmp}(675.02, 675.013, 0.011)); assert(!
+      \hyperlink{iutils_8h_a74d40be9859adc91fa9ddcdbf8dcebc3}{ifast\_epsilon\_cmp}(675.013, 675.02, 0.011));
+105         \textcolor{comment}{// <}
+106         assert( \hyperlink{iutils_8h_a74d40be9859adc91fa9ddcdbf8dcebc3}{ifast\_epsilon\_cmp}(-675.02, -675.013, 0.001) == -1);
+107         assert( \hyperlink{iutils_8h_a74d40be9859adc91fa9ddcdbf8dcebc3}{ifast\_epsilon\_cmp}(-675.02, 675.013, 0.011)  == -1);
+108         assert( \hyperlink{iutils_8h_a74d40be9859adc91fa9ddcdbf8dcebc3}{ifast\_epsilon\_cmp}(675.013, 675.02, 0.001) == -1);
+109         \textcolor{comment}{// >}
+110         assert( \hyperlink{iutils_8h_a74d40be9859adc91fa9ddcdbf8dcebc3}{ifast\_epsilon\_cmp}(-675.013, -675.02, 0.001) == 1);
+111         assert( \hyperlink{iutils_8h_a74d40be9859adc91fa9ddcdbf8dcebc3}{ifast\_epsilon\_cmp}(675.013, -675.02, 0.011)  == 1);
+112         assert( \hyperlink{iutils_8h_a74d40be9859adc91fa9ddcdbf8dcebc3}{ifast\_epsilon\_cmp}(675.02, 675.013, 0.001) == 1);
+113         printf(\hyperlink{iprettyconsole_8h_ac081c83b067273757f7a2e54a5957d41}{KGRN} \textcolor{stringliteral}{"Success.\(\backslash\)n"} \hyperlink{iprettyconsole_8h_af0036c8022c9980079ab17e5c87fd478}{KWHT});
+114         
+115         \textcolor{comment}{/* move on to tests of ipercent\_error */}
+116 \textcolor{preprocessor}{#define EPS 0.000005}
+117 \textcolor{preprocessor}{}        printf(\textcolor{stringliteral}{"Check ipercent\_error for a few givens... "});
+118         \textcolor{keywordtype}{float} e1 = 5., e2 = 31.307903570339, e3 = 5.358, e4 = 194.642;
+119         assert(\hyperlink{iutils_8h_a74d40be9859adc91fa9ddcdbf8dcebc3}{ifast\_epsilon\_cmp}( \hyperlink{iutils_8h_a123333bd89a1f383b949ebcf4ed09788}{ipercent\_error}(95, 100), e1, 
+      \hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}) == 0);
+120         assert(\hyperlink{iutils_8h_a74d40be9859adc91fa9ddcdbf8dcebc3}{ifast\_epsilon\_cmp}( \hyperlink{iutils_8h_a123333bd89a1f383b949ebcf4ed09788}{ipercent\_error}(675.312, 983.1), e2, 
+      \hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}) == 0);
+121         assert(\hyperlink{iutils_8h_a74d40be9859adc91fa9ddcdbf8dcebc3}{ifast\_epsilon\_cmp}( \hyperlink{iutils_8h_a123333bd89a1f383b949ebcf4ed09788}{ipercent\_error}(-47.321, -50), e3, 
+      \hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}) == 0);
+122         assert(\hyperlink{iutils_8h_a74d40be9859adc91fa9ddcdbf8dcebc3}{ifast\_epsilon\_cmp}( \hyperlink{iutils_8h_a123333bd89a1f383b949ebcf4ed09788}{ipercent\_error}(-47.321, 50), e4, 
+      \hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}) == 0);
+123         assert(\hyperlink{iutils_8h_a74d40be9859adc91fa9ddcdbf8dcebc3}{ifast\_epsilon\_cmp}( \hyperlink{iutils_8h_a123333bd89a1f383b949ebcf4ed09788}{ipercent\_error}(47.321, -50), e4, 
+      \hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}) == 0);
+124         printf(\hyperlink{iprettyconsole_8h_ac081c83b067273757f7a2e54a5957d41}{KGRN} \textcolor{stringliteral}{"Success.\(\backslash\)n"} \hyperlink{iprettyconsole_8h_af0036c8022c9980079ab17e5c87fd478}{KWHT});
+125 \textcolor{preprocessor}{#undef EPS}
+126 \textcolor{preprocessor}{}
+127         \textcolor{comment}{/* move on to tests of ifast\_bigpow */}
+128 \textcolor{preprocessor}{#define ERR ipercent\_error}
+129 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define POW ifast\_bigpow}
+130 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define EPS 4.763f}
+131 \textcolor{preprocessor}{}        printf(\textcolor{stringliteral}{"Making sure that ifast\_bigpow has at most 4.763%% error on selected computations... "});
+132         \textcolor{keywordtype}{float} b1 = 0.75, b2 = -33.25, b3 = 0, b4 = 27.5; \textcolor{comment}{// test bases}
+133         \textcolor{keywordtype}{float} p1 = 0, p2 = -0.5, p3 = -3.2, p4 = 5.125;   \textcolor{comment}{// test powers}
+134         \textcolor{keywordtype}{float} bnp1 = 1,
+135               b1p2 = 1.15470053838, b1p3 = 2.51075280841, b1p4 = 0.22892276082,
+136               b3pn = 0,
+137               b4p2 = 0.19069251784, b4p3 = 0.00002478194, b4p4 = 23800169.8209;  \textcolor{comment}{// expected values}
+138         assert(\hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(b1, p1), bnp1)<\hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}); assert(\hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(b2, p1), bnp1)<
+      \hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}); assert(\hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(b3, p1), bnp1)<\hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}); \textcolor{comment}{// all computations involving}
+139         assert(\hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(b4, p1), bnp1)< \hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS});                                                      
+                     \textcolor{comment}{// p1}
+140         assert(\hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(b1, p2), b1p2)<\hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}); assert(\hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(b1, p3), b1p3)<
+      \hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}); assert(\hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(b1, p4), b1p4)<\hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}); \textcolor{comment}{// b1 foreach p 2..4}
+141         \textcolor{comment}{/* b2 for p2 is impossible */}      \textcolor{comment}{/* b2 for p3 is also impossible */} \textcolor{comment}{/* b2 for p4 is impossible,
+       too */}
+142         assert(\hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(b3, p2), b3pn)<\hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}); assert(\hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(b3, p3), b3pn)<
+      \hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}); assert(\hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(b3, p4), b3pn)<\hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}); \textcolor{comment}{// b3 foreach p 2..4}
+143         assert(\hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(b4, p2), b4p2)<\hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}); assert(\hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(b4, p3), b4p3)<
+      \hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}); assert(\hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(b4, p4), b4p4)<\hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}); \textcolor{comment}{// b4 foreach p 2..4}
+144         \textcolor{keywordtype}{float} sum = \hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(b1, p1), bnp1) + \hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(b2, p1), bnp1) + 
+      \hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(b3, p1), bnp1) + \hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(b4, p1), bnp1);
+145               sum+= \hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(b1, p2), b1p2) + \hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(b1, p3), b1p3) + 
+      \hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(b1, p4), b1p4);
+146               sum+= \hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(b3, p2), b3pn) + \hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(b3, p3), b3pn) + 
+      \hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(b3, p4), b3pn);
+147               sum+= \hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(b4, p2), b4p2) + \hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(b4, p3), b4p3) + 
+      \hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(b4, p4), b4p4);
+148         sum = sum / 13.0f;
+149         printf(\hyperlink{iprettyconsole_8h_ac081c83b067273757f7a2e54a5957d41}{KGRN} \textcolor{stringliteral}{"Success. Average percent error = %.3f%%\(\backslash\)n"} \hyperlink{iprettyconsole_8h_af0036c8022c9980079ab17e5c87fd478}{KWHT}, sum);
+150 
+151 \textcolor{preprocessor}{#undef ERR}
+152 \textcolor{preprocessor}{}\textcolor{preprocessor}{#undef POW}
+153 \textcolor{preprocessor}{}\textcolor{preprocessor}{#undef EPS}
+154 \textcolor{preprocessor}{}
+155         \textcolor{comment}{/* move on to tests of ifast\_smallpow */}
+156 \textcolor{preprocessor}{#define ERR ipercent\_error}
+157 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define POW ifast\_smallpow}
+158 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define EPS 5.1f}
+159 \textcolor{preprocessor}{}        printf(\textcolor{stringliteral}{"Making sure that ifast\_smallpow has at most 5.1%% error on selected computations... "});
+160         \textcolor{comment}{//float b1 = 0.75, b2 = -33.25, b3 = 0, b4 = 27.5; // test bases}
+161         \textcolor{comment}{//float p1 = 0, p2 = -0.5, p3 = -3.2, p4 = 5.125;   // test powers}
+162         assert(\hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(64, 0.5f), 8)<\hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}); assert(\hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(125, 0.33333333), 5)<
+      \hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}); \textcolor{comment}{// all computations involving}
+163         assert(\hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(8, 0.333333f), 2.0f)<\hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}); assert(\hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(1024, 0.2), 4)<
+      \hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS});
+164         \textcolor{comment}{//assert(ERR(POW(b4, p1), bnp1)< EPS);                                                             
+              // p1}
+165         \textcolor{comment}{//assert(ERR(POW(b1, p2), b1p2)<EPS); assert(ERR(POW(b1, p3), b1p3)<EPS); assert(ERR(POW(b1, p4),
+       b1p4)<EPS); // b1 foreach p 2..4}
+166         sum = \hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(64, 0.5f), 8.0f) + \hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(125, 0.33333333), 5.0f) + 
+      \hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(8, 0.333333f), 2.0f) + \hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a7d36eb793ee8943f856044317659fbf1}{POW}(1024, 0.2f), 4.0f);
+167         printf(\hyperlink{iprettyconsole_8h_ac081c83b067273757f7a2e54a5957d41}{KGRN} \textcolor{stringliteral}{"Success. Average percent error = %.3f%%\(\backslash\)n"} \hyperlink{iprettyconsole_8h_af0036c8022c9980079ab17e5c87fd478}{KWHT}, sum / 4);
+168 
+169 \textcolor{preprocessor}{#undef ERR}
+170 \textcolor{preprocessor}{}\textcolor{preprocessor}{#undef POW}
+171 \textcolor{preprocessor}{}\textcolor{preprocessor}{#undef EPS}
+172 \textcolor{preprocessor}{}
+173         \textcolor{comment}{/* move on to tests of ifast\_sqrt */}
+174 \textcolor{preprocessor}{#define ERR ipercent\_error}
+175 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define SQRT ifast\_sqrt}
+176 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define EPS 2.0f}
+177 \textcolor{preprocessor}{}        printf(\textcolor{stringliteral}{"Making sure that ifast\_sqrt has at most %f%% error on select computations... "}, 
+      \hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS});
+178         assert(\hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a095e93222540fb38e433670cf08b5a46}{SQRT}(9), 3.0f) < \hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}); assert(\hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a095e93222540fb38e433670cf08b5a46}{SQRT}(81), 9.0f) < 
+      \hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}); assert(\hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a095e93222540fb38e433670cf08b5a46}{SQRT}(2), 1.41421356237f) < \hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS});
+179         assert(\hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a095e93222540fb38e433670cf08b5a46}{SQRT}(25), 5.0f) < \hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}); assert(\hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a095e93222540fb38e433670cf08b5a46}{SQRT}(36), 6.0f) < 
+      \hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}); assert(\hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a095e93222540fb38e433670cf08b5a46}{SQRT}(10000), 100.0f) < \hyperlink{iunit__tests_8c_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS});
+180               sum = \hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a095e93222540fb38e433670cf08b5a46}{SQRT}(9), 3.0f) + \hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a095e93222540fb38e433670cf08b5a46}{SQRT}(81), 9.0f) + \hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(
+      \hyperlink{iunit__tests_8c_a095e93222540fb38e433670cf08b5a46}{SQRT}(2), 1.4421356237f);
+181               sum+= \hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a095e93222540fb38e433670cf08b5a46}{SQRT}(25), 5.0f) + \hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a095e93222540fb38e433670cf08b5a46}{SQRT}(36), 6.0f) + 
+      \hyperlink{iunit__tests_8c_a735563036dced0b7d6cc98f97ea4978b}{ERR}(\hyperlink{iunit__tests_8c_a095e93222540fb38e433670cf08b5a46}{SQRT}(10000), 100.0f);
+182         sum /= 6.0f;
+183         printf(\hyperlink{iprettyconsole_8h_ac081c83b067273757f7a2e54a5957d41}{KGRN} \textcolor{stringliteral}{"Success. Average percent error = %.3f%%\(\backslash\)n"} \hyperlink{iprettyconsole_8h_af0036c8022c9980079ab17e5c87fd478}{KWHT}, sum);
+184 \textcolor{preprocessor}{#undef ERR}
+185 \textcolor{preprocessor}{}\textcolor{preprocessor}{#undef SQRT}
+186 \textcolor{preprocessor}{}\textcolor{preprocessor}{#undef EPS}
+187 \textcolor{preprocessor}{}
+188         \textcolor{comment}{/* move on to tests of inabs */}
+189         printf(\textcolor{stringliteral}{"Checking to see if inabs works... "});
+190         assert(\hyperlink{iutils_8h_ab00c87d5b44ad5f4b1885b8f87b9bc5d}{inabs}(0) == 0); assert(\hyperlink{iutils_8h_ab00c87d5b44ad5f4b1885b8f87b9bc5d}{inabs}(1)==1); assert(\hyperlink{iutils_8h_ab00c87d5b44ad5f4b1885b8f87b9bc5d}{inabs}(-37)==37);
+191         printf(\hyperlink{iprettyconsole_8h_ac081c83b067273757f7a2e54a5957d41}{KGRN} \textcolor{stringliteral}{"Success.\(\backslash\)n"} \hyperlink{iprettyconsole_8h_af0036c8022c9980079ab17e5c87fd478}{KWHT});
+192 
+193         \textcolor{comment}{/* move on to tests of ifabs */}
+194         printf(\textcolor{stringliteral}{"Checking to see if ifabs works... "});
+195         e1 = 37.5, e2 = 894.0883, e3 = 0.0;
+196         assert(\hyperlink{iutils_8h_a7f5fe1ad1f9cffade0a71678a8446532}{ifabs}(37.5) == e1); assert(\hyperlink{iutils_8h_a7f5fe1ad1f9cffade0a71678a8446532}{ifabs}(-894.0883) == e2); assert(
+      \hyperlink{iutils_8h_a7f5fe1ad1f9cffade0a71678a8446532}{ifabs}(0) == 0);
+197         printf(\hyperlink{iprettyconsole_8h_ac081c83b067273757f7a2e54a5957d41}{KGRN} \textcolor{stringliteral}{"Success.\(\backslash\)n"} \hyperlink{iprettyconsole_8h_af0036c8022c9980079ab17e5c87fd478}{KWHT});
+198 
+199         \textcolor{comment}{/* start with tests of icoordinates */}
+200         \textcolor{keyword}{struct }\hyperlink{structipoint__t}{ipoint\_t} *point1;
+201         \textcolor{keyword}{struct }\hyperlink{structipoint__t}{ipoint\_t} *point2;
+202         \textcolor{keyword}{struct }\hyperlink{structipoint__t}{ipoint\_t} *point3;
+203 
+204         point1 = \hyperlink{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}{inew\_point}(627.075, -51.4, 33.0, NULL);
+205         point2 = \hyperlink{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}{inew\_point}(1000.0, -0.5, 6.0, NULL);
+206         point3 = \hyperlink{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}{inew\_point}(-43.675, 12.0, 0.0, NULL);
+207 
+208         printf(\textcolor{stringliteral}{"Making sure that inew\_point does not assign conflicting addresses... "});
+209         assert( point1 != point2); assert( point2 != point3); assert( point1 != point3);
+210         printf(\hyperlink{iprettyconsole_8h_ac081c83b067273757f7a2e54a5957d41}{KGRN} \textcolor{stringliteral}{"Success.\(\backslash\)n"} \hyperlink{iprettyconsole_8h_af0036c8022c9980079ab17e5c87fd478}{KWHT});
+211 
+212         \textcolor{keywordtype}{float} x1 = 627.075, y1 = -51.4,
+213               x2 = 1000.,   y2 = -0.5,
+214               x3 = -43.675, y3 = 12.;
+215         printf(\textcolor{stringliteral}{"Making sure that inew\_point properly assigns accessible values, and"});
+216         printf(\textcolor{stringliteral}{" that that ipoint\_t structure is functional... "});
+217         assert(point1->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x} == x1); assert(point1->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y} == y1); assert(point1->\hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z} == 33);
+218         assert(point2->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x} == x2); assert(point2->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y} == y2); assert(point2->\hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z} == 6);
+219         assert(point3->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x} == x3); assert(point3->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y} == y3); assert(point3->\hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z} == 0);
+220 
+221         free(point1);
+222         free(point2);
+223         free(point3);
+224 
+225         printf(\hyperlink{iprettyconsole_8h_ac081c83b067273757f7a2e54a5957d41}{KGRN} \textcolor{stringliteral}{"Success.\(\backslash\)n"} \hyperlink{iprettyconsole_8h_af0036c8022c9980079ab17e5c87fd478}{KWHT});
+226 
+227         \textcolor{comment}{/* tests of linked lists */}
+228         printf(\hyperlink{iprettyconsole_8h_af0036c8022c9980079ab17e5c87fd478}{KWHT} \textcolor{stringliteral}{"Doing tests of ilinked\_t... "});
+229         \textcolor{keyword}{struct }\hyperlink{structilinked__t}{ilinked\_t} *lp1 = NULL, *lp2 = NULL, *lp3 = NULL;
+230         \textcolor{keywordtype}{int} *arr1 = malloc(10 * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));
+231         arr1[8] = -3; arr1[1] = -2; arr1[5] = -1; arr1[9] = 0; arr1[6] = 1; arr1[2] = 2; arr1[4] = 3; arr1[
+      7] = 4; arr1[0] = 5; arr1[3] = 6;
+232         \textcolor{keywordtype}{int} *arr2 = malloc(10 * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));
+233         arr2[7] = -4; arr2[1] = -3; arr2[2] = -2; arr2[3] = -1;arr2[9] = 0; arr2[5] = 1; arr2[6] = 2; arr2[
+      0] = 3; arr2[8] = 4; arr2[4] = 5;
+234 
+235         \textcolor{keyword}{struct }test\_struct \{ \textcolor{keywordtype}{int} x; \textcolor{keywordtype}{int} y; \textcolor{keywordtype}{int} z; \};
+236         \textcolor{keyword}{struct }test\_struct str1;
+237         str1.x = 0; str1.y = 1; str1.z = 2;
+238 
+239         assert(lp1 == NULL); \textcolor{comment}{// make sure that lp1 doesn't already somehow point to something}
+240         lp1 = \hyperlink{iutils_8c_a168fc457c8928038cb3c471bc5fdf170}{inew\_linked}(arr1); \textcolor{comment}{// initialize lp1}
+241         assert(lp1 != NULL); \textcolor{comment}{// make sure that lp1 points to something}
+242         assert(lp1->\hyperlink{structilinked__t_a6bace3c90bc1b272be7506fe4d259a71}{previous} == NULL); assert(lp1->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next} == NULL); \textcolor{comment}{// make sure the next/prev
+       pointers}
+243                                                                   \textcolor{comment}{// have been NULLed}
+244         assert(((\textcolor{keywordtype}{int}*)(lp1->\hyperlink{structilinked__t_ac285ea385953cbd5a332b2cbab39b62b}{data}))[0] == 5); assert(((\textcolor{keywordtype}{int}*)(lp1->\hyperlink{structilinked__t_ac285ea385953cbd5a332b2cbab39b62b}{data}))[1] == -2); \textcolor{comment}{// make sure
+       that the}
+245                                                                                    \textcolor{comment}{// data points to the}
+246                                                                                    \textcolor{comment}{// right array}
+247         
+248         assert(lp2 == NULL); \textcolor{comment}{// make sure lp2 is empty before we start}
+249         lp3 = NULL; lp3 = \hyperlink{iutils_8c_a168fc457c8928038cb3c471bc5fdf170}{inew\_linked}(&str1); \textcolor{comment}{// make sure lp3 is empty, then make a new linked
+       node out of it}
+250         lp2 = \hyperlink{iutils_8c_a67413257923db7c88d91a7e706024e98}{iadd\_linked}(NULL, lp3); \textcolor{comment}{// this should just make lp3 into the primary list.}
+251         assert(lp2 != NULL); assert(lp2 == lp3); lp3 = NULL; \textcolor{comment}{// make sure lp2 isn't NULL, then make sure
+       it's lp3, then}
+252                                                              \textcolor{comment}{// null out lp3 for later use}
+253         assert(lp2->previous == NULL); assert(lp2->next == NULL); \textcolor{comment}{// make sure next and previous are nulled}
+254 
+255                         \textcolor{comment}{// make sure values copied over properly.}
+256         assert(((\textcolor{keyword}{struct} test\_struct*)(lp2->data))->x == 0); assert(((\textcolor{keyword}{struct} test\_struct*)(lp2->data))->y ==
+       1);
+257         assert(((\textcolor{keyword}{struct} test\_struct*)(lp2->data))->z == 2); assert(lp2->data == &str1);
+258 
+259         lp3 = lp1; \textcolor{comment}{// set lp3 to lp1 (tmp)}
+260         lp1 = \hyperlink{iutils_8c_a67413257923db7c88d91a7e706024e98}{iadd\_linked}(lp1, lp2); \textcolor{comment}{// lp1->next=lp2}
+261         assert(lp3 == lp1); lp3 = NULL; \textcolor{comment}{// make sure lp1 hasn't changed, then null out lp3 for later}
+262         assert(lp1->\hyperlink{structilinked__t_a6bace3c90bc1b272be7506fe4d259a71}{previous} == NULL); assert(lp1->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next} == lp2); assert(lp2->previous == lp1); \textcolor{comment}{
+      // make sure structure checks out}
+263         assert(\hyperlink{iutils_8c_a67413257923db7c88d91a7e706024e98}{iadd\_linked}(NULL, lp2) == NULL); assert(lp1->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next} == lp2); assert(lp2->
+      previous == lp1); \textcolor{comment}{// make sure that adding lp2}
+264                                                                                                         \textcolor{comment}{//
+       to the NULL node doesn't}
+265                                                                                                         \textcolor{comment}{//
+       misbehave.}
+266         assert(\hyperlink{iutils_8c_a67413257923db7c88d91a7e706024e98}{iadd\_linked}(lp1, NULL) == lp1); assert(lp2->previous == lp1); assert(lp1->
+      \hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next} == lp2); \textcolor{comment}{// make sute that adding the}
+267                                                                                                         \textcolor{comment}{//
+       NULL node to lp1 doesn't}
+268                                                                                                         \textcolor{comment}{//
+       misbehave.}
+269 
+270         lp3 = \hyperlink{iutils_8c_a168fc457c8928038cb3c471bc5fdf170}{inew\_linked}(arr2);
+271         \hyperlink{iutils_8c_a67413257923db7c88d91a7e706024e98}{iadd\_linked}(lp1, lp3); 
+272         assert(\hyperlink{iutils_8c_afa917800755bb3e467deb597d34f674e}{iget\_linked}(lp1, 7) == NULL); assert(\hyperlink{iutils_8c_afa917800755bb3e467deb597d34f674e}{iget\_linked}(lp2, 2) == lp3);
+273         assert(\hyperlink{iutils_8c_ab23b2e52f032125daf0977aba08bc1e6}{iremove\_linked}(lp1) == lp2); 
+274         \hyperlink{iutils_8c_a67413257923db7c88d91a7e706024e98}{iadd\_linked}(lp3, lp1 = \hyperlink{iutils_8c_a168fc457c8928038cb3c471bc5fdf170}{inew\_linked}(arr1)); 
+275         assert(\hyperlink{iutils_8c_ab23b2e52f032125daf0977aba08bc1e6}{iremove\_linked}(lp3) == lp1); 
+276         \hyperlink{iutils_8c_a67413257923db7c88d91a7e706024e98}{iadd\_linked}(lp1, lp3 = \hyperlink{iutils_8c_a168fc457c8928038cb3c471bc5fdf170}{inew\_linked}(arr2)); 
+277         assert(\hyperlink{iutils_8c_ab23b2e52f032125daf0977aba08bc1e6}{iremove\_linked}(lp1) == lp3); 
+278         lp1 = \hyperlink{iutils_8c_a168fc457c8928038cb3c471bc5fdf170}{inew\_linked}(arr1);
+279         lp1 = \hyperlink{iutils_8c_a67413257923db7c88d91a7e706024e98}{iadd\_linked}(lp1, lp2);
+280 
+281         assert(lp1->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next} == lp2); assert(lp2->next == lp3); assert(lp3->next == NULL);
+282         assert(lp1->\hyperlink{structilinked__t_a6bace3c90bc1b272be7506fe4d259a71}{previous} == NULL); assert(lp2->previous == lp1); assert(lp3->previous == lp2);
+283 
+284         assert(\hyperlink{iutils_8c_a87ccc53b520060810c7be2e2243e6397}{iset\_linked}(lp1, 0, arr2) == lp1); assert(\hyperlink{iutils_8c_afa917800755bb3e467deb597d34f674e}{iget\_linked}(lp1, 0)->data ==
+       arr2);
+285         assert(\hyperlink{iutils_8c_a87ccc53b520060810c7be2e2243e6397}{iset\_linked}(lp2, 0, arr1) == lp1); assert(\hyperlink{iutils_8c_afa917800755bb3e467deb597d34f674e}{iget\_linked}(lp2, 0)->data ==
+       arr1);
+286         assert(\hyperlink{iutils_8c_a87ccc53b520060810c7be2e2243e6397}{iset\_linked}(lp1, 1, arr2) == lp2); assert(lp2->data == arr2);
+287         assert(\hyperlink{iutils_8c_a87ccc53b520060810c7be2e2243e6397}{iset\_linked}(lp2, 1, &str1) == lp2); assert(lp2->data == &str1);
+288 
+289         assert(\hyperlink{iutils_8c_acf8aca63685fbd6b4c995516baedab14}{igetfirst\_linked}(lp1) == lp1); assert(
+      \hyperlink{iutils_8c_acf8aca63685fbd6b4c995516baedab14}{igetfirst\_linked}(lp1) == \hyperlink{iutils_8c_acf8aca63685fbd6b4c995516baedab14}{igetfirst\_linked}(lp2));
+290         assert(\hyperlink{iutils_8c_acf8aca63685fbd6b4c995516baedab14}{igetfirst\_linked}(NULL) == NULL);
+291 
+292         assert(\hyperlink{iutils_8c_af8939cbd050e1b0099ca01f4ff127e9c}{igetlast\_linked}(lp1) == lp3); assert(
+      \hyperlink{iutils_8c_af8939cbd050e1b0099ca01f4ff127e9c}{igetlast\_linked}(lp1) == \hyperlink{iutils_8c_af8939cbd050e1b0099ca01f4ff127e9c}{igetlast\_linked}(lp2));
+293         assert(\hyperlink{iutils_8c_af8939cbd050e1b0099ca01f4ff127e9c}{igetlast\_linked}(NULL) == NULL);
+294 
+295         assert(\hyperlink{iutils_8c_a78c507c5fd82c0c4f5255213b3690b57}{igetnext\_linked}(lp1) == lp2); assert(
+      \hyperlink{iutils_8c_a78c507c5fd82c0c4f5255213b3690b57}{igetnext\_linked}(lp3) == NULL);
+296         assert(\hyperlink{iutils_8c_a78c507c5fd82c0c4f5255213b3690b57}{igetnext\_linked}(NULL) == NULL);
+297 
+298         assert(lp1->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next} = lp2); assert(lp2->next = lp3); assert(lp3->next == NULL);
+299 
+300         \hyperlink{iutils_8c_a758cf0f59ad81b8c8eb0b91ae6bf03a3}{ifree\_linked}(lp1, \textcolor{charliteral}{'n'});
+301 
+302         printf(\hyperlink{iprettyconsole_8h_ac081c83b067273757f7a2e54a5957d41}{KGRN} \textcolor{stringliteral}{"Success.\(\backslash\)n"} \hyperlink{iprettyconsole_8h_af0036c8022c9980079ab17e5c87fd478}{KWHT});
+303 
+304         \textcolor{comment}{/* test inmin and inmax functions */}
+305         printf(\hyperlink{iprettyconsole_8h_af0036c8022c9980079ab17e5c87fd478}{KWHT} \textcolor{stringliteral}{"Testing inmin and inmax functions... "});
+306 
+307         assert(\hyperlink{iutils_8c_afd023cba92b054b0902b7e79b751e3cb}{inmin}(arr1, 10) == -3); assert(\hyperlink{iutils_8c_afd023cba92b054b0902b7e79b751e3cb}{inmin}(arr2, 10) == -4);
+308         assert(\hyperlink{iutils_8c_a63f5dd85a7ce4fb2770c82a0b21cab09}{inmax}(arr1, 10) ==  6); assert(\hyperlink{iutils_8c_a63f5dd85a7ce4fb2770c82a0b21cab09}{inmax}(arr2, 10) ==  5);
+309 
+310         printf(\hyperlink{iprettyconsole_8h_ac081c83b067273757f7a2e54a5957d41}{KGRN} \textcolor{stringliteral}{"Success.\(\backslash\)n"} \hyperlink{iprettyconsole_8h_af0036c8022c9980079ab17e5c87fd478}{KWHT});
+311 
+312         \textcolor{comment}{/* test the region system */}
+313         printf(\hyperlink{iprettyconsole_8h_af0036c8022c9980079ab17e5c87fd478}{KWHT} \textcolor{stringliteral}{"Testing the new region system and the frontend state system as a bonus... "});
+314 
+315         \textcolor{keyword}{struct }\hyperlink{structifrontendstate__t}{ifrontendstate\_t} *state = malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} 
+      \hyperlink{structifrontendstate__t}{ifrontendstate\_t}));
+316         state->\hyperlink{structifrontendstate__t_ad30593dd0b69372008108075c55cfe27}{num\_regions} = 0;
+317         state->\hyperlink{structifrontendstate__t_a42ce77321ecea4fde68dd68b7f0f2283}{regions} =  NULL;
+318 
+319         assert(\hyperlink{icoordinates_8h_ac1de6770b93fc86eda03aca4bb9183e0}{DEFAULT\_REGION\_WIDTH} >= 50); assert(
+      \hyperlink{icoordinates_8h_ae7530daba46f50a0254f51d8a66f75bd}{DEFAULT\_REGION\_HEIGHT} >= 50);
+320         point1 = \hyperlink{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}{inew\_point}(13.0, 23.0, 4, state);
+321         
+322         assert(state->\hyperlink{structifrontendstate__t_ad30593dd0b69372008108075c55cfe27}{num\_regions} == 1);
+323         assert(point1->\hyperlink{structipoint__t_a92092dc10d022e8cbeea97795e16f55b}{region} == ((\textcolor{keyword}{struct} \hyperlink{structiregion__t}{iregion\_t}*)(state->
+      \hyperlink{structifrontendstate__t_a42ce77321ecea4fde68dd68b7f0f2283}{regions}->\hyperlink{structilinked__t_ac285ea385953cbd5a332b2cbab39b62b}{data}))->id);
+324         assert(point1->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x} == 13.0); assert(point1->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y} == 23.0); assert(point1->\hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z} == 4);
+325 
+326         point2 = \hyperlink{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}{inew\_point}(\hyperlink{icoordinates_8h_ac1de6770b93fc86eda03aca4bb9183e0}{DEFAULT\_REGION\_WIDTH} + 13.0, 
+      \hyperlink{icoordinates_8h_ae7530daba46f50a0254f51d8a66f75bd}{DEFAULT\_REGION\_HEIGHT} + 23.0, 4, state);
+327         
+328         assert(state->\hyperlink{structifrontendstate__t_ad30593dd0b69372008108075c55cfe27}{num\_regions} == 2);
+329         assert(point2->\hyperlink{structipoint__t_a92092dc10d022e8cbeea97795e16f55b}{region} == ((\textcolor{keyword}{struct} \hyperlink{structiregion__t}{iregion\_t}*)(state->
+      \hyperlink{structifrontendstate__t_a42ce77321ecea4fde68dd68b7f0f2283}{regions}->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next}->\hyperlink{structilinked__t_ac285ea385953cbd5a332b2cbab39b62b}{data}))->id);
+330         assert(point2->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x} == 13.0); assert(point2->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y} == 23.0); assert(point2->\hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z} == 4);
+331 
+332         point3 = \hyperlink{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}{inew\_point}(-\hyperlink{icoordinates_8h_ac1de6770b93fc86eda03aca4bb9183e0}{DEFAULT\_REGION\_WIDTH} + 13.0, -
+      \hyperlink{icoordinates_8h_ae7530daba46f50a0254f51d8a66f75bd}{DEFAULT\_REGION\_HEIGHT} + 23.0, 4, state);
+333         
+334         assert(state->\hyperlink{structifrontendstate__t_ad30593dd0b69372008108075c55cfe27}{num\_regions} == 3);
+335         assert(point3->\hyperlink{structipoint__t_a92092dc10d022e8cbeea97795e16f55b}{region} == ((\textcolor{keyword}{struct} \hyperlink{structiregion__t}{iregion\_t}*)(state->
+      \hyperlink{structifrontendstate__t_a42ce77321ecea4fde68dd68b7f0f2283}{regions}->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next}->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next}->\hyperlink{structilinked__t_ac285ea385953cbd5a332b2cbab39b62b}{data}))->id);
+336         assert(point3->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x} == 13.0); assert(point3->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y} == 23.0); assert(point3->\hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z} == 4);
+337 
+338         free(point1); free(point2); free(point3);
+339 
+340         printf(\hyperlink{iprettyconsole_8h_ac081c83b067273757f7a2e54a5957d41}{KGRN} \textcolor{stringliteral}{"Success.\(\backslash\)n"} \hyperlink{iprettyconsole_8h_af0036c8022c9980079ab17e5c87fd478}{KWHT});
+341 
+342         printf(\hyperlink{iprettyconsole_8h_ab702106cf3b3e96750b6845ded4e0299}{RESET});
+343 
+344         free(arr1);
+345         free(arr2);
+346         \textcolor{keywordflow}{return} 0;
+347 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{iunit__tests_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph}
+\end{center}
+\end{figure}
+
+

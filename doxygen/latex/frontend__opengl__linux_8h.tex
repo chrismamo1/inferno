@@ -1,0 +1,153 @@
+\hypertarget{frontend__opengl__linux_8h}{\section{src/frontends/frontend\-\_\-opengl\-\_\-linux.h File Reference}
+\label{frontend__opengl__linux_8h}\index{src/frontends/frontend\-\_\-opengl\-\_\-linux.\-h@{src/frontends/frontend\-\_\-opengl\-\_\-linux.\-h}}
+}
+{\ttfamily \#include $<$X11/\-X.\-h$>$}\\*
+{\ttfamily \#include $<$X11/\-Xlib.\-h$>$}\\*
+{\ttfamily \#include $<$G\-L/gl.\-h$>$}\\*
+{\ttfamily \#include $<$G\-L/glx.\-h$>$}\\*
+{\ttfamily \#include $<$G\-L/glu.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}frontend.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../icoordinates.\-h\char`\"{}}\\*
+Include dependency graph for frontend\-\_\-opengl\-\_\-linux.\-h\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frontend__opengl__linux_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{frontend__opengl__linux_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{frontend__opengl__linux_8h_a345706a31501f213b1c7ad1825d4628f}{Draw\-A\-Quad} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Display $\ast$ \hyperlink{frontend__opengl__linux_8h_a7d43b3edf58f8d85a89852ab95b740f6}{dpy}
+\item 
+Window \hyperlink{frontend__opengl__linux_8h_a67efd2aa4387dcb1b33df1f044512a16}{root}
+\item 
+G\-Lint \hyperlink{frontend__opengl__linux_8h_a5222c83ddcc16d2021dab765c97f6955}{att} \mbox{[}5\mbox{]}
+\item 
+X\-Visual\-Info $\ast$ \hyperlink{frontend__opengl__linux_8h_a6ea38ddc009c6f56a768347fa8cca7fc}{vi}
+\item 
+Colormap \hyperlink{frontend__opengl__linux_8h_ae9e16ee22daffbbbbf59f6c841c2ab75}{cmap}
+\item 
+X\-Set\-Window\-Attributes \hyperlink{frontend__opengl__linux_8h_a89fc0a57cdcd1daf998256dd0f62acd2}{swa}
+\item 
+Window \hyperlink{frontend__opengl__linux_8h_af5e9cbaf11bc8c0c330917f546d0045f}{win}
+\item 
+G\-L\-X\-Context \hyperlink{frontend__opengl__linux_8h_a865db36501e45073170bee430ee35fc3}{glc}
+\item 
+X\-Window\-Attributes \hyperlink{frontend__opengl__linux_8h_aba75c5c2ba56afc9f1960cb36460d247}{gwa}
+\item 
+X\-Event \hyperlink{frontend__opengl__linux_8h_aa8a168b034976fcc1a0896de4a6ea64d}{xev}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{frontend__opengl__linux_8h_a345706a31501f213b1c7ad1825d4628f}{\index{frontend\-\_\-opengl\-\_\-linux.\-h@{frontend\-\_\-opengl\-\_\-linux.\-h}!Draw\-A\-Quad@{Draw\-A\-Quad}}
+\index{Draw\-A\-Quad@{Draw\-A\-Quad}!frontend_opengl_linux.h@{frontend\-\_\-opengl\-\_\-linux.\-h}}
+\subsubsection[{Draw\-A\-Quad}]{\setlength{\rightskip}{0pt plus 5cm}void Draw\-A\-Quad (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{frontend__opengl__linux_8h_a345706a31501f213b1c7ad1825d4628f}
+
+
+Definition at line 16 of file frontend\-\_\-opengl\-\_\-linux.\-c.
+
+
+\begin{DoxyCode}
+16                  \{
+17         glBegin(GL\_QUADS);
+18         \textcolor{comment}{/*glColor3f(1., 0., 0.); glVertex3f(-.75, -.75, 0.);}
+19 \textcolor{comment}{        glColor3f(0., 1., 0.); glVertex3f( 75, -.75, 0.);}
+20 \textcolor{comment}{        glColor3f(0., 0., 1.); glVertex3f( .75,  .75, 0.);}
+21 \textcolor{comment}{        glColor3f(1., 1., 0.); glVertex3f(-.75,  .75, 0.);*/}
+22         glColor3f(0., 0., 0.);
+23         glVertex2f(0.0, 0.); glVertex2f(1., 0.); glVertex2f(1., 1.); glVertex2f(0., 1.);
+24         glEnd();
+25 \} 
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\hypertarget{frontend__opengl__linux_8h_a5222c83ddcc16d2021dab765c97f6955}{\index{frontend\-\_\-opengl\-\_\-linux.\-h@{frontend\-\_\-opengl\-\_\-linux.\-h}!att@{att}}
+\index{att@{att}!frontend_opengl_linux.h@{frontend\-\_\-opengl\-\_\-linux.\-h}}
+\subsubsection[{att}]{\setlength{\rightskip}{0pt plus 5cm}G\-Lint att\mbox{[}5\mbox{]}}}\label{frontend__opengl__linux_8h_a5222c83ddcc16d2021dab765c97f6955}
+
+
+Definition at line 15 of file frontend\-\_\-opengl\-\_\-linux.\-h.
+
+\hypertarget{frontend__opengl__linux_8h_ae9e16ee22daffbbbbf59f6c841c2ab75}{\index{frontend\-\_\-opengl\-\_\-linux.\-h@{frontend\-\_\-opengl\-\_\-linux.\-h}!cmap@{cmap}}
+\index{cmap@{cmap}!frontend_opengl_linux.h@{frontend\-\_\-opengl\-\_\-linux.\-h}}
+\subsubsection[{cmap}]{\setlength{\rightskip}{0pt plus 5cm}Colormap cmap}}\label{frontend__opengl__linux_8h_ae9e16ee22daffbbbbf59f6c841c2ab75}
+
+
+Definition at line 17 of file frontend\-\_\-opengl\-\_\-linux.\-h.
+
+\hypertarget{frontend__opengl__linux_8h_a7d43b3edf58f8d85a89852ab95b740f6}{\index{frontend\-\_\-opengl\-\_\-linux.\-h@{frontend\-\_\-opengl\-\_\-linux.\-h}!dpy@{dpy}}
+\index{dpy@{dpy}!frontend_opengl_linux.h@{frontend\-\_\-opengl\-\_\-linux.\-h}}
+\subsubsection[{dpy}]{\setlength{\rightskip}{0pt plus 5cm}Display$\ast$ dpy}}\label{frontend__opengl__linux_8h_a7d43b3edf58f8d85a89852ab95b740f6}
+
+
+Definition at line 13 of file frontend\-\_\-opengl\-\_\-linux.\-h.
+
+\hypertarget{frontend__opengl__linux_8h_a865db36501e45073170bee430ee35fc3}{\index{frontend\-\_\-opengl\-\_\-linux.\-h@{frontend\-\_\-opengl\-\_\-linux.\-h}!glc@{glc}}
+\index{glc@{glc}!frontend_opengl_linux.h@{frontend\-\_\-opengl\-\_\-linux.\-h}}
+\subsubsection[{glc}]{\setlength{\rightskip}{0pt plus 5cm}G\-L\-X\-Context glc}}\label{frontend__opengl__linux_8h_a865db36501e45073170bee430ee35fc3}
+
+
+Definition at line 20 of file frontend\-\_\-opengl\-\_\-linux.\-h.
+
+\hypertarget{frontend__opengl__linux_8h_aba75c5c2ba56afc9f1960cb36460d247}{\index{frontend\-\_\-opengl\-\_\-linux.\-h@{frontend\-\_\-opengl\-\_\-linux.\-h}!gwa@{gwa}}
+\index{gwa@{gwa}!frontend_opengl_linux.h@{frontend\-\_\-opengl\-\_\-linux.\-h}}
+\subsubsection[{gwa}]{\setlength{\rightskip}{0pt plus 5cm}X\-Window\-Attributes gwa}}\label{frontend__opengl__linux_8h_aba75c5c2ba56afc9f1960cb36460d247}
+
+
+Definition at line 21 of file frontend\-\_\-opengl\-\_\-linux.\-h.
+
+\hypertarget{frontend__opengl__linux_8h_a67efd2aa4387dcb1b33df1f044512a16}{\index{frontend\-\_\-opengl\-\_\-linux.\-h@{frontend\-\_\-opengl\-\_\-linux.\-h}!root@{root}}
+\index{root@{root}!frontend_opengl_linux.h@{frontend\-\_\-opengl\-\_\-linux.\-h}}
+\subsubsection[{root}]{\setlength{\rightskip}{0pt plus 5cm}Window root}}\label{frontend__opengl__linux_8h_a67efd2aa4387dcb1b33df1f044512a16}
+
+
+Definition at line 14 of file frontend\-\_\-opengl\-\_\-linux.\-h.
+
+\hypertarget{frontend__opengl__linux_8h_a89fc0a57cdcd1daf998256dd0f62acd2}{\index{frontend\-\_\-opengl\-\_\-linux.\-h@{frontend\-\_\-opengl\-\_\-linux.\-h}!swa@{swa}}
+\index{swa@{swa}!frontend_opengl_linux.h@{frontend\-\_\-opengl\-\_\-linux.\-h}}
+\subsubsection[{swa}]{\setlength{\rightskip}{0pt plus 5cm}X\-Set\-Window\-Attributes swa}}\label{frontend__opengl__linux_8h_a89fc0a57cdcd1daf998256dd0f62acd2}
+
+
+Definition at line 18 of file frontend\-\_\-opengl\-\_\-linux.\-h.
+
+\hypertarget{frontend__opengl__linux_8h_a6ea38ddc009c6f56a768347fa8cca7fc}{\index{frontend\-\_\-opengl\-\_\-linux.\-h@{frontend\-\_\-opengl\-\_\-linux.\-h}!vi@{vi}}
+\index{vi@{vi}!frontend_opengl_linux.h@{frontend\-\_\-opengl\-\_\-linux.\-h}}
+\subsubsection[{vi}]{\setlength{\rightskip}{0pt plus 5cm}X\-Visual\-Info$\ast$ vi}}\label{frontend__opengl__linux_8h_a6ea38ddc009c6f56a768347fa8cca7fc}
+
+
+Definition at line 16 of file frontend\-\_\-opengl\-\_\-linux.\-h.
+
+\hypertarget{frontend__opengl__linux_8h_af5e9cbaf11bc8c0c330917f546d0045f}{\index{frontend\-\_\-opengl\-\_\-linux.\-h@{frontend\-\_\-opengl\-\_\-linux.\-h}!win@{win}}
+\index{win@{win}!frontend_opengl_linux.h@{frontend\-\_\-opengl\-\_\-linux.\-h}}
+\subsubsection[{win}]{\setlength{\rightskip}{0pt plus 5cm}Window win}}\label{frontend__opengl__linux_8h_af5e9cbaf11bc8c0c330917f546d0045f}
+
+
+Definition at line 19 of file frontend\-\_\-opengl\-\_\-linux.\-h.
+
+\hypertarget{frontend__opengl__linux_8h_aa8a168b034976fcc1a0896de4a6ea64d}{\index{frontend\-\_\-opengl\-\_\-linux.\-h@{frontend\-\_\-opengl\-\_\-linux.\-h}!xev@{xev}}
+\index{xev@{xev}!frontend_opengl_linux.h@{frontend\-\_\-opengl\-\_\-linux.\-h}}
+\subsubsection[{xev}]{\setlength{\rightskip}{0pt plus 5cm}X\-Event xev}}\label{frontend__opengl__linux_8h_aa8a168b034976fcc1a0896de4a6ea64d}
+
+
+Definition at line 22 of file frontend\-\_\-opengl\-\_\-linux.\-h.
+

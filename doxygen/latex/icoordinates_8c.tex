@@ -1,0 +1,735 @@
+\hypertarget{icoordinates_8c}{\section{src/icoordinates.c File Reference}
+\label{icoordinates_8c}\index{src/icoordinates.\-c@{src/icoordinates.\-c}}
+}
+{\ttfamily \#include \char`\"{}frontend.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}icoordinates.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}error.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}iutils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}itypes.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}iprettyconsole.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+Include dependency graph for icoordinates.\-c\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{icoordinates_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structilinkedpoint__t}{ilinkedpoint\-\_\-t} $\ast$ \hyperlink{icoordinates_8c_a7c978730cf6130f65e3ca306b83d953b}{inew\-\_\-linkedpoint} (struct \hyperlink{structipoint__t}{ipoint\-\_\-t} $\ast$point)
+\item 
+struct \hyperlink{structilinkedpoint__t}{ilinkedpoint\-\_\-t} $\ast$ \hyperlink{icoordinates_8c_a1576e4429e977b28e65001af937bcf3e}{iadd\-\_\-linkedpoint} (struct \hyperlink{structilinkedpoint__t}{ilinkedpoint\-\_\-t} $\ast$head, struct \hyperlink{structilinkedpoint__t}{ilinkedpoint\-\_\-t} $\ast$point)
+\item 
+struct \hyperlink{structilinkedpoint__t}{ilinkedpoint\-\_\-t} $\ast$ \hyperlink{icoordinates_8c_a804e459765ed24235ff910f99aa97171}{icontains\-\_\-linkedpoint} (struct \hyperlink{structilinkedpoint__t}{ilinkedpoint\-\_\-t} $\ast$head, struct \hyperlink{structilinkedpoint__t}{ilinkedpoint\-\_\-t} $\ast$lookfor)
+\item 
+void \hyperlink{icoordinates_8c_a6d84d9578b81bb5cf94a5bab5612c08d}{ifree\-\_\-linkedpoints} (struct \hyperlink{structilinkedpoint__t}{ilinkedpoint\-\_\-t} $\ast$head, char contents)
+\item 
+struct \hyperlink{structipoint__t}{ipoint\-\_\-t} $\ast$ \hyperlink{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}{inew\-\_\-point} (long double x, long double y, \hyperlink{itypes_8h_adde6aaee8457bee49c2a92621fe22b79}{uint8} z, struct \hyperlink{structifrontendstate__t}{ifrontendstate\-\_\-t} $\ast$state)
+\item 
+struct \hyperlink{structiabsolutepoint__t}{iabsolutepoint\-\_\-t} $\ast$ \hyperlink{icoordinates_8c_ad953c3dfb9db024d40480c2654abe255}{iget\-\_\-absolutepoint} (struct \hyperlink{structipoint__t}{ipoint\-\_\-t} $\ast$rel, struct \hyperlink{structifrontendstate__t}{ifrontendstate\-\_\-t} $\ast$state)
+\item 
+struct \hyperlink{structivector__t}{ivector\-\_\-t} $\ast$ \hyperlink{icoordinates_8c_a3c04cf922b23f8a788dd96261c97f50a}{inew\-\_\-vector} (double x, double y)
+\item 
+struct \hyperlink{structivector__t}{ivector\-\_\-t} $\ast$ \hyperlink{icoordinates_8c_ae329256a981cc3027c3945b339972130}{inormalize\-\_\-vector} (struct \hyperlink{structivector__t}{ivector\-\_\-t} $\ast$vector)
+\item 
+struct \hyperlink{structivector__t}{ivector\-\_\-t} $\ast$ \hyperlink{icoordinates_8c_a17716cbfb667749e45d8275b3737b33b}{ipush\-\_\-vector} (struct \hyperlink{structivector__t}{ivector\-\_\-t} $\ast$vector, struct \hyperlink{structivector__t}{ivector\-\_\-t} $\ast$direction, float magnitude)
+\item 
+struct \hyperlink{structivector__t}{ivector\-\_\-t} $\ast$ \hyperlink{icoordinates_8c_aa3bd0ffced71d8827c58fa3aeedad854}{iadd\-\_\-vector} (struct \hyperlink{structivector__t}{ivector\-\_\-t} $\ast$v1, struct \hyperlink{structivector__t}{ivector\-\_\-t} $\ast$v2)
+\item 
+void \hyperlink{icoordinates_8c_a49f0ede26f4ff04407aa27d96e333a06}{iprint\-\_\-point} (struct \hyperlink{structipoint__t}{ipoint\-\_\-t} $\ast$restrict point)
+\item 
+struct \hyperlink{structiregion__t}{iregion\-\_\-t} $\ast$ \hyperlink{icoordinates_8c_a4507e51c1f2470e19e8ff5a77adf54bd}{icreate\-\_\-region} (int x, int y, \hyperlink{itypes_8h_a1134b580f8da4de94ca6b1de4d37975e}{uint32} width, \hyperlink{itypes_8h_a1134b580f8da4de94ca6b1de4d37975e}{uint32} height, struct \hyperlink{structifrontendstate__t}{ifrontendstate\-\_\-t} $\ast$state)
+\item 
+void \hyperlink{icoordinates_8c_af824fb9002b49e7348de15d84229e536}{iprint\-\_\-vector} (struct \hyperlink{structivector__t}{ivector\-\_\-t} $\ast$restrict vec)
+\item 
+static size\-\_\-t \hyperlink{icoordinates_8c_a6725eb7fd1dc248c96ec9cfc949aab4e}{str\-\_\-len} (char $\ast$string)
+\item 
+char $\ast$ \hyperlink{icoordinates_8c_a7fb9a1c5a40e8901d93703d1006694f9}{iprints\-\_\-point} (struct \hyperlink{structipoint__t}{ipoint\-\_\-t} $\ast$restrict point)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{icoordinates_8c_a1576e4429e977b28e65001af937bcf3e}{\index{icoordinates.\-c@{icoordinates.\-c}!iadd\-\_\-linkedpoint@{iadd\-\_\-linkedpoint}}
+\index{iadd\-\_\-linkedpoint@{iadd\-\_\-linkedpoint}!icoordinates.c@{icoordinates.\-c}}
+\subsubsection[{iadd\-\_\-linkedpoint}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf ilinkedpoint\-\_\-t}$\ast$ iadd\-\_\-linkedpoint (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ilinkedpoint\-\_\-t} $\ast$}]{head, }
+\item[{struct {\bf ilinkedpoint\-\_\-t} $\ast$}]{point}
+\end{DoxyParamCaption}
+)}}\label{icoordinates_8c_a1576e4429e977b28e65001af937bcf3e}
+add a new point to a linked points structure 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$head} & the structure we want to append to \\
+\hline
+{\em $\ast$point} & the point to be appended \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the new head of the list 
+\end{DoxyReturn}
+
+
+Definition at line 41 of file icoordinates.\-c.
+
+
+\begin{DoxyCode}
+42 \{
+43         \textcolor{keywordflow}{if} (head) \{
+44                 \textcolor{keywordflow}{if} (point) \{
+45 \textcolor{preprocessor}{#if I\_PRESERVE\_LINKED\_POINTS\_ORDER==1}
+46 \textcolor{preprocessor}{}                        \hyperlink{structilinkedpoint__t}{ilinkedpoint\_t} *tmp = head;
+47                         \textcolor{keywordflow}{while} (head->\hyperlink{structilinkedpoint__t_a3af3bf37f168b5b11fce11262286d6c4}{next} != NULL)
+48                                 head = head->\hyperlink{structilinkedpoint__t_a3af3bf37f168b5b11fce11262286d6c4}{next};
+49                         head->\hyperlink{structilinkedpoint__t_a3af3bf37f168b5b11fce11262286d6c4}{next} = point;
+50                         \textcolor{keywordflow}{return} tmp;
+51 \textcolor{preprocessor}{#else}
+52 \textcolor{preprocessor}{}                        \textcolor{keyword}{struct }\hyperlink{structilinkedpoint__t}{ilinkedpoint\_t} *tmp = head->\hyperlink{structilinkedpoint__t_a3af3bf37f168b5b11fce11262286d6c4}{next};
+53                         head->\hyperlink{structilinkedpoint__t_a3af3bf37f168b5b11fce11262286d6c4}{next} = \hyperlink{structilinkedpoint__t_ad679b26e2151ec3a4ad7b062679fd3c3}{point};
+54                         point->\hyperlink{structilinkedpoint__t_a3af3bf37f168b5b11fce11262286d6c4}{next} = tmp;
+55                         \textcolor{keywordflow}{return} head;
+56 \textcolor{preprocessor}{#endif}
+57 \textcolor{preprocessor}{}                \}
+58                 \hyperlink{error_8c_ab10bea042bb9daa7a0e027197b8080e5}{ierror}(\hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55ba0155494d2502d24c87bdcab2830802de}{I\_NULL\_LINKED\_ERROR});
+59                 \textcolor{keywordflow}{return} head;
+60         \}
+61         \textcolor{keywordflow}{return} \hyperlink{structilinkedpoint__t_ad679b26e2151ec3a4ad7b062679fd3c3}{point};
+62 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{icoordinates_8c_a1576e4429e977b28e65001af937bcf3e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{icoordinates_8c_a1576e4429e977b28e65001af937bcf3e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{icoordinates_8c_aa3bd0ffced71d8827c58fa3aeedad854}{\index{icoordinates.\-c@{icoordinates.\-c}!iadd\-\_\-vector@{iadd\-\_\-vector}}
+\index{iadd\-\_\-vector@{iadd\-\_\-vector}!icoordinates.c@{icoordinates.\-c}}
+\subsubsection[{iadd\-\_\-vector}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf ivector\-\_\-t}$\ast$ iadd\-\_\-vector (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ivector\-\_\-t} $\ast$}]{v1, }
+\item[{struct {\bf ivector\-\_\-t} $\ast$}]{v2}
+\end{DoxyParamCaption}
+)}}\label{icoordinates_8c_aa3bd0ffced71d8827c58fa3aeedad854}
+performs simple vector addition, v1 += v2 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$v1} & a pointer to the destination vector \\
+\hline
+{\em $\ast$v2} & a pointer to the source vector \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 210 of file icoordinates.\-c.
+
+
+\begin{DoxyCode}
+211 \{
+212         v1->\hyperlink{structivector__t_a4b91a8fcb6a98d2ba8e2f5d483d7c577}{x} += v2->\hyperlink{structivector__t_a4b91a8fcb6a98d2ba8e2f5d483d7c577}{x};
+213         v1->\hyperlink{structivector__t_af6af8ee13897aea97b1d8fe42bb83b17}{y} += v2->\hyperlink{structivector__t_af6af8ee13897aea97b1d8fe42bb83b17}{y};
+214         \textcolor{keywordflow}{return} v1;
+215 \}
+\end{DoxyCode}
+\hypertarget{icoordinates_8c_a804e459765ed24235ff910f99aa97171}{\index{icoordinates.\-c@{icoordinates.\-c}!icontains\-\_\-linkedpoint@{icontains\-\_\-linkedpoint}}
+\index{icontains\-\_\-linkedpoint@{icontains\-\_\-linkedpoint}!icoordinates.c@{icoordinates.\-c}}
+\subsubsection[{icontains\-\_\-linkedpoint}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf ilinkedpoint\-\_\-t}$\ast$ icontains\-\_\-linkedpoint (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ilinkedpoint\-\_\-t} $\ast$}]{head, }
+\item[{struct {\bf ilinkedpoint\-\_\-t} $\ast$}]{lookfor}
+\end{DoxyParamCaption}
+)}}\label{icoordinates_8c_a804e459765ed24235ff910f99aa97171}
+See if an ilinkedpoint list contains a point at the same location or with the same value as a given argument. 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$head} & The presumed \char`\"{}head\char`\"{} of the list \\
+\hline
+{\em $\ast$lookfor} & A pointer to the point to search for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the linked list element containing $\ast$lookfor, or N\-U\-L\-L if $\ast$lookfor can't be found in the list 
+\end{DoxyReturn}
+
+
+Definition at line 71 of file icoordinates.\-c.
+
+
+\begin{DoxyCode}
+72 \{
+73         \textcolor{keywordflow}{if} (lookfor == NULL || head == NULL)
+74                 \textcolor{keywordflow}{return} NULL;
+75         \textcolor{keyword}{struct }\hyperlink{structilinkedpoint__t}{ilinkedpoint\_t} *hd = head;
+76         \textcolor{keyword}{struct }\hyperlink{structipoint__t}{ipoint\_t} *point = lookfor->\hyperlink{structilinkedpoint__t_ad679b26e2151ec3a4ad7b062679fd3c3}{point};
+77         \textcolor{keywordflow}{if} (point == NULL)
+78                 \textcolor{keywordflow}{return} NULL;
+79         \textcolor{keywordflow}{while} (hd) \{
+80                 \textcolor{keywordflow}{if} (hd == lookfor)
+81                         \textcolor{keywordflow}{return} hd;
+82                 \textcolor{keywordflow}{if} (hd == NULL)
+83                         \textcolor{keywordflow}{return} NULL;
+84                 \textcolor{keywordflow}{if} (hd->\hyperlink{structilinkedpoint__t_ad679b26e2151ec3a4ad7b062679fd3c3}{point} == NULL)
+85                         \textcolor{keywordflow}{return} NULL;
+86                 \textcolor{keywordflow}{if} (point->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x} == ((\textcolor{keyword}{struct} \hyperlink{structipoint__t}{ipoint\_t}*)(hd->\hyperlink{structilinkedpoint__t_ad679b26e2151ec3a4ad7b062679fd3c3}{point}))->x
+87                         && point->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y} == hd->\hyperlink{structilinkedpoint__t_ad679b26e2151ec3a4ad7b062679fd3c3}{point}->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y}
+88                         && point->\hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z} == hd->\hyperlink{structilinkedpoint__t_ad679b26e2151ec3a4ad7b062679fd3c3}{point}->\hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z})
+89                         \textcolor{keywordflow}{return} hd;
+90                 hd = hd->\hyperlink{structilinkedpoint__t_a3af3bf37f168b5b11fce11262286d6c4}{next};
+91         \}
+92         \textcolor{keywordflow}{return} NULL;
+93 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{icoordinates_8c_a804e459765ed24235ff910f99aa97171_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{icoordinates_8c_a4507e51c1f2470e19e8ff5a77adf54bd}{\index{icoordinates.\-c@{icoordinates.\-c}!icreate\-\_\-region@{icreate\-\_\-region}}
+\index{icreate\-\_\-region@{icreate\-\_\-region}!icoordinates.c@{icoordinates.\-c}}
+\subsubsection[{icreate\-\_\-region}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf iregion\-\_\-t}$\ast$ icreate\-\_\-region (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{{\bf uint32}}]{width, }
+\item[{{\bf uint32}}]{height, }
+\item[{struct {\bf ifrontendstate\-\_\-t} $\ast$}]{state}
+\end{DoxyParamCaption}
+)}}\label{icoordinates_8c_a4507e51c1f2470e19e8ff5a77adf54bd}
+
+
+Definition at line 230 of file icoordinates.\-c.
+
+
+\begin{DoxyCode}
+231 \{
+232         \textcolor{keyword}{struct }\hyperlink{structiregion__t}{iregion\_t} *region = malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \hyperlink{structiregion__t}{iregion\_t}));
+233         region->\hyperlink{structiregion__t_a244884f21e4d054538530e389755ac3e}{x} = \hyperlink{structiregion__t_a244884f21e4d054538530e389755ac3e}{x};
+234         region->\hyperlink{structiregion__t_a8b975f923a92e3969b4aec3d935af310}{y} = \hyperlink{structiregion__t_a8b975f923a92e3969b4aec3d935af310}{y};
+235         region->\hyperlink{structiregion__t_abcafee0857bd757384813e53ddf879d9}{width} = \hyperlink{structiregion__t_abcafee0857bd757384813e53ddf879d9}{width};
+236         region->\hyperlink{structiregion__t_ac7c841eeb48c334a9a7182480855d251}{height} = \hyperlink{structiregion__t_ac7c841eeb48c334a9a7182480855d251}{height};
+237 
+238         \textcolor{keywordflow}{if} (state->\hyperlink{structifrontendstate__t_a42ce77321ecea4fde68dd68b7f0f2283}{regions} == NULL) \{
+239                 region->\hyperlink{structiregion__t_a09ef2d2779286827357a7c3290e65d9a}{id} = 0;
+240                 state->\hyperlink{structifrontendstate__t_a42ce77321ecea4fde68dd68b7f0f2283}{regions} = \hyperlink{iutils_8c_a168fc457c8928038cb3c471bc5fdf170}{inew\_linked}(region);
+241                 state->\hyperlink{structifrontendstate__t_ad30593dd0b69372008108075c55cfe27}{num\_regions} = 1;
+242         \} \textcolor{keywordflow}{else} \{
+243                 \hyperlink{itypes_8h_a05f6b0ae8f6a6e135b0e290c25fe0e4e}{uint16} \hyperlink{structiregion__t_a09ef2d2779286827357a7c3290e65d9a}{id};
+244                 \textcolor{keyword}{struct }\hyperlink{structilinked__t}{ilinked\_t} *cur = \hyperlink{iutils_8c_acf8aca63685fbd6b4c995516baedab14}{igetfirst\_linked}(state->
+      \hyperlink{structifrontendstate__t_a42ce77321ecea4fde68dd68b7f0f2283}{regions});
+245                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{id} = 0; cur != NULL; cur = cur->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next})
+246                         \textcolor{keywordflow}{if} (((\textcolor{keyword}{struct} \hyperlink{structiregion__t}{iregion\_t}*)(cur->\hyperlink{structilinked__t_ac285ea385953cbd5a332b2cbab39b62b}{data}))->id > \textcolor{keywordtype}{id})
+247                                 \textcolor{keywordtype}{id} = ((\textcolor{keyword}{struct }\hyperlink{structiregion__t}{iregion\_t}*)(cur->\hyperlink{structilinked__t_ac285ea385953cbd5a332b2cbab39b62b}{data}))->\textcolor{keywordtype}{id};
+248                 \textcolor{keywordtype}{id} = \textcolor{keywordtype}{id} + 1;
+249                 region->\hyperlink{structiregion__t_a09ef2d2779286827357a7c3290e65d9a}{id} = \hyperlink{structiregion__t_a09ef2d2779286827357a7c3290e65d9a}{id};
+250                 \hyperlink{iutils_8c_a67413257923db7c88d91a7e706024e98}{iadd\_linked}(state->\hyperlink{structifrontendstate__t_a42ce77321ecea4fde68dd68b7f0f2283}{regions}, \hyperlink{iutils_8c_a168fc457c8928038cb3c471bc5fdf170}{inew\_linked}(region));
+251                 state->\hyperlink{structifrontendstate__t_ad30593dd0b69372008108075c55cfe27}{num\_regions}++;
+252         \}
+253         \textcolor{keywordflow}{return} region;
+254 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{icoordinates_8c_a4507e51c1f2470e19e8ff5a77adf54bd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{icoordinates_8c_a4507e51c1f2470e19e8ff5a77adf54bd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{icoordinates_8c_a6d84d9578b81bb5cf94a5bab5612c08d}{\index{icoordinates.\-c@{icoordinates.\-c}!ifree\-\_\-linkedpoints@{ifree\-\_\-linkedpoints}}
+\index{ifree\-\_\-linkedpoints@{ifree\-\_\-linkedpoints}!icoordinates.c@{icoordinates.\-c}}
+\subsubsection[{ifree\-\_\-linkedpoints}]{\setlength{\rightskip}{0pt plus 5cm}void ifree\-\_\-linkedpoints (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ilinkedpoint\-\_\-t} $\ast$}]{head, }
+\item[{char}]{contents}
+\end{DoxyParamCaption}
+)}}\label{icoordinates_8c_a6d84d9578b81bb5cf94a5bab5612c08d}
+free a linkedpoint list 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$head} & The head of the list \\
+\hline
+{\em contents} & determine if the points \char`\"{}contained\char`\"{} in the list should be freed as well. 'y' or 1 mean \char`\"{}yes\char`\"{} and 'n' or '0' mean \char`\"{}no\char`\"{}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 100 of file icoordinates.\-c.
+
+
+\begin{DoxyCode}
+101 \{
+102         \textcolor{keyword}{struct }\hyperlink{structilinkedpoint__t}{ilinkedpoint\_t} *tmp = head->\hyperlink{structilinkedpoint__t_a3af3bf37f168b5b11fce11262286d6c4}{next};
+103         \textcolor{keywordflow}{while} (head) \{
+104                 \textcolor{keywordflow}{if} (contents == \textcolor{charliteral}{'y'}) \{
+105                         free(head->\hyperlink{structilinkedpoint__t_ad679b26e2151ec3a4ad7b062679fd3c3}{point});
+106                 \}
+107                 free(head);
+108                 head = tmp;
+109                 tmp = head->\hyperlink{structilinkedpoint__t_a3af3bf37f168b5b11fce11262286d6c4}{next};
+110         \}
+111 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{icoordinates_8c_a6d84d9578b81bb5cf94a5bab5612c08d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{icoordinates_8c_ad953c3dfb9db024d40480c2654abe255}{\index{icoordinates.\-c@{icoordinates.\-c}!iget\-\_\-absolutepoint@{iget\-\_\-absolutepoint}}
+\index{iget\-\_\-absolutepoint@{iget\-\_\-absolutepoint}!icoordinates.c@{icoordinates.\-c}}
+\subsubsection[{iget\-\_\-absolutepoint}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf iabsolutepoint\-\_\-t}$\ast$ iget\-\_\-absolutepoint (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ipoint\-\_\-t} $\ast$}]{rel, }
+\item[{struct {\bf ifrontendstate\-\_\-t} $\ast$}]{state}
+\end{DoxyParamCaption}
+)}}\label{icoordinates_8c_ad953c3dfb9db024d40480c2654abe255}
+
+
+Definition at line 174 of file icoordinates.\-c.
+
+
+\begin{DoxyCode}
+175 \{
+176         \textcolor{keyword}{struct }\hyperlink{structiabsolutepoint__t}{iabsolutepoint\_t} *rval = malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} 
+      \hyperlink{structiabsolutepoint__t}{iabsolutepoint\_t}));
+177         rval->\hyperlink{structiabsolutepoint__t_a7c546cbece73b64e924b982d1647005f}{x} = rel->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x};
+178         rval->\hyperlink{structiabsolutepoint__t_a12ea188889c536abe1c6eba40dc62c39}{y} = rel->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y};
+179         \textcolor{comment}{//rval->x += (long double)}
+180         \textcolor{comment}{//}
+181         \textcolor{keywordflow}{return} rval;
+182 \}
+\end{DoxyCode}
+\hypertarget{icoordinates_8c_a7c978730cf6130f65e3ca306b83d953b}{\index{icoordinates.\-c@{icoordinates.\-c}!inew\-\_\-linkedpoint@{inew\-\_\-linkedpoint}}
+\index{inew\-\_\-linkedpoint@{inew\-\_\-linkedpoint}!icoordinates.c@{icoordinates.\-c}}
+\subsubsection[{inew\-\_\-linkedpoint}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf ilinkedpoint\-\_\-t}$\ast$ inew\-\_\-linkedpoint (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ipoint\-\_\-t} $\ast$}]{point}
+\end{DoxyParamCaption}
+)}}\label{icoordinates_8c_a7c978730cf6130f65e3ca306b83d953b}
+allocate and initialize a new ilinkedpoint structure, a type of singly linked list specialized for holding ipoints 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$point} & the ipoint structure the be \char`\"{}contained\char`\"{} the the link \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new ilinkedpoint, or N\-U\-L\-L on failure 
+\end{DoxyReturn}
+
+
+Definition at line 20 of file icoordinates.\-c.
+
+
+\begin{DoxyCode}
+21 \{
+22         \textcolor{keywordflow}{if} (point) \{
+23                 \textcolor{keyword}{struct }\hyperlink{structilinkedpoint__t}{ilinkedpoint\_t} *rval = malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} 
+      \hyperlink{structilinkedpoint__t}{ilinkedpoint\_t}));
+24                 \textcolor{keywordflow}{if} (rval) \{
+25                         rval->\hyperlink{structilinkedpoint__t_a3af3bf37f168b5b11fce11262286d6c4}{next} = NULL;
+26                         rval->\hyperlink{structilinkedpoint__t_ad679b26e2151ec3a4ad7b062679fd3c3}{point} = \hyperlink{structilinkedpoint__t_ad679b26e2151ec3a4ad7b062679fd3c3}{point};
+27                         \textcolor{keywordflow}{return} rval;
+28                 \}
+29                 \hyperlink{error_8c_ab10bea042bb9daa7a0e027197b8080e5}{ierror}(\hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55bac52ce3dc72e9de7cd173594b72138a02}{I\_INITIALIZATION\_ERROR});
+30                 \textcolor{keywordflow}{return} NULL;
+31         \}
+32         \hyperlink{error_8c_ab10bea042bb9daa7a0e027197b8080e5}{ierror}(\hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55ba0155494d2502d24c87bdcab2830802de}{I\_NULL\_LINKED\_ERROR});
+33         \textcolor{keywordflow}{return} NULL;
+34 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{icoordinates_8c_a7c978730cf6130f65e3ca306b83d953b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{icoordinates_8c_a7c978730cf6130f65e3ca306b83d953b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}{\index{icoordinates.\-c@{icoordinates.\-c}!inew\-\_\-point@{inew\-\_\-point}}
+\index{inew\-\_\-point@{inew\-\_\-point}!icoordinates.c@{icoordinates.\-c}}
+\subsubsection[{inew\-\_\-point}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf ipoint\-\_\-t}$\ast$ inew\-\_\-point (
+\begin{DoxyParamCaption}
+\item[{long double}]{x, }
+\item[{long double}]{y, }
+\item[{{\bf uint8}}]{z, }
+\item[{struct {\bf ifrontendstate\-\_\-t} $\ast$}]{state}
+\end{DoxyParamCaption}
+)}}\label{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}
+Allocates and initializes a new point using the new region system 
+
+Definition at line 116 of file icoordinates.\-c.
+
+
+\begin{DoxyCode}
+117 \{
+118         \textcolor{keyword}{struct }\hyperlink{structipoint__t}{ipoint\_t} *rval = malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \hyperlink{structipoint__t}{ipoint\_t}));
+119         \textcolor{keywordflow}{if} (state == NULL) \{
+120                 rval->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x} = \hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x};
+121                 rval->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y} = \hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y};
+122                 rval->\hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z} = \hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z};
+123                 rval->\hyperlink{structipoint__t_a92092dc10d022e8cbeea97795e16f55b}{region} = -1;
+124                 \textcolor{keywordflow}{return} rval;
+125         \}
+126         \textcolor{keyword}{volatile} \textcolor{keyword}{struct }\hyperlink{structilinked__t}{ilinked\_t} *list = \hyperlink{iutils_8c_acf8aca63685fbd6b4c995516baedab14}{igetfirst\_linked}(state->
+      \hyperlink{structifrontendstate__t_a42ce77321ecea4fde68dd68b7f0f2283}{regions});
+127         \textcolor{keyword}{volatile} \textcolor{keyword}{struct }\hyperlink{structiregion__t}{iregion\_t} *region;
+128 
+129         \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} \_x = (\textcolor{keywordtype}{long} int)\hyperlink{structiregion__t_a244884f21e4d054538530e389755ac3e}{x}, \_y = (\textcolor{keywordtype}{long} \textcolor{keywordtype}{int})\hyperlink{structiregion__t_a8b975f923a92e3969b4aec3d935af310}{y};
+130 
+131         \textcolor{keywordflow}{if} (list == NULL)
+132                 \textcolor{keywordflow}{goto} HANDLE\_NO\_VALID\_REGIONS;
+133 
+134         \textcolor{keywordflow}{for} ( ; list != NULL; list = list->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next}) \{
+135                 region = (\textcolor{keyword}{struct }\hyperlink{structiregion__t}{iregion\_t}*)(list->\hyperlink{structilinked__t_ac285ea385953cbd5a332b2cbab39b62b}{data});
+136                 \textcolor{keywordflow}{if} (\hyperlink{structiregion__t_a244884f21e4d054538530e389755ac3e}{x} > region->\hyperlink{structiregion__t_a244884f21e4d054538530e389755ac3e}{x} && x < region->\hyperlink{structiregion__t_a244884f21e4d054538530e389755ac3e}{x} + region->\hyperlink{structiregion__t_abcafee0857bd757384813e53ddf879d9}{width})
+137                         \textcolor{keywordflow}{if} (\hyperlink{structiregion__t_a8b975f923a92e3969b4aec3d935af310}{y} > region->\hyperlink{structiregion__t_a8b975f923a92e3969b4aec3d935af310}{y} && y < region->\hyperlink{structiregion__t_a8b975f923a92e3969b4aec3d935af310}{y} + region->\hyperlink{structiregion__t_ac7c841eeb48c334a9a7182480855d251}{height}) \{
+138                                 rval->\hyperlink{structipoint__t_a92092dc10d022e8cbeea97795e16f55b}{region} = region->\hyperlink{structiregion__t_a09ef2d2779286827357a7c3290e65d9a}{id};
+139                                 \textcolor{keywordflow}{break};
+140                         \}
+141         \}
+142         \textcolor{keywordflow}{if} (list == NULL) \{
+143 HANDLE\_NO\_VALID\_REGIONS:
+144                 \textcolor{keywordflow}{if} (\hyperlink{structiregion__t_a244884f21e4d054538530e389755ac3e}{x} > 0)
+145                         \_x = \_x - \_x % \hyperlink{icoordinates_8h_ac1de6770b93fc86eda03aca4bb9183e0}{DEFAULT\_REGION\_WIDTH};
+146                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{structiregion__t_a244884f21e4d054538530e389755ac3e}{x} < 0)
+147                         \_x = \_x - (\hyperlink{icoordinates_8h_ac1de6770b93fc86eda03aca4bb9183e0}{DEFAULT\_REGION\_WIDTH} + (\_x % 
+      \hyperlink{icoordinates_8h_ac1de6770b93fc86eda03aca4bb9183e0}{DEFAULT\_REGION\_WIDTH}));
+148                 \textcolor{keywordflow}{else}
+149                         \_x = 0;
+150 
+151                 \textcolor{keywordflow}{if} (\hyperlink{structiregion__t_a8b975f923a92e3969b4aec3d935af310}{y} > 0)
+152                         \_y = \_y - \_y % \hyperlink{icoordinates_8h_ae7530daba46f50a0254f51d8a66f75bd}{DEFAULT\_REGION\_HEIGHT};
+153                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{structiregion__t_a8b975f923a92e3969b4aec3d935af310}{y} < 0)
+154                         \_y = \_y - (\hyperlink{icoordinates_8h_ae7530daba46f50a0254f51d8a66f75bd}{DEFAULT\_REGION\_HEIGHT} + (\_y % 
+      \hyperlink{icoordinates_8h_ae7530daba46f50a0254f51d8a66f75bd}{DEFAULT\_REGION\_HEIGHT}));
+155                 \textcolor{keywordflow}{else}
+156                         \_y = 0;
+157                 
+158                 \textcolor{keyword}{struct }\hyperlink{structiregion__t}{iregion\_t} *newregion = NULL;
+159                 newregion = \hyperlink{icoordinates_8c_a4507e51c1f2470e19e8ff5a77adf54bd}{icreate\_region}(\_x, \_y, 
+      \hyperlink{icoordinates_8h_ac1de6770b93fc86eda03aca4bb9183e0}{DEFAULT\_REGION\_WIDTH},
+160                                                    \hyperlink{icoordinates_8h_ae7530daba46f50a0254f51d8a66f75bd}{DEFAULT\_REGION\_HEIGHT}, state);
+161 
+162                 region = newregion;
+163         \}
+164         rval->\hyperlink{structipoint__t_a92092dc10d022e8cbeea97795e16f55b}{region} = region->\hyperlink{structiregion__t_a09ef2d2779286827357a7c3290e65d9a}{id};
+165         rval->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x} = \hyperlink{structiregion__t_a244884f21e4d054538530e389755ac3e}{x} - (\textcolor{keywordtype}{long} double)(region->\hyperlink{structiregion__t_a244884f21e4d054538530e389755ac3e}{x});
+166         rval->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y} = \hyperlink{structiregion__t_a8b975f923a92e3969b4aec3d935af310}{y} - (\textcolor{keywordtype}{long} double)(region->\hyperlink{structiregion__t_a8b975f923a92e3969b4aec3d935af310}{y});
+167         rval->\hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z} = z;
+168         \textcolor{keywordflow}{return} rval;
+169 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{icoordinates_8c_a3c04cf922b23f8a788dd96261c97f50a}{\index{icoordinates.\-c@{icoordinates.\-c}!inew\-\_\-vector@{inew\-\_\-vector}}
+\index{inew\-\_\-vector@{inew\-\_\-vector}!icoordinates.c@{icoordinates.\-c}}
+\subsubsection[{inew\-\_\-vector}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf ivector\-\_\-t}$\ast$ inew\-\_\-vector (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)}}\label{icoordinates_8c_a3c04cf922b23f8a788dd96261c97f50a}
+
+
+Definition at line 184 of file icoordinates.\-c.
+
+
+\begin{DoxyCode}
+185 \{
+186         \textcolor{keyword}{struct }\hyperlink{structivector__t}{ivector\_t} *rval = malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \hyperlink{structivector__t}{ivector\_t}));
+187         rval->\hyperlink{structivector__t_a4b91a8fcb6a98d2ba8e2f5d483d7c577}{x} = \hyperlink{structivector__t_a4b91a8fcb6a98d2ba8e2f5d483d7c577}{x};
+188         rval->\hyperlink{structivector__t_af6af8ee13897aea97b1d8fe42bb83b17}{y} = \hyperlink{structivector__t_af6af8ee13897aea97b1d8fe42bb83b17}{y};
+189         \textcolor{keywordflow}{return} rval;
+190 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{icoordinates_8c_a3c04cf922b23f8a788dd96261c97f50a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{icoordinates_8c_ae329256a981cc3027c3945b339972130}{\index{icoordinates.\-c@{icoordinates.\-c}!inormalize\-\_\-vector@{inormalize\-\_\-vector}}
+\index{inormalize\-\_\-vector@{inormalize\-\_\-vector}!icoordinates.c@{icoordinates.\-c}}
+\subsubsection[{inormalize\-\_\-vector}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf ivector\-\_\-t}$\ast$ inormalize\-\_\-vector (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ivector\-\_\-t} $\ast$}]{vector}
+\end{DoxyParamCaption}
+)}}\label{icoordinates_8c_ae329256a981cc3027c3945b339972130}
+
+
+Definition at line 192 of file icoordinates.\-c.
+
+
+\begin{DoxyCode}
+193 \{
+194         \textcolor{keywordtype}{float} invlength = \hyperlink{iutils_8c_a1c96160b622425f63f2566171feda038}{ifast\_rsqrt}(vector->\hyperlink{structivector__t_a4b91a8fcb6a98d2ba8e2f5d483d7c577}{x} * vector->\hyperlink{structivector__t_a4b91a8fcb6a98d2ba8e2f5d483d7c577}{x} + vector->
+      \hyperlink{structivector__t_af6af8ee13897aea97b1d8fe42bb83b17}{y} * vector->\hyperlink{structivector__t_af6af8ee13897aea97b1d8fe42bb83b17}{y});
+195         vector->\hyperlink{structivector__t_a4b91a8fcb6a98d2ba8e2f5d483d7c577}{x} *= invlength;
+196         vector->\hyperlink{structivector__t_af6af8ee13897aea97b1d8fe42bb83b17}{y} *= invlength;
+197         \textcolor{keywordflow}{return} vector;
+198 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{icoordinates_8c_ae329256a981cc3027c3945b339972130_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{icoordinates_8c_a49f0ede26f4ff04407aa27d96e333a06}{\index{icoordinates.\-c@{icoordinates.\-c}!iprint\-\_\-point@{iprint\-\_\-point}}
+\index{iprint\-\_\-point@{iprint\-\_\-point}!icoordinates.c@{icoordinates.\-c}}
+\subsubsection[{iprint\-\_\-point}]{\setlength{\rightskip}{0pt plus 5cm}void iprint\-\_\-point (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ipoint\-\_\-t} $\ast$restrict}]{point}
+\end{DoxyParamCaption}
+)}}\label{icoordinates_8c_a49f0ede26f4ff04407aa27d96e333a06}
+prints a point all pretty-\/like 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$point} & the point to print \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 220 of file icoordinates.\-c.
+
+
+\begin{DoxyCode}
+221 \{
+222         printf(\textcolor{stringliteral}{"point "} \hyperlink{iprettyconsole_8h_a897b10d246533c95ba86cb79f92e465a}{KYEL} \textcolor{stringliteral}{"@@%p"} \hyperlink{iprettyconsole_8h_ab702106cf3b3e96750b6845ded4e0299}{RESET} \textcolor{stringliteral}{", coordinates(%f, %f, %d)\(\backslash\)n"}, (\textcolor{keywordtype}{void}*)point,
+223                         point->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x},
+224                         point->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y},
+225                         point->\hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z}
+226               );
+227         \textcolor{keywordflow}{return};
+228 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{icoordinates_8c_a49f0ede26f4ff04407aa27d96e333a06_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{icoordinates_8c_af824fb9002b49e7348de15d84229e536}{\index{icoordinates.\-c@{icoordinates.\-c}!iprint\-\_\-vector@{iprint\-\_\-vector}}
+\index{iprint\-\_\-vector@{iprint\-\_\-vector}!icoordinates.c@{icoordinates.\-c}}
+\subsubsection[{iprint\-\_\-vector}]{\setlength{\rightskip}{0pt plus 5cm}void iprint\-\_\-vector (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ivector\-\_\-t} $\ast$restrict}]{vec}
+\end{DoxyParamCaption}
+)}}\label{icoordinates_8c_af824fb9002b49e7348de15d84229e536}
+prints a vector all pretty-\/like 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$vec} & the vector to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]make it prettier \end{DoxyRefDesc}
+
+
+Definition at line 260 of file icoordinates.\-c.
+
+
+\begin{DoxyCode}
+261 \{
+262         printf(\textcolor{stringliteral}{"ivector\_t @%p, (x, y) = (%lf, %lf)\(\backslash\)n"}, (\textcolor{keywordtype}{void}*)vec, vec->\hyperlink{structivector__t_a4b91a8fcb6a98d2ba8e2f5d483d7c577}{x}, vec->
+      \hyperlink{structivector__t_af6af8ee13897aea97b1d8fe42bb83b17}{y});
+263 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{icoordinates_8c_af824fb9002b49e7348de15d84229e536_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{icoordinates_8c_a7fb9a1c5a40e8901d93703d1006694f9}{\index{icoordinates.\-c@{icoordinates.\-c}!iprints\-\_\-point@{iprints\-\_\-point}}
+\index{iprints\-\_\-point@{iprints\-\_\-point}!icoordinates.c@{icoordinates.\-c}}
+\subsubsection[{iprints\-\_\-point}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ iprints\-\_\-point (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ipoint\-\_\-t} $\ast$restrict}]{point}
+\end{DoxyParamCaption}
+)}}\label{icoordinates_8c_a7fb9a1c5a40e8901d93703d1006694f9}
+prints a point all pretty-\/like to a new string 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$point} & a pointer to the point to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a string 
+\end{DoxyReturn}
+
+
+Definition at line 283 of file icoordinates.\-c.
+
+
+\begin{DoxyCode}
+284 \{
+285         \textcolor{keywordtype}{char} *buffer = malloc(64 * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));
+286         sprintf(buffer, \textcolor{stringliteral}{"ipoint\_t at %p, coordinates(%f, %f, %d)"},
+287                         (\textcolor{keywordtype}{void}*)point,
+288                         point->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x},
+289                         point->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y},
+290                         point->\hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z}
+291               );
+292         buffer = realloc(buffer, \hyperlink{icoordinates_8c_a6725eb7fd1dc248c96ec9cfc949aab4e}{str\_len}(buffer));
+293         \textcolor{keywordflow}{return} buffer;
+294 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{icoordinates_8c_a7fb9a1c5a40e8901d93703d1006694f9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{icoordinates_8c_a17716cbfb667749e45d8275b3737b33b}{\index{icoordinates.\-c@{icoordinates.\-c}!ipush\-\_\-vector@{ipush\-\_\-vector}}
+\index{ipush\-\_\-vector@{ipush\-\_\-vector}!icoordinates.c@{icoordinates.\-c}}
+\subsubsection[{ipush\-\_\-vector}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf ivector\-\_\-t}$\ast$ ipush\-\_\-vector (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ivector\-\_\-t} $\ast$}]{vector, }
+\item[{struct {\bf ivector\-\_\-t} $\ast$}]{direction, }
+\item[{float}]{magnitude}
+\end{DoxyParamCaption}
+)}}\label{icoordinates_8c_a17716cbfb667749e45d8275b3737b33b}
+
+
+Definition at line 200 of file icoordinates.\-c.
+
+
+\begin{DoxyCode}
+201 \{
+202         
+203         \textcolor{keywordflow}{return} vector;
+204 \}
+\end{DoxyCode}
+\hypertarget{icoordinates_8c_a6725eb7fd1dc248c96ec9cfc949aab4e}{\index{icoordinates.\-c@{icoordinates.\-c}!str\-\_\-len@{str\-\_\-len}}
+\index{str\-\_\-len@{str\-\_\-len}!icoordinates.c@{icoordinates.\-c}}
+\subsubsection[{str\-\_\-len}]{\setlength{\rightskip}{0pt plus 5cm}static size\-\_\-t str\-\_\-len (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{string}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{icoordinates_8c_a6725eb7fd1dc248c96ec9cfc949aab4e}
+a static inline homebrew strlen function so that I don't have to include the whole string.\-h header 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$string} & the string to find the length of \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+length of the string, in number of characters 
+\end{DoxyReturn}
+
+
+Definition at line 269 of file icoordinates.\-c.
+
+
+\begin{DoxyCode}
+273 \{
+274         \textcolor{keywordtype}{size\_t} i;
+275         \textcolor{keywordflow}{for} ( i = 0; *(\textcolor{keywordtype}{string} + i) != \textcolor{charliteral}{'\(\backslash\)0'}; ++i) ;
+276         \textcolor{keywordflow}{return} i;
+277 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{icoordinates_8c_a6725eb7fd1dc248c96ec9cfc949aab4e_icgraph}
+\end{center}
+\end{figure}
+
+

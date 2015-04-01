@@ -1,0 +1,91 @@
+\hypertarget{frontend_8c}{\section{src/frontends/frontend.c File Reference}
+\label{frontend_8c}\index{src/frontends/frontend.\-c@{src/frontends/frontend.\-c}}
+}
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}frontend.\-h\char`\"{}}\\*
+Include dependency graph for frontend.\-c\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frontend_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structievent__handler}{ievent\-\_\-handler} $\ast$ \hyperlink{frontend_8c_af20744b431ee1afa0043f15e5e2f9207}{inew\-\_\-eventhandler} (void $\ast$($\ast$handler)(void $\ast$args, void $\ast$event), void $\ast$args, unsigned short key\-\_\-code)
+\item 
+void \hyperlink{frontend_8c_a3012f53c007b67ba7dedf3156eb37e80}{frontend\-\_\-set\-\_\-eventhandler} (unsigned short i, char down, struct \hyperlink{structievent__handler}{ievent\-\_\-handler} $\ast$h, struct \hyperlink{structifrontendstate__t}{ifrontendstate\-\_\-t} $\ast$state)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{frontend_8c_a3012f53c007b67ba7dedf3156eb37e80}{\index{frontend.\-c@{frontend.\-c}!frontend\-\_\-set\-\_\-eventhandler@{frontend\-\_\-set\-\_\-eventhandler}}
+\index{frontend\-\_\-set\-\_\-eventhandler@{frontend\-\_\-set\-\_\-eventhandler}!frontend.c@{frontend.\-c}}
+\subsubsection[{frontend\-\_\-set\-\_\-eventhandler}]{\setlength{\rightskip}{0pt plus 5cm}void frontend\-\_\-set\-\_\-eventhandler (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{i, }
+\item[{char}]{down, }
+\item[{struct {\bf ievent\-\_\-handler} $\ast$}]{h, }
+\item[{struct {\bf ifrontendstate\-\_\-t} $\ast$}]{state}
+\end{DoxyParamCaption}
+)}}\label{frontend_8c_a3012f53c007b67ba7dedf3156eb37e80}
+
+
+Definition at line 31 of file frontend.\-c.
+
+
+\begin{DoxyCode}
+32 \{
+33         \textcolor{keywordflow}{if} (down)
+34                 state->\hyperlink{structifrontendstate__t_ad8fd468eaec37b949af562b39ad20d5a}{onkeydown\_handlers}[i] = h;
+35         \textcolor{keywordflow}{else}
+36                 state->\hyperlink{structifrontendstate__t_a5bb9423c4ba5f86cd8a0d50575031952}{onkeyup\_handlers}[i] = h;
+37 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{frontend_8c_a3012f53c007b67ba7dedf3156eb37e80_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{frontend_8c_af20744b431ee1afa0043f15e5e2f9207}{\index{frontend.\-c@{frontend.\-c}!inew\-\_\-eventhandler@{inew\-\_\-eventhandler}}
+\index{inew\-\_\-eventhandler@{inew\-\_\-eventhandler}!frontend.c@{frontend.\-c}}
+\subsubsection[{inew\-\_\-eventhandler}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf ievent\-\_\-handler}$\ast$ inew\-\_\-eventhandler (
+\begin{DoxyParamCaption}
+\item[{void $\ast$($\ast$)(void $\ast$args, void $\ast$event)}]{handler, }
+\item[{void $\ast$}]{args, }
+\item[{unsigned short}]{key\-\_\-code}
+\end{DoxyParamCaption}
+)}}\label{frontend_8c_af20744b431ee1afa0043f15e5e2f9207}
+
+
+Definition at line 22 of file frontend.\-c.
+
+
+\begin{DoxyCode}
+23 \{
+24         \textcolor{keyword}{struct }\hyperlink{structievent__handler}{ievent\_handler} *rval = malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} 
+      \hyperlink{structievent__handler}{ievent\_handler}));
+25         rval->\hyperlink{structievent__handler_a320eaffc01d119279ead9c5ad877c6da}{handler} = \hyperlink{structievent__handler_a320eaffc01d119279ead9c5ad877c6da}{handler};
+26         rval->\hyperlink{structievent__handler_ac6b4e6b5b95ada7b0d9985f738ffe1e5}{args} = \hyperlink{structievent__handler_ac6b4e6b5b95ada7b0d9985f738ffe1e5}{args};
+27         rval->\hyperlink{structievent__handler_af2766b148965989b8d202b11b9e72f60}{key\_code} = \hyperlink{structievent__handler_af2766b148965989b8d202b11b9e72f60}{key\_code};
+28         \textcolor{keywordflow}{return} rval;
+29 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frontend_8c_af20744b431ee1afa0043f15e5e2f9207_icgraph}
+\end{center}
+\end{figure}
+
+

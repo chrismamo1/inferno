@@ -1,0 +1,12 @@
+<map id="iobject_add_triplet" name="iobject_add_triplet">
+<area shape="rect" id="node2" href="$iutils_8c.html#a67413257923db7c88d91a7e706024e98" title="iadd_linked" alt="" coords="210,5,297,32"/>
+<area shape="rect" id="node5" href="$iutils_8c.html#a168fc457c8928038cb3c471bc5fdf170" title="inew_linked" alt="" coords="208,56,299,83"/>
+<area shape="rect" id="node6" href="$iutils_8c.html#af8939cbd050e1b0099ca01f4ff127e9c" title="igetlast_linked" alt="" coords="201,107,306,133"/>
+<area shape="rect" id="node7" href="$icoordinates_8c.html#a7c978730cf6130f65e3ca306b83d953b" title="inew_linkedpoint" alt="" coords="194,157,313,184"/>
+<area shape="rect" id="node8" href="$icoordinates_8c.html#a1576e4429e977b28e65001af937bcf3e" title="iadd_linkedpoint" alt="" coords="196,208,311,235"/>
+<area shape="rect" id="node9" href="$iutils_8c.html#a0f9358d11318a553a072c0384b8ed6d9" title="iget_distance" alt="" coords="204,259,303,285"/>
+<area shape="rect" id="node11" href="$icoordinates_8c.html#a804e459765ed24235ff910f99aa97171" title="icontains_linkedpoint" alt="" coords="182,309,325,336"/>
+<area shape="rect" id="node3" href="$error_8c.html#ab10bea042bb9daa7a0e027197b8080e5" title="ierror" alt="" coords="387,107,437,133"/>
+<area shape="rect" id="node4" href="$error_8c.html#ac1727d6e8e99b92957a0a7099d19d6f4" title="print_error" alt="" coords="499,107,579,133"/>
+<area shape="rect" id="node10" href="$iutils_8c.html#a99799aeb9cb7fb340a3cec124d429764" title="ifast_sqrt" alt="" coords="374,259,450,285"/>
+</map>

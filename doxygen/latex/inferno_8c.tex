@@ -1,0 +1,241 @@
+\hypertarget{inferno_8c}{\section{src/inferno.c File Reference}
+\label{inferno_8c}\index{src/inferno.\-c@{src/inferno.\-c}}
+}
+{\ttfamily \#include $<$X11/\-X.\-h$>$}\\*
+{\ttfamily \#include $<$X11/\-Xlib.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}frontend.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}frontend\-\_\-opengl\-\_\-linux.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}iutils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}icoordinates.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}igraphics.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}error.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}isimulation.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+Include dependency graph for inferno.\-c\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{inferno_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \hyperlink{inferno_8c_ac367369074184100d42ced4c3f1025ca}{random\-\_\-function} (void $\ast$args, void $\ast$ev)
+\item 
+int \hyperlink{inferno_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{inferno_8c_a0ddf1224851353fc92bfbff6f499fa97}{\index{inferno.\-c@{inferno.\-c}!main@{main}}
+\index{main@{main}!inferno.c@{inferno.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{inferno_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Definition at line 28 of file inferno.\-c.
+
+
+\begin{DoxyCode}
+29 \{
+30         \hyperlink{frontend_8h_a4cb194a7e9456fffef751e2a311735eb}{frontend\_initialize}();
+31         \textcolor{keyword}{struct }\hyperlink{structifrontendstate__t}{ifrontendstate\_t} state;
+32         \hyperlink{frontend_8h_aeac975aee6becbb83f7fac162d290fe0}{frontend\_initialize\_viewspace}(0, 2, 0, 2, 11, &state);
+33         state.background\_color->r = 255;
+34         state.background\_color->g = 255;
+35         state.background\_color->b = 255;
+36         \hyperlink{frontend_8h_ad8a729cc49f33a0037227c75e1979ada}{frontend\_reset\_viewspace}(&state);
+37 
+38 
+39         \textcolor{comment}{/*iobject\_t *obj = NULL;}
+40 \textcolor{comment}{        obj = init\_iobject(obj);*/}
+41 
+42         \textcolor{keyword}{struct }\hyperlink{structicolor__t}{icolor\_t} *neon\_green = NULL;
+43         neon\_green = \hyperlink{iprimitives_8c_ae27d7429de4cdecf56a3ac42046e0bf8}{inew\_color}(neon\_green, 100, 255, 100);
+44 
+45         \textcolor{comment}{/*iobject\_add\_triplet(obj, inew\_coloredtriplet( inew\_point(0., 0., 0), neon\_green,}
+46 \textcolor{comment}{                                                       inew\_point(1., 0., 0), neon\_green,}
+47 \textcolor{comment}{                                                       inew\_point(1., 1., 0), neon\_green));}
+48 \textcolor{comment}{}
+49 \textcolor{comment}{        iobject\_add\_triplet(obj, inew\_coloredtriplet( inew\_point(0., 0., 1.), neon\_green,}
+50 \textcolor{comment}{                                                       inew\_point(5., 0., 3.), neon\_green,}
+51 \textcolor{comment}{                                                       inew\_point(1., 1., 0.01), neon\_green));*/}
+52 
+53         \textcolor{keyword}{struct }\hyperlink{structicolor__t}{icolor\_t} *black = NULL;
+54         black = \hyperlink{iprimitives_8c_ae27d7429de4cdecf56a3ac42046e0bf8}{inew\_color}(black, 0, 0, 0);
+55 
+56         \textcolor{keyword}{struct }\hyperlink{structicolor__t}{icolor\_t} *purple = NULL;
+57         purple = \hyperlink{iprimitives_8c_ae27d7429de4cdecf56a3ac42046e0bf8}{inew\_color}(purple, 153, 0, 153);
+58 
+59         \textcolor{keyword}{struct }\hyperlink{structiobject__t}{iobject\_t} *corners = NULL;
+60         corners = \hyperlink{iprimitives_8c_a50f1cb57c7e493d9622bcc633f0a5309}{init\_iobject}(corners);
+61         \hyperlink{iprimitives_8c_a32c313b4080f6b2ce22b65bbd1ad9236}{iobject\_add\_triplet}(corners, \hyperlink{iprimitives_8c_a4dd78e34cbd3e6cabf29a57b62b1bc90}{inew\_coloredtriplet}( 
+      \hyperlink{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}{inew\_point}(0., 1.9, 0, &state), black,
+62                                                            \hyperlink{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}{inew\_point}(0., 2.0, 0, &state), black,
+63                                                            \hyperlink{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}{inew\_point}(0.1, 2.0, 0, &state), black
+      ));
+64 
+65         \hyperlink{iprimitives_8c_a32c313b4080f6b2ce22b65bbd1ad9236}{iobject\_add\_triplet}(corners, \hyperlink{iprimitives_8c_a4dd78e34cbd3e6cabf29a57b62b1bc90}{inew\_coloredtriplet}( 
+      \hyperlink{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}{inew\_point}(2., 1.9, 0, &state), black,
+66                                                            \hyperlink{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}{inew\_point}(2., 2.0, 0, &state), black,
+67                                                            \hyperlink{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}{inew\_point}(1.9, 2.0, 0, &state), black
+      ));
+68 
+69         \hyperlink{iprimitives_8c_a32c313b4080f6b2ce22b65bbd1ad9236}{iobject\_add\_triplet}(corners, \hyperlink{iprimitives_8c_a4dd78e34cbd3e6cabf29a57b62b1bc90}{inew\_coloredtriplet}( 
+      \hyperlink{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}{inew\_point}(0., .1, 0, &state), black,
+70                                                            \hyperlink{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}{inew\_point}(0., 0.0, 0, &state), black,
+71                                                            \hyperlink{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}{inew\_point}(.1, 0., 0, &state), black))
+      ;
+72 
+73         \hyperlink{iprimitives_8c_a32c313b4080f6b2ce22b65bbd1ad9236}{iobject\_add\_triplet}(corners, \hyperlink{iprimitives_8c_a4dd78e34cbd3e6cabf29a57b62b1bc90}{inew\_coloredtriplet}( 
+      \hyperlink{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}{inew\_point}(1.9, 0., 0, &state), black,
+74                                                            \hyperlink{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}{inew\_point}(2., 0., 0, &state), black,
+75                                                            \hyperlink{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}{inew\_point}(2., .1, 0, &state), black))
+      ;
+76 
+77         \textcolor{comment}{/*iobject\_t *triangle = NULL;}
+78 \textcolor{comment}{        triangle = init\_iobject(triangle);}
+79 \textcolor{comment}{        iobject\_add\_triplet(triangle, inew\_coloredtriplet( inew\_point(0.75, 0.8, 0), black,}
+80 \textcolor{comment}{                                                           inew\_point(1.1, 1.5, 0), black,}
+81 \textcolor{comment}{                                                           inew\_point(1.25, 0.7, 0), black));*/}
+82 
+83         \textcolor{keyword}{struct }\hyperlink{structiobject__t}{iobject\_t} *box = NULL;
+84         box = \hyperlink{iprimitives_8c_a50f1cb57c7e493d9622bcc633f0a5309}{init\_iobject}(box);
+85         \hyperlink{iprimitives_8c_a32c313b4080f6b2ce22b65bbd1ad9236}{iobject\_add\_triplet}(box, \hyperlink{iprimitives_8c_a4dd78e34cbd3e6cabf29a57b62b1bc90}{inew\_coloredtriplet}( 
+      \hyperlink{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}{inew\_point}(0.25, 1.25, 0, &state), black,
+86                                                            \hyperlink{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}{inew\_point}(0.25, 1.75, 0, &state), 
+      black,
+87                                                            \hyperlink{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}{inew\_point}(0.75, 1.75, 0, &state), 
+      black));
+88         \hyperlink{iprimitives_8c_a32c313b4080f6b2ce22b65bbd1ad9236}{iobject\_add\_triplet}(box, \hyperlink{iprimitives_8c_a4dd78e34cbd3e6cabf29a57b62b1bc90}{inew\_coloredtriplet}( 
+      \hyperlink{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}{inew\_point}(0.25, 1.25, 0, &state), purple,
+89                                                            \hyperlink{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}{inew\_point}(0.75, 1.25, 0, &state), 
+      purple,
+90                                                            \hyperlink{icoordinates_8c_a045ac96ebb3a6309f1fc2fd44381c45f}{inew\_point}(0.75, 1.75, 0, &state), 
+      purple));
+91 
+92         \hyperlink{iprimitives_8c_ad14816b7b9d9bc34ae7098efadf43add}{iprint\_object}(box);
+93 
+94         \textcolor{keyword}{struct }\hyperlink{structievent__handler}{ievent\_handler} *default\_handler;
+95 
+96         \textcolor{keywordtype}{int} i;
+97         \textcolor{keywordflow}{for} (i = 8; i < 256; i++) \{
+98                 default\_handler = \hyperlink{frontend_8c_af20744b431ee1afa0043f15e5e2f9207}{inew\_eventhandler}(
+      \hyperlink{inferno_8c_ac367369074184100d42ced4c3f1025ca}{random\_function}, NULL, i);
+99                 \hyperlink{frontend_8c_a3012f53c007b67ba7dedf3156eb37e80}{frontend\_set\_eventhandler}(i, 1, default\_handler, &state);
+100         \}
+101 
+102         \textcolor{comment}{/*ionkeydown[25] = &push\_object;}
+103 \textcolor{comment}{        ionkeydown[38] = &push\_object;}
+104 \textcolor{comment}{        ionkeydown[39] = &push\_object;}
+105 \textcolor{comment}{        ionkeydown[40] = &push\_object;*/}
+106 
+107         
+108         \textcolor{keywordtype}{int} coll = \hyperlink{isimulation_8c_a1eeaf5788ce94de493d5d99b1a79d0cb}{idetectcollision\_object}(corners, box);
+109         printf(\textcolor{stringliteral}{"Result of collision between corners and box: %d\(\backslash\)n"}, coll);
+110         
+111         box->\hyperlink{structiobject__t_a95a087e73bb5b8d3fa5e2afd61a3a3c5}{motion}->\hyperlink{structivector__t_a4b91a8fcb6a98d2ba8e2f5d483d7c577}{x} = 0.025;
+112 
+113         \textcolor{keywordtype}{int} val = 0;
+114 
+115         \textcolor{keywordflow}{while} (!val) \{
+116                 \textcolor{comment}{/*XNextEvent(dpy, &xev);}
+117 \textcolor{comment}{                if (xev.type == Expose)}
+118 \textcolor{comment}{                        frontend\_update(&state);}
+119 \textcolor{comment}{                else if(xev.type == KeyPress) \{}
+120 \textcolor{comment}{                        (*ionkeydown[xev.xkey.keycode])(box, &(xev.xkey));}
+121 \textcolor{comment}{                \}}
+122 \textcolor{comment}{                else if (xev.type == KeyRelease) \{ }
+123 \textcolor{comment}{                        (*ionkeyup[xev.xkey.keycode])(NULL, &(xev.xkey));}
+124 \textcolor{comment}{                \}}
+125 \textcolor{comment}{                else if (xev.type == ClientMessage) \{}
+126 \textcolor{comment}{                        frontend\_free();}
+127 \textcolor{comment}{                        val = 1;}
+128 \textcolor{comment}{                \}}
+129 \textcolor{comment}{                frontend\_update(&state);}
+130 \textcolor{comment}{                frontend\_reset\_viewspace(&state);}
+131 \textcolor{comment}{}
+132 \textcolor{comment}{                val = 0;*/}
+133 
+134                 \textcolor{comment}{//draw\_object(corners);}
+135                 \textcolor{comment}{//draw\_object(triangle);}
+136                 \textcolor{comment}{//iobject\_step(box);}
+137                 \textcolor{comment}{//iprint\_object(box);}
+138                 val = \hyperlink{frontend_8h_a6452a9d7c9fcabeb40bb5d8495300090}{step}(&state);
+139                 \hyperlink{igraphics_8c_a59e056b979c3532457c54692f5af63b4}{draw\_object}(box);
+140                 \hyperlink{igraphics_8c_a59e056b979c3532457c54692f5af63b4}{draw\_object}(corners);
+141         \}
+142 
+143         \textcolor{comment}{//idelete\_object(&corners);}
+144         \textcolor{comment}{//idelete\_object(&triangle);}
+145         \hyperlink{iprimitives_8c_ad37f21c7b94e13b74fc04418a30ea62e}{idelete\_object}(&box);
+146         \textcolor{comment}{//idelete\_object(&obj);}
+147 
+148         free(neon\_green);
+149         free(black);
+150 
+151         \hyperlink{frontend_8h_a5f1d2e26db40b3636fb218810a872a03}{frontend\_free}();
+152         printf(\textcolor{stringliteral}{"Exiting.\(\backslash\)n"});
+153         \textcolor{keywordflow}{return} 0;
+154 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{inferno_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{inferno_8c_ac367369074184100d42ced4c3f1025ca}{\index{inferno.\-c@{inferno.\-c}!random\-\_\-function@{random\-\_\-function}}
+\index{random\-\_\-function@{random\-\_\-function}!inferno.c@{inferno.\-c}}
+\subsubsection[{random\-\_\-function}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ random\-\_\-function (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{args, }
+\item[{void $\ast$}]{ev}
+\end{DoxyParamCaption}
+)}}\label{inferno_8c_ac367369074184100d42ced4c3f1025ca}
+w = 25 a = 38 s = 39 d = 40 
+
+Definition at line 20 of file inferno.\-c.
+
+
+\begin{DoxyCode}
+21 \{
+22         XKeyEvent *\textcolor{keyword}{event} = ev;
+23         printf(\textcolor{stringliteral}{"keycode = %d"}, event->keycode);
+24         \hyperlink{error_8c_ab10bea042bb9daa7a0e027197b8080e5}{ierror}(\hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55ba4f043634eb144415a83e7e49adb15d4a}{I\_UNDEFINED\_EVENT\_HANDLER\_ERROR});
+25         \textcolor{keywordflow}{return} NULL;
+26 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{inferno_8c_ac367369074184100d42ced4c3f1025ca_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{inferno_8c_ac367369074184100d42ced4c3f1025ca_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,587 @@
+\hypertarget{iprimitives_8h}{\section{src/iprimitives.h File Reference}
+\label{iprimitives_8h}\index{src/iprimitives.\-h@{src/iprimitives.\-h}}
+}
+{\ttfamily \#include \char`\"{}frontend.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}iutils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}icoordinates.\-h\char`\"{}}\\*
+Include dependency graph for iprimitives.\-h\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{iprimitives_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{iprimitives_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structicolor__t}{icolor\-\_\-t}
+\item 
+struct \hyperlink{structicolorf__t}{icolorf\-\_\-t}
+\item 
+struct \hyperlink{structitriplet__t}{itriplet\-\_\-t}
+\item 
+struct \hyperlink{structicoloredtriplet__t}{icoloredtriplet\-\_\-t}
+\item 
+struct \hyperlink{structiobject__t}{iobject\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \hyperlink{iprimitives_8h_afc34677b05531522408374dc02a31f40}{red} (struct \hyperlink{structicolor__t}{icolor\-\_\-t} color)
+\item 
+unsigned char \hyperlink{iprimitives_8h_abc6932dd227752af4dbf7fac0b6e3291}{green} (struct \hyperlink{structicolor__t}{icolor\-\_\-t} color)
+\item 
+unsigned char \hyperlink{iprimitives_8h_a03066bd036a134534caeec08526b7269}{blue} (struct \hyperlink{structicolor__t}{icolor\-\_\-t} color)
+\item 
+float \hyperlink{iprimitives_8h_ab818a06b736a4f2623acd283f982176d}{redf} (struct \hyperlink{structicolorf__t}{icolorf\-\_\-t} color)
+\item 
+float \hyperlink{iprimitives_8h_a7577d8264941e76772de26e384da02d8}{greenf} (struct \hyperlink{structicolorf__t}{icolorf\-\_\-t} color)
+\item 
+float \hyperlink{iprimitives_8h_a702030a5ed3f44303db2ebb744487a34}{bluef} (struct \hyperlink{structicolorf__t}{icolorf\-\_\-t} color)
+\item 
+struct \hyperlink{structicolor__t}{icolor\-\_\-t} $\ast$ \hyperlink{iprimitives_8h_ae27d7429de4cdecf56a3ac42046e0bf8}{inew\-\_\-color} (struct \hyperlink{structicolor__t}{icolor\-\_\-t} $\ast$rval, unsigned char r, unsigned char g, unsigned char b)
+\item 
+struct \hyperlink{structicoloredtriplet__t}{icoloredtriplet\-\_\-t} $\ast$ \hyperlink{iprimitives_8h_a4dd78e34cbd3e6cabf29a57b62b1bc90}{inew\-\_\-coloredtriplet} (struct \hyperlink{structipoint__t}{ipoint\-\_\-t} $\ast$p1, struct \hyperlink{structicolor__t}{icolor\-\_\-t} $\ast$c1, struct \hyperlink{structipoint__t}{ipoint\-\_\-t} $\ast$p2, struct \hyperlink{structicolor__t}{icolor\-\_\-t} $\ast$c2, struct \hyperlink{structipoint__t}{ipoint\-\_\-t} $\ast$p3, struct \hyperlink{structicolor__t}{icolor\-\_\-t} $\ast$c3)
+\item 
+struct \hyperlink{structiobject__t}{iobject\-\_\-t} $\ast$ \hyperlink{iprimitives_8h_a773c38cc5bd2ea434593a09062b17f90}{init\-\_\-iobject} (struct \hyperlink{structiobject__t}{iobject\-\_\-t} $\ast$iobject)
+\item 
+struct \hyperlink{structiobject__t}{iobject\-\_\-t} $\ast$ \hyperlink{iprimitives_8h_a32c313b4080f6b2ce22b65bbd1ad9236}{iobject\-\_\-add\-\_\-triplet} (struct \hyperlink{structiobject__t}{iobject\-\_\-t} $\ast$object, struct \hyperlink{structicoloredtriplet__t}{icoloredtriplet\-\_\-t} $\ast$triplet)
+\item 
+void \hyperlink{iprimitives_8h_a497e55ba21c3845855ae2d8c5a6ab263}{iobject\-\_\-step} (struct \hyperlink{structiobject__t}{iobject\-\_\-t} $\ast$obj)
+\item 
+void \hyperlink{iprimitives_8h_ad14816b7b9d9bc34ae7098efadf43add}{iprint\-\_\-object} (struct \hyperlink{structiobject__t}{iobject\-\_\-t} $\ast$object)
+\item 
+void \hyperlink{iprimitives_8h_ad37f21c7b94e13b74fc04418a30ea62e}{idelete\-\_\-object} (struct \hyperlink{structiobject__t}{iobject\-\_\-t} $\ast$$\ast$object)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{iprimitives_8h_a03066bd036a134534caeec08526b7269}{\index{iprimitives.\-h@{iprimitives.\-h}!blue@{blue}}
+\index{blue@{blue}!iprimitives.h@{iprimitives.\-h}}
+\subsubsection[{blue}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char blue (
+\begin{DoxyParamCaption}
+\item[{struct {\bf icolor\-\_\-t}}]{color}
+\end{DoxyParamCaption}
+)}}\label{iprimitives_8h_a03066bd036a134534caeec08526b7269}
+
+
+Definition at line 19 of file iprimitives.\-c.
+
+
+\begin{DoxyCode}
+20 \{
+21         \textcolor{keywordflow}{return} color.\hyperlink{structicolor__t_acb75f6cdb4866b33921bde0c5f9000ce}{b};
+22 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{iprimitives_8h_a03066bd036a134534caeec08526b7269_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{iprimitives_8h_a702030a5ed3f44303db2ebb744487a34}{\index{iprimitives.\-h@{iprimitives.\-h}!bluef@{bluef}}
+\index{bluef@{bluef}!iprimitives.h@{iprimitives.\-h}}
+\subsubsection[{bluef}]{\setlength{\rightskip}{0pt plus 5cm}float bluef (
+\begin{DoxyParamCaption}
+\item[{struct {\bf icolorf\-\_\-t}}]{color}
+\end{DoxyParamCaption}
+)}}\label{iprimitives_8h_a702030a5ed3f44303db2ebb744487a34}
+
+
+Definition at line 34 of file iprimitives.\-c.
+
+
+\begin{DoxyCode}
+35 \{
+36         \textcolor{keywordflow}{return} color.\hyperlink{structicolorf__t_a4b38a1a5c2c96286fd18691bae9fc053}{data}[2];
+37 \}
+\end{DoxyCode}
+\hypertarget{iprimitives_8h_abc6932dd227752af4dbf7fac0b6e3291}{\index{iprimitives.\-h@{iprimitives.\-h}!green@{green}}
+\index{green@{green}!iprimitives.h@{iprimitives.\-h}}
+\subsubsection[{green}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char green (
+\begin{DoxyParamCaption}
+\item[{struct {\bf icolor\-\_\-t}}]{color}
+\end{DoxyParamCaption}
+)}}\label{iprimitives_8h_abc6932dd227752af4dbf7fac0b6e3291}
+
+
+Definition at line 14 of file iprimitives.\-c.
+
+
+\begin{DoxyCode}
+15 \{
+16         \textcolor{keywordflow}{return} color.\hyperlink{structicolor__t_a3cf0a9335bbc32fc211d22f3ef502110}{g};
+17 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{iprimitives_8h_abc6932dd227752af4dbf7fac0b6e3291_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{iprimitives_8h_a7577d8264941e76772de26e384da02d8}{\index{iprimitives.\-h@{iprimitives.\-h}!greenf@{greenf}}
+\index{greenf@{greenf}!iprimitives.h@{iprimitives.\-h}}
+\subsubsection[{greenf}]{\setlength{\rightskip}{0pt plus 5cm}float greenf (
+\begin{DoxyParamCaption}
+\item[{struct {\bf icolorf\-\_\-t}}]{color}
+\end{DoxyParamCaption}
+)}}\label{iprimitives_8h_a7577d8264941e76772de26e384da02d8}
+
+
+Definition at line 29 of file iprimitives.\-c.
+
+
+\begin{DoxyCode}
+30 \{
+31         \textcolor{keywordflow}{return} color.\hyperlink{structicolorf__t_a4b38a1a5c2c96286fd18691bae9fc053}{data}[1];
+32 \}
+\end{DoxyCode}
+\hypertarget{iprimitives_8h_ad37f21c7b94e13b74fc04418a30ea62e}{\index{iprimitives.\-h@{iprimitives.\-h}!idelete\-\_\-object@{idelete\-\_\-object}}
+\index{idelete\-\_\-object@{idelete\-\_\-object}!iprimitives.h@{iprimitives.\-h}}
+\subsubsection[{idelete\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}void idelete\-\_\-object (
+\begin{DoxyParamCaption}
+\item[{struct {\bf iobject\-\_\-t} $\ast$$\ast$}]{object}
+\end{DoxyParamCaption}
+)}}\label{iprimitives_8h_ad37f21c7b94e13b74fc04418a30ea62e}
+
+
+Definition at line 178 of file iprimitives.\-c.
+
+
+\begin{DoxyCode}
+179 \{
+180         \hyperlink{iutils_8c_a758cf0f59ad81b8c8eb0b91ae6bf03a3}{ifree\_linked}((*object)->triplets, \textcolor{charliteral}{'y'});
+181         \hyperlink{icoordinates_8c_a6d84d9578b81bb5cf94a5bab5612c08d}{ifree\_linkedpoints}((*object)->points, \textcolor{charliteral}{'y'});
+182         free(*\textcolor{keywordtype}{object});
+183         *\textcolor{keywordtype}{object} = NULL;
+184         free((*object)->motion);
+185 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{iprimitives_8h_ad37f21c7b94e13b74fc04418a30ea62e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{iprimitives_8h_ad37f21c7b94e13b74fc04418a30ea62e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{iprimitives_8h_ae27d7429de4cdecf56a3ac42046e0bf8}{\index{iprimitives.\-h@{iprimitives.\-h}!inew\-\_\-color@{inew\-\_\-color}}
+\index{inew\-\_\-color@{inew\-\_\-color}!iprimitives.h@{iprimitives.\-h}}
+\subsubsection[{inew\-\_\-color}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf icolor\-\_\-t}$\ast$ inew\-\_\-color (
+\begin{DoxyParamCaption}
+\item[{struct {\bf icolor\-\_\-t} $\ast$}]{rval, }
+\item[{unsigned char}]{r, }
+\item[{unsigned char}]{g, }
+\item[{unsigned char}]{b}
+\end{DoxyParamCaption}
+)}}\label{iprimitives_8h_ae27d7429de4cdecf56a3ac42046e0bf8}
+
+
+Definition at line 39 of file iprimitives.\-c.
+
+
+\begin{DoxyCode}
+40 \{
+41         free(rval);
+42         rval = malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \hyperlink{structicolor__t}{icolor\_t}));
+43         rval->\hyperlink{structicolor__t_af41be99aa200064979c76e29d00d4aff}{r} = r; rval->\hyperlink{structicolor__t_a3cf0a9335bbc32fc211d22f3ef502110}{g} = g; rval->\hyperlink{structicolor__t_acb75f6cdb4866b33921bde0c5f9000ce}{b} = b;
+44         \textcolor{keywordflow}{return} rval;
+45 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{iprimitives_8h_ae27d7429de4cdecf56a3ac42046e0bf8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{iprimitives_8h_a4dd78e34cbd3e6cabf29a57b62b1bc90}{\index{iprimitives.\-h@{iprimitives.\-h}!inew\-\_\-coloredtriplet@{inew\-\_\-coloredtriplet}}
+\index{inew\-\_\-coloredtriplet@{inew\-\_\-coloredtriplet}!iprimitives.h@{iprimitives.\-h}}
+\subsubsection[{inew\-\_\-coloredtriplet}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf icoloredtriplet\-\_\-t}$\ast$ inew\-\_\-coloredtriplet (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ipoint\-\_\-t} $\ast$}]{p1, }
+\item[{struct {\bf icolor\-\_\-t} $\ast$}]{c1, }
+\item[{struct {\bf ipoint\-\_\-t} $\ast$}]{p2, }
+\item[{struct {\bf icolor\-\_\-t} $\ast$}]{c2, }
+\item[{struct {\bf ipoint\-\_\-t} $\ast$}]{p3, }
+\item[{struct {\bf icolor\-\_\-t} $\ast$}]{c3}
+\end{DoxyParamCaption}
+)}}\label{iprimitives_8h_a4dd78e34cbd3e6cabf29a57b62b1bc90}
+
+
+Definition at line 47 of file iprimitives.\-c.
+
+
+\begin{DoxyCode}
+48 \{
+49         \textcolor{keyword}{struct }\hyperlink{structicoloredtriplet__t}{icoloredtriplet\_t} *rval = malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} 
+      \hyperlink{structicoloredtriplet__t}{icoloredtriplet\_t}));
+50         rval->\hyperlink{structicoloredtriplet__t_aa599939c78c387bc80a763f3e3728fee}{vertices}[0] = p1; rval->\hyperlink{structicoloredtriplet__t_aa599939c78c387bc80a763f3e3728fee}{vertices}[1] = p2; rval->
+      \hyperlink{structicoloredtriplet__t_aa599939c78c387bc80a763f3e3728fee}{vertices}[2] = p3;
+51         rval->\hyperlink{structicoloredtriplet__t_ac0ba48c5e0ba663bd8c0fb7b3ac2a2a9}{colors}[0] = c1; rval->\hyperlink{structicoloredtriplet__t_ac0ba48c5e0ba663bd8c0fb7b3ac2a2a9}{colors}[1] = c2; rval->\hyperlink{structicoloredtriplet__t_ac0ba48c5e0ba663bd8c0fb7b3ac2a2a9}{colors}[2] = c3;
+52         \textcolor{keywordflow}{return} rval;
+53 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{iprimitives_8h_a4dd78e34cbd3e6cabf29a57b62b1bc90_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{iprimitives_8h_a773c38cc5bd2ea434593a09062b17f90}{\index{iprimitives.\-h@{iprimitives.\-h}!init\-\_\-iobject@{init\-\_\-iobject}}
+\index{init\-\_\-iobject@{init\-\_\-iobject}!iprimitives.h@{iprimitives.\-h}}
+\subsubsection[{init\-\_\-iobject}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf iobject\-\_\-t}$\ast$ init\-\_\-iobject (
+\begin{DoxyParamCaption}
+\item[{struct {\bf iobject\-\_\-t} $\ast$}]{iobject}
+\end{DoxyParamCaption}
+)}}\label{iprimitives_8h_a773c38cc5bd2ea434593a09062b17f90}
+
+
+Definition at line 66 of file iprimitives.\-c.
+
+
+\begin{DoxyCode}
+67 \{
+68         \textcolor{keywordtype}{object} = malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \hyperlink{structiobject__t}{iobject\_t}));
+69         \textcolor{keywordtype}{object}->triplets = NULL;
+70         \textcolor{keywordtype}{object}->num\_triplets = 0;
+71         \textcolor{keywordtype}{object}->points   = NULL;
+72         \textcolor{keywordtype}{object}->num\_points   = 0;
+73         \textcolor{keywordtype}{object}->motion = \hyperlink{icoordinates_8c_a3c04cf922b23f8a788dd96261c97f50a}{inew\_vector}(0.0f, 0.0f);
+74         \textcolor{keywordflow}{return} object;
+75 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{iprimitives_8h_a773c38cc5bd2ea434593a09062b17f90_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{iprimitives_8h_a773c38cc5bd2ea434593a09062b17f90_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{iprimitives_8h_a32c313b4080f6b2ce22b65bbd1ad9236}{\index{iprimitives.\-h@{iprimitives.\-h}!iobject\-\_\-add\-\_\-triplet@{iobject\-\_\-add\-\_\-triplet}}
+\index{iobject\-\_\-add\-\_\-triplet@{iobject\-\_\-add\-\_\-triplet}!iprimitives.h@{iprimitives.\-h}}
+\subsubsection[{iobject\-\_\-add\-\_\-triplet}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf iobject\-\_\-t}$\ast$ iobject\-\_\-add\-\_\-triplet (
+\begin{DoxyParamCaption}
+\item[{struct {\bf iobject\-\_\-t} $\ast$}]{object, }
+\item[{struct {\bf icoloredtriplet\-\_\-t} $\ast$}]{triplet}
+\end{DoxyParamCaption}
+)}}\label{iprimitives_8h_a32c313b4080f6b2ce22b65bbd1ad9236}
+add a triplet to an iobject, and rewire all of its contained points to the iobject's internal point list using runtime redundant vertex elimination for speed and a reduced memory footprint 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$object} & a pointer to an iobject \\
+\hline
+{\em $\ast$triplet} & a pointer to an inferno colored triplet \\
+\hline
+\end{DoxyParams}
+Tell the data structure that there is one more triplet in the house. 
+
+Definition at line 82 of file iprimitives.\-c.
+
+
+\begin{DoxyCode}
+83 \{
+84         \textcolor{keywordtype}{float} epsilon = 0.0001;
+85         \textcolor{keywordtype}{object}->num\_triplets = \textcolor{keywordtype}{object}->num\_triplets + 1;
+86         \textcolor{keywordflow}{if} (object->\hyperlink{structiobject__t_ae5c7b9d49120fc7003f01fcf7055b425}{triplets} == NULL)
+88                 \textcolor{keywordtype}{object}->triplets = \hyperlink{iutils_8c_a67413257923db7c88d91a7e706024e98}{iadd\_linked}(NULL, \hyperlink{iutils_8c_a168fc457c8928038cb3c471bc5fdf170}{inew\_linked}(triplet));
+89         \textcolor{keywordflow}{else}
+90                 \hyperlink{iutils_8c_a67413257923db7c88d91a7e706024e98}{iadd\_linked}( object->\hyperlink{structiobject__t_ae5c7b9d49120fc7003f01fcf7055b425}{triplets}, \hyperlink{iutils_8c_a168fc457c8928038cb3c471bc5fdf170}{inew\_linked}(triplet) );
+91 
+92         \textcolor{keywordflow}{if} (object->\hyperlink{structiobject__t_aaf44cb85cf392a8ac7e30ab6971be2ad}{points} == NULL) \{
+93                 \textcolor{keyword}{struct }\hyperlink{structipoint__t}{ipoint\_t} **points = ((\textcolor{keyword}{struct }\hyperlink{structicoloredtriplet__t}{icoloredtriplet\_t}*)(
+      \hyperlink{iutils_8c_af8939cbd050e1b0099ca01f4ff127e9c}{igetlast\_linked}(object->\hyperlink{structiobject__t_ae5c7b9d49120fc7003f01fcf7055b425}{triplets})->\hyperlink{structilinked__t_ac285ea385953cbd5a332b2cbab39b62b}{data}))->vertices;
+94                 \textcolor{keywordtype}{object}->points = \hyperlink{icoordinates_8c_a7c978730cf6130f65e3ca306b83d953b}{inew\_linkedpoint}(triplet->
+      \hyperlink{structicoloredtriplet__t_aa599939c78c387bc80a763f3e3728fee}{vertices}[0]);
+95                 \hyperlink{icoordinates_8c_a1576e4429e977b28e65001af937bcf3e}{iadd\_linkedpoint}(object->\hyperlink{structiobject__t_aaf44cb85cf392a8ac7e30ab6971be2ad}{points},
+96                                         \hyperlink{icoordinates_8c_a7c978730cf6130f65e3ca306b83d953b}{inew\_linkedpoint}(triplet->
+      \hyperlink{structicoloredtriplet__t_aa599939c78c387bc80a763f3e3728fee}{vertices}[1]));
+97                 \hyperlink{icoordinates_8c_a1576e4429e977b28e65001af937bcf3e}{iadd\_linkedpoint}(object->\hyperlink{structiobject__t_aaf44cb85cf392a8ac7e30ab6971be2ad}{points},
+98                                         \hyperlink{icoordinates_8c_a7c978730cf6130f65e3ca306b83d953b}{inew\_linkedpoint}(triplet->
+      \hyperlink{structicoloredtriplet__t_aa599939c78c387bc80a763f3e3728fee}{vertices}[2]));
+99                 \textcolor{keywordtype}{object}->num\_points = 3;
+100         \} \textcolor{keywordflow}{else} \{
+101                 \textcolor{keyword}{struct }\hyperlink{structipoint__t}{ipoint\_t} **points = ((\textcolor{keyword}{struct }\hyperlink{structicoloredtriplet__t}{icoloredtriplet\_t}*)(
+      \hyperlink{iutils_8c_af8939cbd050e1b0099ca01f4ff127e9c}{igetlast\_linked}(object->\hyperlink{structiobject__t_ae5c7b9d49120fc7003f01fcf7055b425}{triplets})->\hyperlink{structilinked__t_ac285ea385953cbd5a332b2cbab39b62b}{data}))->vertices;
+102                 \textcolor{keywordtype}{int} i;
+103                 \textcolor{keywordflow}{for} ( i = 0; i < 3; i++) \{
+104                         \textcolor{keyword}{struct }\hyperlink{structilinkedpoint__t}{ilinkedpoint\_t} *iterator = \textcolor{keywordtype}{object}->points;
+105                         \textcolor{keywordflow}{for} ( ; iterator != NULL; iterator = iterator->\hyperlink{structilinkedpoint__t_a3af3bf37f168b5b11fce11262286d6c4}{next}) \{
+106                                 \textcolor{keywordtype}{float} distance = \hyperlink{iutils_8c_a0f9358d11318a553a072c0384b8ed6d9}{iget\_distance}(points[i], iterator->
+      \hyperlink{structilinkedpoint__t_ad679b26e2151ec3a4ad7b062679fd3c3}{point});
+107                                 \textcolor{keywordflow}{if} (distance <= epsilon
+108                                         && points[i] != iterator->\hyperlink{structilinkedpoint__t_ad679b26e2151ec3a4ad7b062679fd3c3}{point}) \{ \textcolor{comment}{/* if the distance betweed
+       the current}
+109 \textcolor{comment}{                                                                              candidate point and the
+       current}
+110 \textcolor{comment}{                                                                              incumbent point is within
+       epsilon of}
+111 \textcolor{comment}{                                                                              zero */}
+112                                         printf(\hyperlink{iprettyconsole_8h_af0036c8022c9980079ab17e5c87fd478}{KWHT} \textcolor{stringliteral}{"INFO: found incumbent vertex within EPSILON,
+       swapping reference.\(\backslash\)n"} \hyperlink{iprettyconsole_8h_ab702106cf3b3e96750b6845ded4e0299}{RESET});
+113                                         printf(\hyperlink{iprettyconsole_8h_af0036c8022c9980079ab17e5c87fd478}{KWHT} \textcolor{stringliteral}{"INFO: incumbent @%p, new @%p.\(\backslash\)n"} 
+      \hyperlink{iprettyconsole_8h_ab702106cf3b3e96750b6845ded4e0299}{RESET},
+114                                                         (\textcolor{keywordtype}{void}*)iterator->\hyperlink{structilinkedpoint__t_ad679b26e2151ec3a4ad7b062679fd3c3}{point},
+115                                                         (\textcolor{keywordtype}{void}*)points[i]
+116                                         );
+117                                         \textcolor{keyword}{struct }\hyperlink{structipoint__t}{ipoint\_t} *incumbent = iterator->
+      \hyperlink{structilinkedpoint__t_ad679b26e2151ec3a4ad7b062679fd3c3}{point}; \textcolor{comment}{/* fetch the address of the current incumbent}
+118 \textcolor{comment}{                                                                                  point */}
+119                                         incumbent->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x} = (float)(incumbent->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x} + points[i]->
+      \hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x})/2.; \textcolor{comment}{/* average the two points to minimize}
+120 \textcolor{comment}{                                                                                           visual
+       distortion */}
+121                                         incumbent->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y} = (float)(incumbent->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y} + points[i]->
+      \hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y})/2.;
+122                                         incumbent->\hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z} = ((float)(incumbent->\hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z} + points[i]->
+      \hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z}))/2;
+123                                         free(points[i]); \textcolor{comment}{/* free the point which is about to be discarded 
+      */}
+124                                         points[i] = iterator->\hyperlink{structilinkedpoint__t_ad679b26e2151ec3a4ad7b062679fd3c3}{point}; \textcolor{comment}{/* reset the address stored in
+       the current slot in the}
+125 \textcolor{comment}{                                                                        triplet's array to the address of
+       the incumbent */}
+126                                         assert(points[i]->\hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z}==incumbent->\hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z});
+127                                         assert(points[i]->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y}==incumbent->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y});
+128                                         assert(points[i]->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x}==incumbent->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x});
+129                                         \textcolor{keywordflow}{continue};
+130                                 \} \textcolor{comment}{// else \{}
+131                                 \textcolor{keyword}{struct }\hyperlink{structilinkedpoint__t}{ilinkedpoint\_t} *test\_point = 
+      \hyperlink{icoordinates_8c_a7c978730cf6130f65e3ca306b83d953b}{inew\_linkedpoint}(points[i]);
+132                                 \textcolor{keywordflow}{if} (\hyperlink{icoordinates_8c_a804e459765ed24235ff910f99aa97171}{icontains\_linkedpoint}(object->
+      \hyperlink{structiobject__t_aaf44cb85cf392a8ac7e30ab6971be2ad}{points}, test\_point) == NULL) \{
+133                                         \hyperlink{icoordinates_8c_a1576e4429e977b28e65001af937bcf3e}{iadd\_linkedpoint}(object->
+      \hyperlink{structiobject__t_aaf44cb85cf392a8ac7e30ab6971be2ad}{points}, test\_point);
+134                                         \textcolor{keywordtype}{object}->num\_points++;
+135                                 \}
+136                                 \textcolor{comment}{//if (iaddunique\_linked(igetlast\_linked(object->points), test\_point) ==
+       NULL)}
+137                                 \textcolor{comment}{//        free(test\_point);}
+138                         \}
+139                 \}
+140         \}
+141         \textcolor{keywordflow}{return} object;
+142 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{iprimitives_8h_a32c313b4080f6b2ce22b65bbd1ad9236_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{iprimitives_8h_a32c313b4080f6b2ce22b65bbd1ad9236_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{iprimitives_8h_a497e55ba21c3845855ae2d8c5a6ab263}{\index{iprimitives.\-h@{iprimitives.\-h}!iobject\-\_\-step@{iobject\-\_\-step}}
+\index{iobject\-\_\-step@{iobject\-\_\-step}!iprimitives.h@{iprimitives.\-h}}
+\subsubsection[{iobject\-\_\-step}]{\setlength{\rightskip}{0pt plus 5cm}void iobject\-\_\-step (
+\begin{DoxyParamCaption}
+\item[{struct {\bf iobject\-\_\-t} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{iprimitives_8h_a497e55ba21c3845855ae2d8c5a6ab263}
+
+
+Definition at line 55 of file iprimitives.\-c.
+
+
+\begin{DoxyCode}
+56 \{
+57         \textcolor{keyword}{struct }\hyperlink{structilinkedpoint__t}{ilinkedpoint\_t} *\hyperlink{structilinkedpoint__t_ad679b26e2151ec3a4ad7b062679fd3c3}{point} = obj->\hyperlink{structiobject__t_aaf44cb85cf392a8ac7e30ab6971be2ad}{points};
+58         \textcolor{keywordflow}{for} ( ; point != NULL; point = point->\hyperlink{structilinkedpoint__t_a3af3bf37f168b5b11fce11262286d6c4}{next}) \{
+59                 \textcolor{keyword}{struct }\hyperlink{structipoint__t}{ipoint\_t} *data = point->\hyperlink{structilinkedpoint__t_ad679b26e2151ec3a4ad7b062679fd3c3}{point};
+60                 data->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x} = (double)(data->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x}) + obj->\hyperlink{structiobject__t_a95a087e73bb5b8d3fa5e2afd61a3a3c5}{motion}->\hyperlink{structivector__t_a4b91a8fcb6a98d2ba8e2f5d483d7c577}{x};
+61                 data->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y} = (double)(data->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y}) + obj->\hyperlink{structiobject__t_a95a087e73bb5b8d3fa5e2afd61a3a3c5}{motion}->\hyperlink{structivector__t_af6af8ee13897aea97b1d8fe42bb83b17}{y};
+62         \}
+63         \textcolor{keywordflow}{return};
+64 \}
+\end{DoxyCode}
+\hypertarget{iprimitives_8h_ad14816b7b9d9bc34ae7098efadf43add}{\index{iprimitives.\-h@{iprimitives.\-h}!iprint\-\_\-object@{iprint\-\_\-object}}
+\index{iprint\-\_\-object@{iprint\-\_\-object}!iprimitives.h@{iprimitives.\-h}}
+\subsubsection[{iprint\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}void iprint\-\_\-object (
+\begin{DoxyParamCaption}
+\item[{struct {\bf iobject\-\_\-t} $\ast$}]{object}
+\end{DoxyParamCaption}
+)}}\label{iprimitives_8h_ad14816b7b9d9bc34ae7098efadf43add}
+
+
+Definition at line 144 of file iprimitives.\-c.
+
+
+\begin{DoxyCode}
+145 \{
+146         printf(\textcolor{stringliteral}{"object "} \hyperlink{iprettyconsole_8h_a897b10d246533c95ba86cb79f92e465a}{KYEL} \textcolor{stringliteral}{"@%p"} \hyperlink{iprettyconsole_8h_ab702106cf3b3e96750b6845ded4e0299}{RESET} \textcolor{stringliteral}{".\(\backslash\)n"}, (\textcolor{keywordtype}{void}*)\textcolor{keywordtype}{object});
+147         printf(\textcolor{stringliteral}{"Motion vector = "});
+148         \hyperlink{icoordinates_8c_af824fb9002b49e7348de15d84229e536}{iprint\_vector}(object->\hyperlink{structiobject__t_a95a087e73bb5b8d3fa5e2afd61a3a3c5}{motion});
+149         printf(\textcolor{stringliteral}{"%d triplets:\(\backslash\)n"}, object->\hyperlink{structiobject__t_aa2cbae39b6848c1036afebae90a0bd8c}{num\_triplets});
+150         \textcolor{keyword}{struct }\hyperlink{structilinked__t}{ilinked\_t} *trp = \hyperlink{iutils_8c_acf8aca63685fbd6b4c995516baedab14}{igetfirst\_linked}(object->
+      \hyperlink{structiobject__t_ae5c7b9d49120fc7003f01fcf7055b425}{triplets});
+151         \textcolor{keywordflow}{for} ( ; trp != NULL; trp=trp->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next}) \{
+152                 printf(\textcolor{stringliteral}{"\(\backslash\)ttriplet at address %p.\(\backslash\)n"}, (\textcolor{keywordtype}{void}*)trp->\hyperlink{structilinked__t_ac285ea385953cbd5a332b2cbab39b62b}{data});
+153                 printf(\textcolor{stringliteral}{"\(\backslash\)t L > points:\(\backslash\)n"});
+154                 \textcolor{keyword}{struct }\hyperlink{structicoloredtriplet__t}{icoloredtriplet\_t} *colored = (\textcolor{keyword}{struct }
+      \hyperlink{structicoloredtriplet__t}{icoloredtriplet\_t}*)(trp->\hyperlink{structilinked__t_ac285ea385953cbd5a332b2cbab39b62b}{data});
+155                 \textcolor{keyword}{struct }\hyperlink{structipoint__t}{ipoint\_t} *pnt = colored->\hyperlink{structicoloredtriplet__t_aa599939c78c387bc80a763f3e3728fee}{vertices}[0];
+156                 \textcolor{keyword}{struct }\hyperlink{structicolor__t}{icolor\_t} **colors = colored->\hyperlink{structicoloredtriplet__t_ac0ba48c5e0ba663bd8c0fb7b3ac2a2a9}{colors};
+157                 printf(\textcolor{stringliteral}{"\(\backslash\)t      | > @%p(%.3f, %.3f, %d)"}, (\textcolor{keywordtype}{void}*)pnt, pnt->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x}, pnt->
+      \hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y}, pnt->\hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z});
+158                  printf(\textcolor{stringliteral}{" rgb(%d, %d, %d) @%p\(\backslash\)n"}, colors[0]->\hyperlink{structicolor__t_af41be99aa200064979c76e29d00d4aff}{r}, colors[0]->\hyperlink{structicolor__t_a3cf0a9335bbc32fc211d22f3ef502110}{g}, colors[0]->
+      \hyperlink{structicolor__t_acb75f6cdb4866b33921bde0c5f9000ce}{b}, (\textcolor{keywordtype}{void}*)colors[0]);
+159                 pnt = colored->\hyperlink{structicoloredtriplet__t_aa599939c78c387bc80a763f3e3728fee}{vertices}[1];
+160                 printf(\textcolor{stringliteral}{"\(\backslash\)t      | > @%p(%.3f, %.3f, %d)"}, (\textcolor{keywordtype}{void}*)pnt, pnt->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x}, pnt->
+      \hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y}, pnt->\hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z});
+161                  printf(\textcolor{stringliteral}{" rgb(%d, %d, %d) @%p\(\backslash\)n"}, colors[1]->\hyperlink{structicolor__t_af41be99aa200064979c76e29d00d4aff}{r}, colors[1]->\hyperlink{structicolor__t_a3cf0a9335bbc32fc211d22f3ef502110}{g}, colors[1]->
+      \hyperlink{structicolor__t_acb75f6cdb4866b33921bde0c5f9000ce}{b}, (\textcolor{keywordtype}{void}*)colors[1]);
+162                 pnt = colored->\hyperlink{structicoloredtriplet__t_aa599939c78c387bc80a763f3e3728fee}{vertices}[2];
+163                 printf(\textcolor{stringliteral}{"\(\backslash\)t      L > @%p(%.3f, %.3f, %d)"}, (\textcolor{keywordtype}{void}*)pnt, pnt->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x}, pnt->
+      \hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y}, pnt->\hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z});
+164                  printf(\textcolor{stringliteral}{" rgb(%d, %d, %d) @%p\(\backslash\)n"}, colors[2]->\hyperlink{structicolor__t_af41be99aa200064979c76e29d00d4aff}{r}, colors[2]->\hyperlink{structicolor__t_a3cf0a9335bbc32fc211d22f3ef502110}{g}, colors[2]->
+      \hyperlink{structicolor__t_acb75f6cdb4866b33921bde0c5f9000ce}{b}, (\textcolor{keywordtype}{void}*)colors[2]);
+165         \}
+166         printf(\textcolor{stringliteral}{"%d points are in the global points register:\(\backslash\)n"}, object->
+      \hyperlink{structiobject__t_a281441e3843f4753cd3893f750e78773}{num\_points});
+167         \textcolor{keyword}{struct }\hyperlink{structilinkedpoint__t}{ilinkedpoint\_t} *pnt = \textcolor{keywordtype}{object}->points;
+168         \textcolor{keywordflow}{for} ( ; pnt != NULL; pnt=pnt->\hyperlink{structilinkedpoint__t_a3af3bf37f168b5b11fce11262286d6c4}{next}) \{
+169                 printf(\textcolor{stringliteral}{"\(\backslash\)t"});
+170                 \hyperlink{icoordinates_8c_a49f0ede26f4ff04407aa27d96e333a06}{iprint\_point}(pnt->\hyperlink{structilinkedpoint__t_ad679b26e2151ec3a4ad7b062679fd3c3}{point});
+171                 \textcolor{comment}{/*printf("\(\backslash\)tpoint at address %p. (%.3f, %.3f, %d)\(\backslash\)n", (void*)pnt->point,}
+172 \textcolor{comment}{                                pnt->point->x,}
+173 \textcolor{comment}{                                pnt->point->y,}
+174 \textcolor{comment}{                                pnt->point->z);*/}
+175         \}
+176 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{iprimitives_8h_ad14816b7b9d9bc34ae7098efadf43add_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{iprimitives_8h_ad14816b7b9d9bc34ae7098efadf43add_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{iprimitives_8h_afc34677b05531522408374dc02a31f40}{\index{iprimitives.\-h@{iprimitives.\-h}!red@{red}}
+\index{red@{red}!iprimitives.h@{iprimitives.\-h}}
+\subsubsection[{red}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char red (
+\begin{DoxyParamCaption}
+\item[{struct {\bf icolor\-\_\-t}}]{color}
+\end{DoxyParamCaption}
+)}}\label{iprimitives_8h_afc34677b05531522408374dc02a31f40}
+
+
+Definition at line 9 of file iprimitives.\-c.
+
+
+\begin{DoxyCode}
+10 \{
+11         \textcolor{keywordflow}{return} color.\hyperlink{structicolor__t_af41be99aa200064979c76e29d00d4aff}{r};
+12 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{iprimitives_8h_afc34677b05531522408374dc02a31f40_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{iprimitives_8h_ab818a06b736a4f2623acd283f982176d}{\index{iprimitives.\-h@{iprimitives.\-h}!redf@{redf}}
+\index{redf@{redf}!iprimitives.h@{iprimitives.\-h}}
+\subsubsection[{redf}]{\setlength{\rightskip}{0pt plus 5cm}float redf (
+\begin{DoxyParamCaption}
+\item[{struct {\bf icolorf\-\_\-t}}]{color}
+\end{DoxyParamCaption}
+)}}\label{iprimitives_8h_ab818a06b736a4f2623acd283f982176d}
+
+
+Definition at line 24 of file iprimitives.\-c.
+
+
+\begin{DoxyCode}
+25 \{
+26         \textcolor{keywordflow}{return} color.\hyperlink{structicolorf__t_a4b38a1a5c2c96286fd18691bae9fc053}{data}[0];
+27 \}
+\end{DoxyCode}

@@ -1,0 +1,9 @@
+<map id="frontend_initialize_viewspace" name="frontend_initialize_viewspace">
+<area shape="rect" id="node2" href="$icoordinates_8c.html#a4507e51c1f2470e19e8ff5a77adf54bd" title="icreate_region" alt="" coords="190,56,293,83"/>
+<area shape="rect" id="node8" href="$frontend_8c.html#af20744b431ee1afa0043f15e5e2f9207" title="inew_eventhandler" alt="" coords="176,107,307,133"/>
+<area shape="rect" id="node3" href="$iutils_8c.html#a168fc457c8928038cb3c471bc5fdf170" title="inew_linked" alt="" coords="363,5,453,32"/>
+<area shape="rect" id="node6" href="$iutils_8c.html#acf8aca63685fbd6b4c995516baedab14" title="igetfirst_linked" alt="" coords="355,56,461,83"/>
+<area shape="rect" id="node7" href="$iutils_8c.html#a67413257923db7c88d91a7e706024e98" title="iadd_linked" alt="" coords="365,107,451,133"/>
+<area shape="rect" id="node4" href="$error_8c.html#ab10bea042bb9daa7a0e027197b8080e5" title="ierror" alt="" coords="509,56,560,83"/>
+<area shape="rect" id="node5" href="$error_8c.html#ac1727d6e8e99b92957a0a7099d19d6f4" title="print_error" alt="" coords="608,56,688,83"/>
+</map>

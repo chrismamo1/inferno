@@ -1,0 +1,8 @@
+<map id="step" name="step">
+<area shape="rect" id="node2" href="$frontend__opengl__linux_8c.html#a740fe64ba30a741771700f190e164a9c" title="frontend_update" alt="" coords="132,5,247,32"/>
+<area shape="rect" id="node3" href="$frontend__opengl__linux_8c.html#a5f1d2e26db40b3636fb218810a872a03" title="frontend_free" alt="" coords="140,56,239,83"/>
+<area shape="rect" id="node4" href="$frontend__opengl__linux_8c.html#ad8a729cc49f33a0037227c75e1979ada" title="frontend_reset_viewspace" alt="" coords="102,107,277,133"/>
+<area shape="rect" id="node5" href="$iprimitives_8c.html#afc34677b05531522408374dc02a31f40" title="red" alt="" coords="333,56,373,83"/>
+<area shape="rect" id="node6" href="$iprimitives_8c.html#abc6932dd227752af4dbf7fac0b6e3291" title="green" alt="" coords="326,107,381,133"/>
+<area shape="rect" id="node7" href="$iprimitives_8c.html#a03066bd036a134534caeec08526b7269" title="blue" alt="" coords="330,157,377,184"/>
+</map>

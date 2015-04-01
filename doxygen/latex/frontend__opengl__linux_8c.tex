@@ -1,0 +1,458 @@
+\hypertarget{frontend__opengl__linux_8c}{\section{src/frontends/frontend\-\_\-opengl\-\_\-linux.c File Reference}
+\label{frontend__opengl__linux_8c}\index{src/frontends/frontend\-\_\-opengl\-\_\-linux.\-c@{src/frontends/frontend\-\_\-opengl\-\_\-linux.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$X11/\-X.\-h$>$}\\*
+{\ttfamily \#include $<$X11/\-Xlib.\-h$>$}\\*
+{\ttfamily \#include $<$G\-L/gl.\-h$>$}\\*
+{\ttfamily \#include $<$G\-L/glx.\-h$>$}\\*
+{\ttfamily \#include $<$G\-L/glu.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}frontend.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../icoordinates.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}frontend\-\_\-opengl\-\_\-linux.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../iprimitives.\-h\char`\"{}}\\*
+Include dependency graph for frontend\-\_\-opengl\-\_\-linux.\-c\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frontend__opengl__linux_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{frontend__opengl__linux_8c_a345706a31501f213b1c7ad1825d4628f}{Draw\-A\-Quad} ()
+\item 
+void \hyperlink{frontend__opengl__linux_8c_a4cb194a7e9456fffef751e2a311735eb}{frontend\-\_\-initialize} ()
+\item 
+void \hyperlink{frontend__opengl__linux_8c_aeac975aee6becbb83f7fac162d290fe0}{frontend\-\_\-initialize\-\_\-viewspace} (float x1, float x2, float y1, float y2, int num\-\_\-z\-\_\-levels, struct \hyperlink{structifrontendstate__t}{ifrontendstate\-\_\-t} $\ast$state)
+\item 
+void \hyperlink{frontend__opengl__linux_8c_ad8a729cc49f33a0037227c75e1979ada}{frontend\-\_\-reset\-\_\-viewspace} (struct \hyperlink{structifrontendstate__t}{ifrontendstate\-\_\-t} $\ast$state)
+\item 
+void \hyperlink{frontend__opengl__linux_8c_a5f1d2e26db40b3636fb218810a872a03}{frontend\-\_\-free} ()
+\item 
+void \hyperlink{frontend__opengl__linux_8c_a740fe64ba30a741771700f190e164a9c}{frontend\-\_\-update} (struct \hyperlink{structifrontendstate__t}{ifrontendstate\-\_\-t} $\ast$state)
+\item 
+void \hyperlink{frontend__opengl__linux_8c_a3e3ddec01ee228bbd7e9bce1779e2f74}{frontend\-\_\-draw\-\_\-rectangle} (struct \hyperlink{structipoint__t}{ipoint\-\_\-t} $\ast$p1, struct \hyperlink{structipoint__t}{ipoint\-\_\-t} $\ast$p2, struct \hyperlink{structicolor__t}{icolor\-\_\-t} color)
+\item 
+void \hyperlink{frontend__opengl__linux_8c_a532cd8517ad651db90c6e979addebf82}{frontend\-\_\-draw\-\_\-point} (struct \hyperlink{structipoint__t}{ipoint\-\_\-t} $\ast$point, struct \hyperlink{structicolor__t}{icolor\-\_\-t} color)
+\item 
+void \hyperlink{frontend__opengl__linux_8c_a0443993e9b09570d3b9ab2a6353be8c0}{frontend\-\_\-draw\-\_\-coloredtriplet} (struct \hyperlink{structicoloredtriplet__t}{icoloredtriplet\-\_\-t} $\ast$triplet)
+\item 
+int \hyperlink{frontend__opengl__linux_8c_a606f78ac8a9bdf59c7a520da2b2052e0}{step} (struct \hyperlink{structifrontendstate__t}{ifrontendstate\-\_\-t} $\ast$state)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{frontend__opengl__linux_8c_a345706a31501f213b1c7ad1825d4628f}{\index{frontend\-\_\-opengl\-\_\-linux.\-c@{frontend\-\_\-opengl\-\_\-linux.\-c}!Draw\-A\-Quad@{Draw\-A\-Quad}}
+\index{Draw\-A\-Quad@{Draw\-A\-Quad}!frontend_opengl_linux.c@{frontend\-\_\-opengl\-\_\-linux.\-c}}
+\subsubsection[{Draw\-A\-Quad}]{\setlength{\rightskip}{0pt plus 5cm}void Draw\-A\-Quad (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{frontend__opengl__linux_8c_a345706a31501f213b1c7ad1825d4628f}
+
+
+Definition at line 16 of file frontend\-\_\-opengl\-\_\-linux.\-c.
+
+
+\begin{DoxyCode}
+16                  \{
+17         glBegin(GL\_QUADS);
+18         \textcolor{comment}{/*glColor3f(1., 0., 0.); glVertex3f(-.75, -.75, 0.);}
+19 \textcolor{comment}{        glColor3f(0., 1., 0.); glVertex3f( 75, -.75, 0.);}
+20 \textcolor{comment}{        glColor3f(0., 0., 1.); glVertex3f( .75,  .75, 0.);}
+21 \textcolor{comment}{        glColor3f(1., 1., 0.); glVertex3f(-.75,  .75, 0.);*/}
+22         glColor3f(0., 0., 0.);
+23         glVertex2f(0.0, 0.); glVertex2f(1., 0.); glVertex2f(1., 1.); glVertex2f(0., 1.);
+24         glEnd();
+25 \} 
+\end{DoxyCode}
+\hypertarget{frontend__opengl__linux_8c_a0443993e9b09570d3b9ab2a6353be8c0}{\index{frontend\-\_\-opengl\-\_\-linux.\-c@{frontend\-\_\-opengl\-\_\-linux.\-c}!frontend\-\_\-draw\-\_\-coloredtriplet@{frontend\-\_\-draw\-\_\-coloredtriplet}}
+\index{frontend\-\_\-draw\-\_\-coloredtriplet@{frontend\-\_\-draw\-\_\-coloredtriplet}!frontend_opengl_linux.c@{frontend\-\_\-opengl\-\_\-linux.\-c}}
+\subsubsection[{frontend\-\_\-draw\-\_\-coloredtriplet}]{\setlength{\rightskip}{0pt plus 5cm}void frontend\-\_\-draw\-\_\-coloredtriplet (
+\begin{DoxyParamCaption}
+\item[{struct {\bf icoloredtriplet\-\_\-t} $\ast$}]{triplet}
+\end{DoxyParamCaption}
+)}}\label{frontend__opengl__linux_8c_a0443993e9b09570d3b9ab2a6353be8c0}
+
+
+Definition at line 149 of file frontend\-\_\-opengl\-\_\-linux.\-c.
+
+
+\begin{DoxyCode}
+150 \{
+151         glBegin(GL\_TRIANGLES);
+152                 glColor3ub((triplet->\hyperlink{structicoloredtriplet__t_ac0ba48c5e0ba663bd8c0fb7b3ac2a2a9}{colors}[0]->\hyperlink{structicolor__t_af41be99aa200064979c76e29d00d4aff}{r}),
+153                           (triplet->\hyperlink{structicoloredtriplet__t_ac0ba48c5e0ba663bd8c0fb7b3ac2a2a9}{colors}[0]->\hyperlink{structicolor__t_a3cf0a9335bbc32fc211d22f3ef502110}{g}),
+154                           (triplet->\hyperlink{structicoloredtriplet__t_ac0ba48c5e0ba663bd8c0fb7b3ac2a2a9}{colors}[0]->\hyperlink{structicolor__t_acb75f6cdb4866b33921bde0c5f9000ce}{b}));
+155                 glVertex3f(triplet->\hyperlink{structicoloredtriplet__t_aa599939c78c387bc80a763f3e3728fee}{vertices}[0]->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x}, triplet->\hyperlink{structicoloredtriplet__t_aa599939c78c387bc80a763f3e3728fee}{vertices}[0]->
+      \hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y},
+156                            (\textcolor{keywordtype}{float})triplet->\hyperlink{structicoloredtriplet__t_aa599939c78c387bc80a763f3e3728fee}{vertices}[0]->\hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z});
+157                 glColor3ub(triplet->\hyperlink{structicoloredtriplet__t_ac0ba48c5e0ba663bd8c0fb7b3ac2a2a9}{colors}[1]->\hyperlink{structicolor__t_af41be99aa200064979c76e29d00d4aff}{r},
+158                           triplet->\hyperlink{structicoloredtriplet__t_ac0ba48c5e0ba663bd8c0fb7b3ac2a2a9}{colors}[1]->\hyperlink{structicolor__t_a3cf0a9335bbc32fc211d22f3ef502110}{g},
+159                           triplet->\hyperlink{structicoloredtriplet__t_ac0ba48c5e0ba663bd8c0fb7b3ac2a2a9}{colors}[1]->\hyperlink{structicolor__t_acb75f6cdb4866b33921bde0c5f9000ce}{b});
+160                 glVertex3f(triplet->\hyperlink{structicoloredtriplet__t_aa599939c78c387bc80a763f3e3728fee}{vertices}[1]->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x}, triplet->\hyperlink{structicoloredtriplet__t_aa599939c78c387bc80a763f3e3728fee}{vertices}[1]->
+      \hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y},
+161                            (\textcolor{keywordtype}{float})triplet->\hyperlink{structicoloredtriplet__t_aa599939c78c387bc80a763f3e3728fee}{vertices}[1]->\hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z});
+162                 glColor3ub(triplet->\hyperlink{structicoloredtriplet__t_ac0ba48c5e0ba663bd8c0fb7b3ac2a2a9}{colors}[2]->\hyperlink{structicolor__t_af41be99aa200064979c76e29d00d4aff}{r},
+163                           triplet->\hyperlink{structicoloredtriplet__t_ac0ba48c5e0ba663bd8c0fb7b3ac2a2a9}{colors}[2]->\hyperlink{structicolor__t_a3cf0a9335bbc32fc211d22f3ef502110}{g},
+164                           triplet->\hyperlink{structicoloredtriplet__t_ac0ba48c5e0ba663bd8c0fb7b3ac2a2a9}{colors}[2]->\hyperlink{structicolor__t_acb75f6cdb4866b33921bde0c5f9000ce}{b});
+165                 glVertex3f(triplet->\hyperlink{structicoloredtriplet__t_aa599939c78c387bc80a763f3e3728fee}{vertices}[2]->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x}, triplet->\hyperlink{structicoloredtriplet__t_aa599939c78c387bc80a763f3e3728fee}{vertices}[2]->
+      \hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y},
+166                            (\textcolor{keywordtype}{float})triplet->\hyperlink{structicoloredtriplet__t_aa599939c78c387bc80a763f3e3728fee}{vertices}[2]->\hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z});
+167         glEnd();
+168 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frontend__opengl__linux_8c_a0443993e9b09570d3b9ab2a6353be8c0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{frontend__opengl__linux_8c_a532cd8517ad651db90c6e979addebf82}{\index{frontend\-\_\-opengl\-\_\-linux.\-c@{frontend\-\_\-opengl\-\_\-linux.\-c}!frontend\-\_\-draw\-\_\-point@{frontend\-\_\-draw\-\_\-point}}
+\index{frontend\-\_\-draw\-\_\-point@{frontend\-\_\-draw\-\_\-point}!frontend_opengl_linux.c@{frontend\-\_\-opengl\-\_\-linux.\-c}}
+\subsubsection[{frontend\-\_\-draw\-\_\-point}]{\setlength{\rightskip}{0pt plus 5cm}void frontend\-\_\-draw\-\_\-point (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ipoint\-\_\-t} $\ast$}]{point, }
+\item[{struct {\bf icolor\-\_\-t}}]{color}
+\end{DoxyParamCaption}
+)}}\label{frontend__opengl__linux_8c_a532cd8517ad651db90c6e979addebf82}
+
+
+Definition at line 141 of file frontend\-\_\-opengl\-\_\-linux.\-c.
+
+
+\begin{DoxyCode}
+142 \{
+143         glBegin(GL\_POINTS);
+144                 glColor3f((\textcolor{keywordtype}{float})color.\hyperlink{structicolor__t_af41be99aa200064979c76e29d00d4aff}{r}, (\textcolor{keywordtype}{float})color.\hyperlink{structicolor__t_a3cf0a9335bbc32fc211d22f3ef502110}{g}, (\textcolor{keywordtype}{float})color.\hyperlink{structicolor__t_acb75f6cdb4866b33921bde0c5f9000ce}{b});
+145                 glVertex3f(point->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x}, point->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y}, (\textcolor{keywordtype}{float}) point->\hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z});
+146         glEnd();
+147 \}
+\end{DoxyCode}
+\hypertarget{frontend__opengl__linux_8c_a3e3ddec01ee228bbd7e9bce1779e2f74}{\index{frontend\-\_\-opengl\-\_\-linux.\-c@{frontend\-\_\-opengl\-\_\-linux.\-c}!frontend\-\_\-draw\-\_\-rectangle@{frontend\-\_\-draw\-\_\-rectangle}}
+\index{frontend\-\_\-draw\-\_\-rectangle@{frontend\-\_\-draw\-\_\-rectangle}!frontend_opengl_linux.c@{frontend\-\_\-opengl\-\_\-linux.\-c}}
+\subsubsection[{frontend\-\_\-draw\-\_\-rectangle}]{\setlength{\rightskip}{0pt plus 5cm}void frontend\-\_\-draw\-\_\-rectangle (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ipoint\-\_\-t} $\ast$}]{p1, }
+\item[{struct {\bf ipoint\-\_\-t} $\ast$}]{p2, }
+\item[{struct {\bf icolor\-\_\-t}}]{color}
+\end{DoxyParamCaption}
+)}}\label{frontend__opengl__linux_8c_a3e3ddec01ee228bbd7e9bce1779e2f74}
+
+
+Definition at line 129 of file frontend\-\_\-opengl\-\_\-linux.\-c.
+
+
+\begin{DoxyCode}
+130 \{
+131         \textcolor{keywordtype}{float} z = (float) p1->\hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z};
+132         glBegin(GL\_QUADS);
+133                 glColor3f(color.\hyperlink{structicolor__t_af41be99aa200064979c76e29d00d4aff}{r}, color.\hyperlink{structicolor__t_a3cf0a9335bbc32fc211d22f3ef502110}{g}, color.\hyperlink{structicolor__t_acb75f6cdb4866b33921bde0c5f9000ce}{b});
+134                 glVertex3f(p1->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x}, p1->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y}, z);
+135                 glVertex3f(p2->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x}, p1->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y}, z);
+136                 glVertex3f(p2->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x}, p2->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y}, z);
+137                 glVertex3f(p1->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x}, p2->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y}, z);
+138         glEnd();
+139 \}
+\end{DoxyCode}
+\hypertarget{frontend__opengl__linux_8c_a5f1d2e26db40b3636fb218810a872a03}{\index{frontend\-\_\-opengl\-\_\-linux.\-c@{frontend\-\_\-opengl\-\_\-linux.\-c}!frontend\-\_\-free@{frontend\-\_\-free}}
+\index{frontend\-\_\-free@{frontend\-\_\-free}!frontend_opengl_linux.c@{frontend\-\_\-opengl\-\_\-linux.\-c}}
+\subsubsection[{frontend\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void frontend\-\_\-free (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{frontend__opengl__linux_8c_a5f1d2e26db40b3636fb218810a872a03}
+
+
+Definition at line 112 of file frontend\-\_\-opengl\-\_\-linux.\-c.
+
+
+\begin{DoxyCode}
+113 \{
+114         printf(\textcolor{stringliteral}{"Freeing frontend resources...\(\backslash\)n"});
+115         glXMakeCurrent(\hyperlink{frontend__opengl__linux_8h_a7d43b3edf58f8d85a89852ab95b740f6}{dpy}, None, NULL);
+116         glXDestroyContext(\hyperlink{frontend__opengl__linux_8h_a7d43b3edf58f8d85a89852ab95b740f6}{dpy}, \hyperlink{frontend__opengl__linux_8h_a865db36501e45073170bee430ee35fc3}{glc});
+117         XDestroyWindow(\hyperlink{frontend__opengl__linux_8h_a7d43b3edf58f8d85a89852ab95b740f6}{dpy}, \hyperlink{frontend__opengl__linux_8h_af5e9cbaf11bc8c0c330917f546d0045f}{win});
+118         XCloseDisplay(\hyperlink{frontend__opengl__linux_8h_a7d43b3edf58f8d85a89852ab95b740f6}{dpy});
+119 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{frontend__opengl__linux_8c_a5f1d2e26db40b3636fb218810a872a03_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{frontend__opengl__linux_8c_a4cb194a7e9456fffef751e2a311735eb}{\index{frontend\-\_\-opengl\-\_\-linux.\-c@{frontend\-\_\-opengl\-\_\-linux.\-c}!frontend\-\_\-initialize@{frontend\-\_\-initialize}}
+\index{frontend\-\_\-initialize@{frontend\-\_\-initialize}!frontend_opengl_linux.c@{frontend\-\_\-opengl\-\_\-linux.\-c}}
+\subsubsection[{frontend\-\_\-initialize}]{\setlength{\rightskip}{0pt plus 5cm}void frontend\-\_\-initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{frontend__opengl__linux_8c_a4cb194a7e9456fffef751e2a311735eb}
+
+
+Definition at line 27 of file frontend\-\_\-opengl\-\_\-linux.\-c.
+
+
+\begin{DoxyCode}
+28 \{
+29         \textcolor{comment}{//att = \{ GLX\_RGBA, GLX\_DEPTH\_SIZE, 24, GLX\_DOUBLEBUFFER, None \};}
+30         \hyperlink{frontend__opengl__linux_8h_a5222c83ddcc16d2021dab765c97f6955}{att}[0] = GLX\_RGBA;
+31         \hyperlink{frontend__opengl__linux_8h_a5222c83ddcc16d2021dab765c97f6955}{att}[1] = GLX\_DEPTH\_SIZE;
+32         \hyperlink{frontend__opengl__linux_8h_a5222c83ddcc16d2021dab765c97f6955}{att}[2] = 24;
+33         \hyperlink{frontend__opengl__linux_8h_a5222c83ddcc16d2021dab765c97f6955}{att}[3] = GLX\_DOUBLEBUFFER;
+34         \hyperlink{frontend__opengl__linux_8h_a5222c83ddcc16d2021dab765c97f6955}{att}[4] = None;
+35         \hyperlink{frontend__opengl__linux_8h_a7d43b3edf58f8d85a89852ab95b740f6}{dpy} = XOpenDisplay(NULL);
+36         
+37         \textcolor{keywordflow}{if}(\hyperlink{frontend__opengl__linux_8h_a7d43b3edf58f8d85a89852ab95b740f6}{dpy} == NULL) \{
+38                 printf(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)tcannot connect to X server\(\backslash\)n\(\backslash\)n"});
+39                 exit(0);
+40         \}
+41 
+42         \hyperlink{frontend__opengl__linux_8h_a67efd2aa4387dcb1b33df1f044512a16}{root} = DefaultRootWindow(\hyperlink{frontend__opengl__linux_8h_a7d43b3edf58f8d85a89852ab95b740f6}{dpy});
+43 
+44         \hyperlink{frontend__opengl__linux_8h_a6ea38ddc009c6f56a768347fa8cca7fc}{vi} = glXChooseVisual(\hyperlink{frontend__opengl__linux_8h_a7d43b3edf58f8d85a89852ab95b740f6}{dpy}, 0, \hyperlink{frontend__opengl__linux_8h_a5222c83ddcc16d2021dab765c97f6955}{att});
+45 
+46         \textcolor{keywordflow}{if}(\hyperlink{frontend__opengl__linux_8h_a6ea38ddc009c6f56a768347fa8cca7fc}{vi} == NULL) \{
+47                 printf(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)tno appropriate visual found\(\backslash\)n\(\backslash\)n"});
+48                 exit(0);
+49         \} 
+50         \textcolor{keywordflow}{else} \{
+51                 printf(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)tvisual %p selected\(\backslash\)n"}, (\textcolor{keywordtype}{void} *)\hyperlink{frontend__opengl__linux_8h_a6ea38ddc009c6f56a768347fa8cca7fc}{vi}->visualid);
+52         \}
+53 
+54         \hyperlink{frontend__opengl__linux_8h_ae9e16ee22daffbbbbf59f6c841c2ab75}{cmap} = XCreateColormap(\hyperlink{frontend__opengl__linux_8h_a7d43b3edf58f8d85a89852ab95b740f6}{dpy}, \hyperlink{frontend__opengl__linux_8h_a67efd2aa4387dcb1b33df1f044512a16}{root}, \hyperlink{frontend__opengl__linux_8h_a6ea38ddc009c6f56a768347fa8cca7fc}{vi}->visual, AllocNone);
+55 
+56         \hyperlink{frontend__opengl__linux_8h_a89fc0a57cdcd1daf998256dd0f62acd2}{swa}.colormap = \hyperlink{frontend__opengl__linux_8h_ae9e16ee22daffbbbbf59f6c841c2ab75}{cmap};
+57         \hyperlink{frontend__opengl__linux_8h_a89fc0a57cdcd1daf998256dd0f62acd2}{swa}.event\_mask = ExposureMask | KeyPressMask;
+58 
+59         \hyperlink{frontend__opengl__linux_8h_af5e9cbaf11bc8c0c330917f546d0045f}{win} = XCreateWindow(\hyperlink{frontend__opengl__linux_8h_a7d43b3edf58f8d85a89852ab95b740f6}{dpy}, \hyperlink{frontend__opengl__linux_8h_a67efd2aa4387dcb1b33df1f044512a16}{root}, 0, 0, 600, 600, 0,
+60                                 \hyperlink{frontend__opengl__linux_8h_a6ea38ddc009c6f56a768347fa8cca7fc}{vi}->depth, InputOutput, \hyperlink{frontend__opengl__linux_8h_a6ea38ddc009c6f56a768347fa8cca7fc}{vi}->visual,
+61                                 CWColormap | CWEventMask, &\hyperlink{frontend__opengl__linux_8h_a89fc0a57cdcd1daf998256dd0f62acd2}{swa});
+62 
+63         XMapWindow(\hyperlink{frontend__opengl__linux_8h_a7d43b3edf58f8d85a89852ab95b740f6}{dpy}, \hyperlink{frontend__opengl__linux_8h_af5e9cbaf11bc8c0c330917f546d0045f}{win});
+64 
+65         XStoreName(\hyperlink{frontend__opengl__linux_8h_a7d43b3edf58f8d85a89852ab95b740f6}{dpy}, \hyperlink{frontend__opengl__linux_8h_af5e9cbaf11bc8c0c330917f546d0045f}{win}, \textcolor{stringliteral}{"VERY SIMPLE APPLICATION"});
+66 
+67         \hyperlink{frontend__opengl__linux_8h_a865db36501e45073170bee430ee35fc3}{glc} = glXCreateContext(\hyperlink{frontend__opengl__linux_8h_a7d43b3edf58f8d85a89852ab95b740f6}{dpy}, \hyperlink{frontend__opengl__linux_8h_a6ea38ddc009c6f56a768347fa8cca7fc}{vi}, NULL, GL\_TRUE);
+68         glXMakeCurrent(\hyperlink{frontend__opengl__linux_8h_a7d43b3edf58f8d85a89852ab95b740f6}{dpy}, \hyperlink{frontend__opengl__linux_8h_af5e9cbaf11bc8c0c330917f546d0045f}{win}, \hyperlink{frontend__opengl__linux_8h_a865db36501e45073170bee430ee35fc3}{glc});
+69 
+70         glDisable(GL\_DEPTH\_TEST);
+71 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{frontend__opengl__linux_8c_a4cb194a7e9456fffef751e2a311735eb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{frontend__opengl__linux_8c_aeac975aee6becbb83f7fac162d290fe0}{\index{frontend\-\_\-opengl\-\_\-linux.\-c@{frontend\-\_\-opengl\-\_\-linux.\-c}!frontend\-\_\-initialize\-\_\-viewspace@{frontend\-\_\-initialize\-\_\-viewspace}}
+\index{frontend\-\_\-initialize\-\_\-viewspace@{frontend\-\_\-initialize\-\_\-viewspace}!frontend_opengl_linux.c@{frontend\-\_\-opengl\-\_\-linux.\-c}}
+\subsubsection[{frontend\-\_\-initialize\-\_\-viewspace}]{\setlength{\rightskip}{0pt plus 5cm}void frontend\-\_\-initialize\-\_\-viewspace (
+\begin{DoxyParamCaption}
+\item[{float}]{x1, }
+\item[{float}]{x2, }
+\item[{float}]{y1, }
+\item[{float}]{y2, }
+\item[{int}]{num\-\_\-z\-\_\-levels, }
+\item[{struct {\bf ifrontendstate\-\_\-t} $\ast$}]{state}
+\end{DoxyParamCaption}
+)}}\label{frontend__opengl__linux_8c_aeac975aee6becbb83f7fac162d290fe0}
+\begin{DoxyReturn}{Returns}
+a bitmap with the 0 byte being the number of \char`\"{}near\char`\"{} z-\/levels and the 1 byte being the number of \char`\"{}far\char`\"{} z-\/levels 
+\end{DoxyReturn}
+
+
+Definition at line 76 of file frontend\-\_\-opengl\-\_\-linux.\-c.
+
+
+\begin{DoxyCode}
+77 \{
+78         state->\hyperlink{structifrontendstate__t_afb7c49000e593f77bcb30b1ae4384ded}{background\_color} = malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \hyperlink{structicolor__t}{icolor\_t}));
+79         state->\hyperlink{structifrontendstate__t_ac81d750ec8cd1ba1d44e2c0f55bea687}{drawing\_color} = malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \hyperlink{structicolor__t}{icolor\_t}));
+80         state->\hyperlink{structifrontendstate__t_a54ee910059c66c18fa1bb1555d0e61c5}{left} = x1;
+81         state->\hyperlink{structifrontendstate__t_a7c304035e472522fb01b3bb85b37eef8}{right} = x2;
+82         state->\hyperlink{structifrontendstate__t_adc025993349dceae53dfe235f84fdef2}{bottom} = y1;
+83         state->\hyperlink{structifrontendstate__t_afda9cb91a47174c6e95a4888918964f4}{top} = y2;
+84         state->\hyperlink{structifrontendstate__t_aefb96a4cd8758bcd9a3e5b506290adca}{z\_levels} = num\_z\_levels;
+85         state->\hyperlink{structifrontendstate__t_ad30593dd0b69372008108075c55cfe27}{num\_regions} = 0;
+86         state->\hyperlink{structifrontendstate__t_a42ce77321ecea4fde68dd68b7f0f2283}{regions} = NULL;
+87         \hyperlink{icoordinates_8c_a4507e51c1f2470e19e8ff5a77adf54bd}{icreate\_region}(0, 0, 100, 100, state);
+88         \textcolor{keywordtype}{int} i;
+89         \textcolor{keywordflow}{for} (i = 0; i < 256; i++) \{
+90                 state->\hyperlink{structifrontendstate__t_a5bb9423c4ba5f86cd8a0d50575031952}{onkeyup\_handlers}[i]   = \hyperlink{frontend_8c_af20744b431ee1afa0043f15e5e2f9207}{inew\_eventhandler}(NULL, 
+      NULL, i);
+91                 state->\hyperlink{structifrontendstate__t_ad8fd468eaec37b949af562b39ad20d5a}{onkeydown\_handlers}[i] = 
+      \hyperlink{frontend_8c_af20744b431ee1afa0043f15e5e2f9207}{inew\_eventhandler}(NULL, NULL, i);
+92         \}
+93 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frontend__opengl__linux_8c_aeac975aee6becbb83f7fac162d290fe0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{frontend__opengl__linux_8c_aeac975aee6becbb83f7fac162d290fe0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{frontend__opengl__linux_8c_ad8a729cc49f33a0037227c75e1979ada}{\index{frontend\-\_\-opengl\-\_\-linux.\-c@{frontend\-\_\-opengl\-\_\-linux.\-c}!frontend\-\_\-reset\-\_\-viewspace@{frontend\-\_\-reset\-\_\-viewspace}}
+\index{frontend\-\_\-reset\-\_\-viewspace@{frontend\-\_\-reset\-\_\-viewspace}!frontend_opengl_linux.c@{frontend\-\_\-opengl\-\_\-linux.\-c}}
+\subsubsection[{frontend\-\_\-reset\-\_\-viewspace}]{\setlength{\rightskip}{0pt plus 5cm}void frontend\-\_\-reset\-\_\-viewspace (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ifrontendstate\-\_\-t} $\ast$}]{state}
+\end{DoxyParamCaption}
+)}}\label{frontend__opengl__linux_8c_ad8a729cc49f33a0037227c75e1979ada}
+
+
+Definition at line 95 of file frontend\-\_\-opengl\-\_\-linux.\-c.
+
+
+\begin{DoxyCode}
+96 \{
+97         glClearColor((\textcolor{keywordtype}{float})\hyperlink{iprimitives_8c_afc34677b05531522408374dc02a31f40}{red}(*state->\hyperlink{structifrontendstate__t_afb7c49000e593f77bcb30b1ae4384ded}{background\_color})/256.,
+98                      (\textcolor{keywordtype}{float})\hyperlink{iprimitives_8c_abc6932dd227752af4dbf7fac0b6e3291}{green}(*state->\hyperlink{structifrontendstate__t_afb7c49000e593f77bcb30b1ae4384ded}{background\_color})/256.,
+99                      (\textcolor{keywordtype}{float})\hyperlink{iprimitives_8c_a03066bd036a134534caeec08526b7269}{blue}(*state->\hyperlink{structifrontendstate__t_afb7c49000e593f77bcb30b1ae4384ded}{background\_color})/256., 1.0);
+100         glClear(GL\_COLOR\_BUFFER\_BIT | GL\_DEPTH\_BUFFER\_BIT);
+101 
+102         glMatrixMode(GL\_PROJECTION);
+103         glLoadIdentity();
+104         glOrtho(state->\hyperlink{structifrontendstate__t_a54ee910059c66c18fa1bb1555d0e61c5}{left}, state->\hyperlink{structifrontendstate__t_a7c304035e472522fb01b3bb85b37eef8}{right}, state->\hyperlink{structifrontendstate__t_adc025993349dceae53dfe235f84fdef2}{bottom}, state->
+      \hyperlink{structifrontendstate__t_afda9cb91a47174c6e95a4888918964f4}{top}, state->\hyperlink{structifrontendstate__t_aefb96a4cd8758bcd9a3e5b506290adca}{z\_levels}, 0);
+105 
+106         glMatrixMode(GL\_MODELVIEW);
+107         glLoadIdentity();
+108         gluLookAt(0., 0., 10., 0., 0., 0., 0., 1., 0.);
+109 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{frontend__opengl__linux_8c_ad8a729cc49f33a0037227c75e1979ada_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{frontend__opengl__linux_8c_ad8a729cc49f33a0037227c75e1979ada_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{frontend__opengl__linux_8c_a740fe64ba30a741771700f190e164a9c}{\index{frontend\-\_\-opengl\-\_\-linux.\-c@{frontend\-\_\-opengl\-\_\-linux.\-c}!frontend\-\_\-update@{frontend\-\_\-update}}
+\index{frontend\-\_\-update@{frontend\-\_\-update}!frontend_opengl_linux.c@{frontend\-\_\-opengl\-\_\-linux.\-c}}
+\subsubsection[{frontend\-\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}void frontend\-\_\-update (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ifrontendstate\-\_\-t} $\ast$}]{state}
+\end{DoxyParamCaption}
+)}}\label{frontend__opengl__linux_8c_a740fe64ba30a741771700f190e164a9c}
+
+
+Definition at line 121 of file frontend\-\_\-opengl\-\_\-linux.\-c.
+
+
+\begin{DoxyCode}
+122 \{
+123         XGetWindowAttributes(\hyperlink{frontend__opengl__linux_8h_a7d43b3edf58f8d85a89852ab95b740f6}{dpy}, \hyperlink{frontend__opengl__linux_8h_af5e9cbaf11bc8c0c330917f546d0045f}{win}, &\hyperlink{frontend__opengl__linux_8h_aba75c5c2ba56afc9f1960cb36460d247}{gwa});
+124         glViewport(0, 0, \hyperlink{frontend__opengl__linux_8h_aba75c5c2ba56afc9f1960cb36460d247}{gwa}.width, \hyperlink{frontend__opengl__linux_8h_aba75c5c2ba56afc9f1960cb36460d247}{gwa}.height);
+125         \textcolor{comment}{//DrawAQuad(); }
+126         glXSwapBuffers(\hyperlink{frontend__opengl__linux_8h_a7d43b3edf58f8d85a89852ab95b740f6}{dpy}, \hyperlink{frontend__opengl__linux_8h_af5e9cbaf11bc8c0c330917f546d0045f}{win});
+127 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{frontend__opengl__linux_8c_a740fe64ba30a741771700f190e164a9c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{frontend__opengl__linux_8c_a606f78ac8a9bdf59c7a520da2b2052e0}{\index{frontend\-\_\-opengl\-\_\-linux.\-c@{frontend\-\_\-opengl\-\_\-linux.\-c}!step@{step}}
+\index{step@{step}!frontend_opengl_linux.c@{frontend\-\_\-opengl\-\_\-linux.\-c}}
+\subsubsection[{step}]{\setlength{\rightskip}{0pt plus 5cm}int step (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ifrontendstate\-\_\-t} $\ast$}]{state}
+\end{DoxyParamCaption}
+)}}\label{frontend__opengl__linux_8c_a606f78ac8a9bdf59c7a520da2b2052e0}
+
+
+Definition at line 170 of file frontend\-\_\-opengl\-\_\-linux.\-c.
+
+
+\begin{DoxyCode}
+171 \{
+172         XNextEvent(\hyperlink{frontend__opengl__linux_8h_a7d43b3edf58f8d85a89852ab95b740f6}{dpy}, &\hyperlink{frontend__opengl__linux_8h_aa8a168b034976fcc1a0896de4a6ea64d}{xev});
+173         \textcolor{keywordflow}{if} (\hyperlink{frontend__opengl__linux_8h_aa8a168b034976fcc1a0896de4a6ea64d}{xev}.type == Expose)
+174                 \hyperlink{frontend__opengl__linux_8c_a740fe64ba30a741771700f190e164a9c}{frontend\_update}(state);
+175         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{frontend__opengl__linux_8h_aa8a168b034976fcc1a0896de4a6ea64d}{xev}.type == KeyPress) \{
+176                 \textcolor{keyword}{struct }\hyperlink{structievent__handler}{ievent\_handler} *h = state->
+      \hyperlink{structifrontendstate__t_ad8fd468eaec37b949af562b39ad20d5a}{onkeydown\_handlers}[\hyperlink{frontend__opengl__linux_8h_aa8a168b034976fcc1a0896de4a6ea64d}{xev}.xkey.keycode];
+177                 *(h->\hyperlink{structievent__handler_a320eaffc01d119279ead9c5ad877c6da}{handler})(h->\hyperlink{structievent__handler_ac6b4e6b5b95ada7b0d9985f738ffe1e5}{args}, (\textcolor{keywordtype}{void}*)&(\hyperlink{frontend__opengl__linux_8h_aa8a168b034976fcc1a0896de4a6ea64d}{xev}.xkey));
+178         \}
+179         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{frontend__opengl__linux_8h_aa8a168b034976fcc1a0896de4a6ea64d}{xev}.type == KeyRelease) \{ 
+180                 \textcolor{keyword}{struct }\hyperlink{structievent__handler}{ievent\_handler} *h = state->\hyperlink{structifrontendstate__t_a5bb9423c4ba5f86cd8a0d50575031952}{onkeyup\_handlers}[
+      \hyperlink{frontend__opengl__linux_8h_aa8a168b034976fcc1a0896de4a6ea64d}{xev}.xkey.keycode];
+181                 *(h->\hyperlink{structievent__handler_a320eaffc01d119279ead9c5ad877c6da}{handler})(h->\hyperlink{structievent__handler_ac6b4e6b5b95ada7b0d9985f738ffe1e5}{args}, (\textcolor{keywordtype}{void}*)&(\hyperlink{frontend__opengl__linux_8h_aa8a168b034976fcc1a0896de4a6ea64d}{xev}.xkey));
+182         \}
+183         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{frontend__opengl__linux_8h_aa8a168b034976fcc1a0896de4a6ea64d}{xev}.type == ClientMessage) \{
+184                 \hyperlink{frontend__opengl__linux_8c_a5f1d2e26db40b3636fb218810a872a03}{frontend\_free}();
+185                 \textcolor{keywordflow}{return} 1;
+186         \}
+187         \hyperlink{frontend__opengl__linux_8c_a740fe64ba30a741771700f190e164a9c}{frontend\_update}(state);
+188         \hyperlink{frontend__opengl__linux_8c_ad8a729cc49f33a0037227c75e1979ada}{frontend\_reset\_viewspace}(state);
+189         \textcolor{keywordflow}{return} 0;
+190 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frontend__opengl__linux_8c_a606f78ac8a9bdf59c7a520da2b2052e0_cgraph}
+\end{center}
+\end{figure}
+
+

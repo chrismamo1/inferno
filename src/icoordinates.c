@@ -203,6 +203,10 @@ struct ivector_t* ipush_vector(struct ivector_t *vector, struct ivector_t *direc
         return vector;
 }
 
+/** performs simple vector addition, v1 += v2
+ * @param *v1 a pointer to the destination vector
+ * @param *v2 a pointer to the source vector
+ */
 struct ivector_t* iadd_vector(struct ivector_t *v1, struct ivector_t *v2)
 {
         v1->x += v2->x;
@@ -210,6 +214,9 @@ struct ivector_t* iadd_vector(struct ivector_t *v1, struct ivector_t *v2)
         return v1;
 }
 
+/** prints a point all pretty-like
+ * @param *point the point to print
+ */
 void iprint_point(struct ipoint_t *restrict point)
 {
         printf("point " KYEL "@@%p" RESET ", coordinates(%f, %f, %d)\n", (void*)point,
@@ -246,11 +253,19 @@ struct iregion_t* icreate_region(int x, int y, uint32 width, uint32 height, stru
         return region;
 }
 
+/** prints a vector all pretty-like
+ * @param *vec the vector to print
+ * @todo make it prettier
+ */
 void iprint_vector(struct ivector_t *restrict vec)
 {
         printf("ivector_t @%p, (x, y) = (%lf, %lf)\n", (void*)vec, vec->x, vec->y);
 }
 
+/** a static inline homebrew strlen function so that I don't have to include the whole string.h header
+ * @param *string the string to find the length of
+ * @return length of the string, in number of characters
+ */
 static inline size_t str_len(char *string)
                              // homebrew strlen function, because
                              // we really don't need the entire
@@ -258,9 +273,13 @@ static inline size_t str_len(char *string)
 {
         size_t i;
         for ( i = 0; *(string + i) != '\0'; ++i) ;
-        return i - 1;
+        return i;
 }
 
+/** prints a point all pretty-like to a new string
+ * @param *point a pointer to the point to print
+ * @return a string
+ */
 char* iprints_point(struct ipoint_t *restrict point)
 {
         char *buffer = malloc(64 * sizeof(char));
@@ -270,6 +289,6 @@ char* iprints_point(struct ipoint_t *restrict point)
                         point->y,
                         point->z
               );
-        buffer = realloc(buffer, str_len(buffer) + 1);
+        buffer = realloc(buffer, str_len(buffer));
         return buffer;
 }

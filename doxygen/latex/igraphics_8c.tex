@@ -1,0 +1,70 @@
+\hypertarget{igraphics_8c}{\section{src/igraphics.c File Reference}
+\label{igraphics_8c}\index{src/igraphics.\-c@{src/igraphics.\-c}}
+}
+{\ttfamily \#include \char`\"{}igraphics.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}frontend.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}iutils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}iprimitives.\-h\char`\"{}}\\*
+Include dependency graph for igraphics.\-c\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{igraphics_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{igraphics_8c_a59e056b979c3532457c54692f5af63b4}{draw\-\_\-object} (struct \hyperlink{structiobject__t}{iobject\-\_\-t} $\ast$object)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{igraphics_8c_a59e056b979c3532457c54692f5af63b4}{\index{igraphics.\-c@{igraphics.\-c}!draw\-\_\-object@{draw\-\_\-object}}
+\index{draw\-\_\-object@{draw\-\_\-object}!igraphics.c@{igraphics.\-c}}
+\subsubsection[{draw\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}void draw\-\_\-object (
+\begin{DoxyParamCaption}
+\item[{struct {\bf iobject\-\_\-t} $\ast$}]{object}
+\end{DoxyParamCaption}
+)}}\label{igraphics_8c_a59e056b979c3532457c54692f5af63b4}
+
+
+Definition at line 7 of file igraphics.\-c.
+
+
+\begin{DoxyCode}
+8 \{
+9         \textcolor{keyword}{struct }\hyperlink{structilinked__t}{ilinked\_t} *li = \textcolor{comment}{/*igetfirst\_linked(*/}\textcolor{keywordtype}{object}->triplets\textcolor{comment}{/*)*/};
+10         \textcolor{keywordflow}{for} ( ; li != NULL; li = li->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next}) \{
+11                 \hyperlink{frontend_8h_a0443993e9b09570d3b9ab2a6353be8c0}{frontend\_draw\_coloredtriplet}(li->
+      \hyperlink{structilinked__t_ac285ea385953cbd5a332b2cbab39b62b}{data});
+12         \}
+13         \textcolor{keywordflow}{return};
+14         \textcolor{keywordflow}{do} \{
+15                 \hyperlink{frontend_8h_a0443993e9b09570d3b9ab2a6353be8c0}{frontend\_draw\_coloredtriplet}(li->
+      \hyperlink{structilinked__t_ac285ea385953cbd5a332b2cbab39b62b}{data});
+16         \} \textcolor{keywordflow}{while} ( (li = \hyperlink{iutils_8c_a78c507c5fd82c0c4f5255213b3690b57}{igetnext\_linked}(li)) );
+17 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{igraphics_8c_a59e056b979c3532457c54692f5af63b4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{igraphics_8c_a59e056b979c3532457c54692f5af63b4_icgraph}
+\end{center}
+\end{figure}
+
+

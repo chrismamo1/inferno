@@ -1,0 +1,6 @@
+<map id="draw_object" name="draw_object">
+<area shape="rect" id="node2" href="$frontend_8h.html#a0443993e9b09570d3b9ab2a6353be8c0" title="frontend_draw_coloredtriplet" alt="" coords="147,5,333,32"/>
+<area shape="rect" id="node3" href="$iutils_8c.html#a78c507c5fd82c0c4f5255213b3690b57" title="igetnext_linked" alt="" coords="185,56,295,83"/>
+<area shape="rect" id="node4" href="$error_8c.html#ab10bea042bb9daa7a0e027197b8080e5" title="ierror" alt="" coords="381,56,432,83"/>
+<area shape="rect" id="node5" href="$error_8c.html#ac1727d6e8e99b92957a0a7099d19d6f4" title="print_error" alt="" coords="480,56,560,83"/>
+</map>

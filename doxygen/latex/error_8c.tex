@@ -1,0 +1,197 @@
+\hypertarget{error_8c}{\section{src/error.c File Reference}
+\label{error_8c}\index{src/error.\-c@{src/error.\-c}}
+}
+{\ttfamily \#include \char`\"{}error.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}iprettyconsole.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+Include dependency graph for error.\-c\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{error_8c_a3dccf4da7c4aabf6f10a72c80baa5b9f}{idie} (int error)
+\item 
+static void \hyperlink{error_8c_ac1727d6e8e99b92957a0a7099d19d6f4}{print\-\_\-error} (int error, char $\ast$message, int iswarning)
+\item 
+int \hyperlink{error_8c_ab10bea042bb9daa7a0e027197b8080e5}{ierror} (int error)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{error_8c_a115185aff727ba2ac3079ebef145354d}{ishowerrors} = 1
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{error_8c_a3dccf4da7c4aabf6f10a72c80baa5b9f}{\index{error.\-c@{error.\-c}!idie@{idie}}
+\index{idie@{idie}!error.c@{error.\-c}}
+\subsubsection[{idie}]{\setlength{\rightskip}{0pt plus 5cm}int idie (
+\begin{DoxyParamCaption}
+\item[{int}]{error}
+\end{DoxyParamCaption}
+)}}\label{error_8c_a3dccf4da7c4aabf6f10a72c80baa5b9f}
+\hypertarget{error_8c_ab10bea042bb9daa7a0e027197b8080e5}{\index{error.\-c@{error.\-c}!ierror@{ierror}}
+\index{ierror@{ierror}!error.c@{error.\-c}}
+\subsubsection[{ierror}]{\setlength{\rightskip}{0pt plus 5cm}int ierror (
+\begin{DoxyParamCaption}
+\item[{int}]{error}
+\end{DoxyParamCaption}
+)}}\label{error_8c_ab10bea042bb9daa7a0e027197b8080e5}
+Inferno's error handling function 
+\begin{DoxyParams}{Parameters}
+{\em error} & the error code that has been encountered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an integer specifying the severity of the error 
+\end{DoxyReturn}
+
+
+Definition at line 29 of file error.\-c.
+
+
+\begin{DoxyCode}
+30 \{
+31         \textcolor{keywordflow}{switch} (error) \{
+32         \textcolor{keywordflow}{case} \hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55bac52ce3dc72e9de7cd173594b72138a02}{I\_INITIALIZATION\_ERROR}:
+33                 \textcolor{keywordflow}{if}(\hyperlink{error_8c_a115185aff727ba2ac3079ebef145354d}{ishowerrors}) 
+34                         \hyperlink{error_8c_ac1727d6e8e99b92957a0a7099d19d6f4}{print\_error}(\hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55bac52ce3dc72e9de7cd173594b72138a02}{I\_INITIALIZATION\_ERROR}, 
+35                                     \textcolor{stringliteral}{"problem initializing inferno object."},
+36                                     0
+37                                    );
+38                 \textcolor{keywordflow}{return} 1;
+39         \textcolor{keywordflow}{case} \hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55ba4f043634eb144415a83e7e49adb15d4a}{I\_UNDEFINED\_EVENT\_HANDLER\_ERROR}:
+40                 \textcolor{keywordflow}{if}(\hyperlink{error_8c_a115185aff727ba2ac3079ebef145354d}{ishowerrors}) 
+41                         \hyperlink{error_8c_ac1727d6e8e99b92957a0a7099d19d6f4}{print\_error}(\hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55ba4f043634eb144415a83e7e49adb15d4a}{I\_UNDEFINED\_EVENT\_HANDLER\_ERROR}
+      ,
+42                                     \textcolor{stringliteral}{"trying to call an undefined event handler."},
+43                                     1
+44                                    );
+45                 \textcolor{keywordflow}{return} 1;
+46         \textcolor{keywordflow}{case} \hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55ba0155494d2502d24c87bdcab2830802de}{I\_NULL\_LINKED\_ERROR}:
+47                 \textcolor{keywordflow}{if}(\hyperlink{error_8c_a115185aff727ba2ac3079ebef145354d}{ishowerrors}) 
+48                         \hyperlink{error_8c_ac1727d6e8e99b92957a0a7099d19d6f4}{print\_error}(\hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55ba0155494d2502d24c87bdcab2830802de}{I\_NULL\_LINKED\_ERROR},
+49                                     \textcolor{stringliteral}{"trying to access a null linked list element node."},
+50                                     1
+51                                    );
+52                 \textcolor{keywordflow}{return} 2;
+53         \textcolor{keywordflow}{case} \hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55ba67a045addd07db0dbf120c909105a375}{I\_BAD\_TRIPLET\_ERROR}:
+54                 \textcolor{keywordflow}{if}(\hyperlink{error_8c_a115185aff727ba2ac3079ebef145354d}{ishowerrors}) 
+55                         \hyperlink{error_8c_ac1727d6e8e99b92957a0a7099d19d6f4}{print\_error}(\hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55ba67a045addd07db0dbf120c909105a375}{I\_BAD\_TRIPLET\_ERROR},
+56                                     \textcolor{stringliteral}{"trying to use a defective triplet, maybe two of the points
+       accidentally have the same address or value?"},
+57                                     0
+58                                    );
+59                 \textcolor{keywordflow}{return} 1;
+60         \textcolor{keywordflow}{case} \hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55bad7fcde3f033c9c24f92c3afcb2bb3238}{I\_FRONTEND\_INITIALIZATION\_ERROR}:
+61                 \textcolor{keywordflow}{if}(\hyperlink{error_8c_a115185aff727ba2ac3079ebef145354d}{ishowerrors}) 
+62                         \hyperlink{error_8c_ac1727d6e8e99b92957a0a7099d19d6f4}{print\_error}(\hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55bad7fcde3f033c9c24f92c3afcb2bb3238}{I\_FRONTEND\_INITIALIZATION\_ERROR}
+      ,
+63                                     \textcolor{stringliteral}{"problem setting up your frontend."},
+64                                     0
+65                                    );
+66                 \textcolor{keywordflow}{return} 2;
+67         \textcolor{keywordflow}{case} \hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55ba1ed2580ed7646ff8fde5b8f10f476083}{I\_ERROR\_ERROR}:
+68                 \textcolor{keywordflow}{if}(\hyperlink{error_8c_a115185aff727ba2ac3079ebef145354d}{ishowerrors}) 
+69                         \hyperlink{error_8c_ac1727d6e8e99b92957a0a7099d19d6f4}{print\_error}(\hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55ba1ed2580ed7646ff8fde5b8f10f476083}{I\_ERROR\_ERROR},
+70                                     \textcolor{stringliteral}{"trying to throw a nonexistent error."},
+71                                     1
+72                                    );
+73                 \textcolor{keywordflow}{return} 1;
+74         \textcolor{keywordflow}{case} \hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55ba5533863256dcb6d3efdfe981103a3120}{I\_IMPOSSIBLE\_ERROR}:
+75                 \textcolor{keywordflow}{if} (\hyperlink{error_8c_a115185aff727ba2ac3079ebef145354d}{ishowerrors})
+76                         \hyperlink{error_8c_ac1727d6e8e99b92957a0a7099d19d6f4}{print\_error}(\hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55ba5533863256dcb6d3efdfe981103a3120}{I\_IMPOSSIBLE\_ERROR},
+77                                     \textcolor{stringliteral}{"the program has just reached a point that you thought was impossible
+       to reach, and you decided to not handle it just in case, instead opting to make it throw the \(\backslash\)""} 
+      \hyperlink{iprettyconsole_8h_a66290957baed5df3930ada4cb8caccf1}{KRED} \textcolor{stringliteral}{"I\_IMPOSSIBLE\_ERROR"} \hyperlink{iprettyconsole_8h_ab702106cf3b3e96750b6845ded4e0299}{RESET} \textcolor{stringliteral}{"\(\backslash\)" just to tempt fate."},
+78                                     0);
+79                 \textcolor{keywordflow}{return} 2;
+80         \textcolor{keywordflow}{default}:
+81                 \textcolor{keywordflow}{return} \hyperlink{error_8c_ab10bea042bb9daa7a0e027197b8080e5}{ierror}(\hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55ba1ed2580ed7646ff8fde5b8f10f476083}{I\_ERROR\_ERROR});
+82         \}
+83 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{error_8c_ab10bea042bb9daa7a0e027197b8080e5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error_8c_ab10bea042bb9daa7a0e027197b8080e5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{error_8c_ac1727d6e8e99b92957a0a7099d19d6f4}{\index{error.\-c@{error.\-c}!print\-\_\-error@{print\-\_\-error}}
+\index{print\-\_\-error@{print\-\_\-error}!error.c@{error.\-c}}
+\subsubsection[{print\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}static void print\-\_\-error (
+\begin{DoxyParamCaption}
+\item[{int}]{error, }
+\item[{char $\ast$}]{message, }
+\item[{int}]{iswarning}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{error_8c_ac1727d6e8e99b92957a0a7099d19d6f4}
+Handles printing of errors. Static function, only to be called by ierror 
+\begin{DoxyParams}{Parameters}
+{\em error} & the integer code of the error to be printed \\
+\hline
+{\em $\ast$message} & the message to tell the user \\
+\hline
+{\em iswarning} & bool, determines the message prefix and its color \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file error.\-c.
+
+
+\begin{DoxyCode}
+16 \{
+17         \textcolor{keywordflow}{if} (iswarning)
+18                 fprintf(stderr, \hyperlink{iprettyconsole_8h_a897b10d246533c95ba86cb79f92e465a}{KYEL} \textcolor{stringliteral}{"WARNING %d"} \hyperlink{iprettyconsole_8h_ab702106cf3b3e96750b6845ded4e0299}{RESET}, error);
+19         \textcolor{keywordflow}{else}
+20                 fprintf(stderr, \hyperlink{iprettyconsole_8h_a66290957baed5df3930ada4cb8caccf1}{KRED} \textcolor{stringliteral}{"ERROR %d"} \hyperlink{iprettyconsole_8h_ab702106cf3b3e96750b6845ded4e0299}{RESET}, error);
+21         fprintf(stdout, \textcolor{stringliteral}{": %s\(\backslash\)n"}, message);
+22         \textcolor{keywordflow}{return};
+23 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error_8c_ac1727d6e8e99b92957a0a7099d19d6f4_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{error_8c_a115185aff727ba2ac3079ebef145354d}{\index{error.\-c@{error.\-c}!ishowerrors@{ishowerrors}}
+\index{ishowerrors@{ishowerrors}!error.c@{error.\-c}}
+\subsubsection[{ishowerrors}]{\setlength{\rightskip}{0pt plus 5cm}int ishowerrors = 1}}\label{error_8c_a115185aff727ba2ac3079ebef145354d}
+
+
+Definition at line 6 of file error.\-c.
+

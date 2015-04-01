@@ -1,0 +1,1034 @@
+\hypertarget{iutils_8c}{\section{src/iutils.c File Reference}
+\label{iutils_8c}\index{src/iutils.\-c@{src/iutils.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}iutils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}icoordinates.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}error.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}itypes.\-h\char`\"{}}\\*
+Include dependency graph for iutils.\-c\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{iutils_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{iutils_8c_ad9b6aaf19fdac7482cc5e8bbb77cb796}{ifast\-\_\-bigpow} (float base, float power)
+\item 
+float \hyperlink{iutils_8c_ac8fed0eb9501e0cdf9ee92fb58c0d8eb}{ifast\-\_\-smallpow} (float base, float power)
+\item 
+float \hyperlink{iutils_8c_a1c96160b622425f63f2566171feda038}{ifast\-\_\-rsqrt} (float x)
+\begin{DoxyCompactList}\small\item\em All credit the the authors of the Quake engine. \end{DoxyCompactList}\item 
+float \hyperlink{iutils_8c_a99799aeb9cb7fb340a3cec124d429764}{ifast\-\_\-sqrt} (float x)
+\item 
+int \hyperlink{iutils_8c_afd023cba92b054b0902b7e79b751e3cb}{inmin} (int $\ast$restrict arr, unsigned int length)
+\item 
+int \hyperlink{iutils_8c_a63f5dd85a7ce4fb2770c82a0b21cab09}{inmax} (int $\ast$restrict arr, unsigned int length)
+\item 
+int $\ast$ \hyperlink{iutils_8c_ad0ad5e5cbedd00755591bbb6a2862d97}{infastsort} (int $\ast$restrict arr, unsigned int len)
+\item 
+float \hyperlink{iutils_8c_a0f9358d11318a553a072c0384b8ed6d9}{iget\-\_\-distance} (struct \hyperlink{structipoint__t}{ipoint\-\_\-t} $\ast$restrict p1, struct \hyperlink{structipoint__t}{ipoint\-\_\-t} $\ast$restrict p2)
+\item 
+struct \hyperlink{structipoint__t}{ipoint\-\_\-t} $\ast$ \hyperlink{iutils_8c_af19f54fefe2f16b8a7fba23fc7f67de5}{igetclosest\-\_\-point\-\_\-linked} (struct \hyperlink{structipoint__t}{ipoint\-\_\-t} $\ast$p, struct \hyperlink{structilinked__t}{ilinked\-\_\-t} $\ast$list, float epsilon)
+\item 
+struct \hyperlink{structilinked__t}{ilinked\-\_\-t} $\ast$ \hyperlink{iutils_8c_a168fc457c8928038cb3c471bc5fdf170}{inew\-\_\-linked} (void $\ast$data)
+\item 
+struct \hyperlink{structilinked__t}{ilinked\-\_\-t} $\ast$ \hyperlink{iutils_8c_afa917800755bb3e467deb597d34f674e}{iget\-\_\-linked} (struct \hyperlink{structilinked__t}{ilinked\-\_\-t} $\ast$list, int index)
+\item 
+struct \hyperlink{structilinked__t}{ilinked\-\_\-t} $\ast$ \hyperlink{iutils_8c_a87ccc53b520060810c7be2e2243e6397}{iset\-\_\-linked} (struct \hyperlink{structilinked__t}{ilinked\-\_\-t} $\ast$restrict list, int index, void $\ast$data)
+\item 
+struct \hyperlink{structilinked__t}{ilinked\-\_\-t} $\ast$ \hyperlink{iutils_8c_a67413257923db7c88d91a7e706024e98}{iadd\-\_\-linked} (struct \hyperlink{structilinked__t}{ilinked\-\_\-t} $\ast$list, struct \hyperlink{structilinked__t}{ilinked\-\_\-t} $\ast$n)
+\item 
+struct \hyperlink{structilinked__t}{ilinked\-\_\-t} $\ast$ \hyperlink{iutils_8c_acf8aca63685fbd6b4c995516baedab14}{igetfirst\-\_\-linked} (struct \hyperlink{structilinked__t}{ilinked\-\_\-t} $\ast$list)
+\item 
+struct \hyperlink{structilinked__t}{ilinked\-\_\-t} $\ast$ \hyperlink{iutils_8c_af8939cbd050e1b0099ca01f4ff127e9c}{igetlast\-\_\-linked} (struct \hyperlink{structilinked__t}{ilinked\-\_\-t} $\ast$list)
+\item 
+struct \hyperlink{structilinked__t}{ilinked\-\_\-t} $\ast$ \hyperlink{iutils_8c_a78c507c5fd82c0c4f5255213b3690b57}{igetnext\-\_\-linked} (struct \hyperlink{structilinked__t}{ilinked\-\_\-t} $\ast$restrict list)
+\item 
+struct \hyperlink{structilinked__t}{ilinked\-\_\-t} $\ast$ \hyperlink{iutils_8c_ab23b2e52f032125daf0977aba08bc1e6}{iremove\-\_\-linked} (struct \hyperlink{structilinked__t}{ilinked\-\_\-t} $\ast$list)
+\item 
+int \hyperlink{iutils_8c_a33e3d3f35e70f3424c71ffaf21fdefa2}{icontains\-\_\-linked} (struct \hyperlink{structilinked__t}{ilinked\-\_\-t} $\ast$list, void $\ast$data)
+\item 
+struct \hyperlink{structilinked__t}{ilinked\-\_\-t} $\ast$ \hyperlink{iutils_8c_a40c74bf6618e54c690f2917d11c0076d}{iaddunique\-\_\-linked} (struct \hyperlink{structilinked__t}{ilinked\-\_\-t} $\ast$list, struct \hyperlink{structilinked__t}{ilinked\-\_\-t} $\ast$n)
+\item 
+void \hyperlink{iutils_8c_a758cf0f59ad81b8c8eb0b91ae6bf03a3}{ifree\-\_\-linked} (struct \hyperlink{structilinked__t}{ilinked\-\_\-t} $\ast$list, char free\-\_\-contents)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{iutils_8c_a67413257923db7c88d91a7e706024e98}{\index{iutils.\-c@{iutils.\-c}!iadd\-\_\-linked@{iadd\-\_\-linked}}
+\index{iadd\-\_\-linked@{iadd\-\_\-linked}!iutils.c@{iutils.\-c}}
+\subsubsection[{iadd\-\_\-linked}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf ilinked\-\_\-t}$\ast$ iadd\-\_\-linked (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ilinked\-\_\-t} $\ast$}]{list, }
+\item[{struct {\bf ilinked\-\_\-t} $\ast$}]{n}
+\end{DoxyParamCaption}
+)}}\label{iutils_8c_a67413257923db7c88d91a7e706024e98}
+
+
+Definition at line 332 of file iutils.\-c.
+
+
+\begin{DoxyCode}
+333 \{
+334         \textcolor{keyword}{struct }\hyperlink{structilinked__t}{ilinked\_t} *rval = list;
+335         \textcolor{keywordflow}{if} (n == NULL) \{
+336                 \hyperlink{error_8c_ab10bea042bb9daa7a0e027197b8080e5}{ierror}(\hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55ba0155494d2502d24c87bdcab2830802de}{I\_NULL\_LINKED\_ERROR});
+337                 \textcolor{keywordflow}{return} list;
+338         \}
+339         \textcolor{keywordflow}{if} (n->\hyperlink{structilinked__t_a6bace3c90bc1b272be7506fe4d259a71}{previous} != NULL) \{
+340                 \hyperlink{error_8c_ab10bea042bb9daa7a0e027197b8080e5}{ierror}(\hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55ba0155494d2502d24c87bdcab2830802de}{I\_NULL\_LINKED\_ERROR});
+341                 \textcolor{keywordflow}{return} NULL;
+342         \}
+343         \textcolor{keywordflow}{if} (list == NULL) \{
+344                 n->\hyperlink{structilinked__t_a6bace3c90bc1b272be7506fe4d259a71}{previous} = NULL;
+345                 n->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next} = NULL;
+346                 \textcolor{keywordflow}{return} n;
+347         \}
+348         \textcolor{keywordflow}{for} ( ; list->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next} != NULL; list = list->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next}) ;
+349         list->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next} = n;
+350         n->\hyperlink{structilinked__t_a6bace3c90bc1b272be7506fe4d259a71}{previous} = list;
+351         \textcolor{keywordflow}{return} rval;
+352 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{iutils_8c_a67413257923db7c88d91a7e706024e98_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{iutils_8c_a67413257923db7c88d91a7e706024e98_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{iutils_8c_a40c74bf6618e54c690f2917d11c0076d}{\index{iutils.\-c@{iutils.\-c}!iaddunique\-\_\-linked@{iaddunique\-\_\-linked}}
+\index{iaddunique\-\_\-linked@{iaddunique\-\_\-linked}!iutils.c@{iutils.\-c}}
+\subsubsection[{iaddunique\-\_\-linked}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf ilinked\-\_\-t}$\ast$ iaddunique\-\_\-linked (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ilinked\-\_\-t} $\ast$}]{list, }
+\item[{struct {\bf ilinked\-\_\-t} $\ast$}]{n}
+\end{DoxyParamCaption}
+)}}\label{iutils_8c_a40c74bf6618e54c690f2917d11c0076d}
+
+
+Definition at line 408 of file iutils.\-c.
+
+
+\begin{DoxyCode}
+409 \{
+410         \textcolor{keywordflow}{if} (!\hyperlink{iutils_8c_a33e3d3f35e70f3424c71ffaf21fdefa2}{icontains\_linked}(list, n->\hyperlink{structilinked__t_ac285ea385953cbd5a332b2cbab39b62b}{data}))
+411                 \hyperlink{iutils_8c_a67413257923db7c88d91a7e706024e98}{iadd\_linked}(list, n);
+412         \textcolor{keywordflow}{else}
+413                 \textcolor{keywordflow}{return} NULL;
+414         \textcolor{keywordflow}{return} list;
+415 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{iutils_8c_a40c74bf6618e54c690f2917d11c0076d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{iutils_8c_a33e3d3f35e70f3424c71ffaf21fdefa2}{\index{iutils.\-c@{iutils.\-c}!icontains\-\_\-linked@{icontains\-\_\-linked}}
+\index{icontains\-\_\-linked@{icontains\-\_\-linked}!iutils.c@{iutils.\-c}}
+\subsubsection[{icontains\-\_\-linked}]{\setlength{\rightskip}{0pt plus 5cm}int icontains\-\_\-linked (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ilinked\-\_\-t} $\ast$}]{list, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{iutils_8c_a33e3d3f35e70f3424c71ffaf21fdefa2}
+
+
+Definition at line 398 of file iutils.\-c.
+
+
+\begin{DoxyCode}
+400 \{
+401         list = \hyperlink{iutils_8c_acf8aca63685fbd6b4c995516baedab14}{igetfirst\_linked}(list);
+402         \textcolor{keywordflow}{for} ( ; list != NULL; list=list->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next})
+403                 \textcolor{keywordflow}{if} (list->\hyperlink{structilinked__t_ac285ea385953cbd5a332b2cbab39b62b}{data} == \hyperlink{structilinked__t_ac285ea385953cbd5a332b2cbab39b62b}{data})
+404                         \textcolor{keywordflow}{return} 1;
+405         \textcolor{keywordflow}{return} 0;
+406 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{iutils_8c_a33e3d3f35e70f3424c71ffaf21fdefa2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{iutils_8c_a33e3d3f35e70f3424c71ffaf21fdefa2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{iutils_8c_ad9b6aaf19fdac7482cc5e8bbb77cb796}{\index{iutils.\-c@{iutils.\-c}!ifast\-\_\-bigpow@{ifast\-\_\-bigpow}}
+\index{ifast\-\_\-bigpow@{ifast\-\_\-bigpow}!iutils.c@{iutils.\-c}}
+\subsubsection[{ifast\-\_\-bigpow}]{\setlength{\rightskip}{0pt plus 5cm}float ifast\-\_\-bigpow (
+\begin{DoxyParamCaption}
+\item[{float}]{base, }
+\item[{float}]{power}
+\end{DoxyParamCaption}
+)}}\label{iutils_8c_ad9b6aaf19fdac7482cc5e8bbb77cb796}
+\begin{DoxyAuthor}{Author}
+John Christopher Mc\-Alpine 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000002}{Todo}]Let this be a warning to you\-: I have abused the ever loving S\-H\-I\-T out of Hungarian notation up in 'hyah. \end{DoxyRefDesc}
+Computes the approximate result of the expression base $^\wedge$ power where power $>$ 1 
+\begin{DoxyParams}{Parameters}
+{\em base} & the base of the operation \\
+\hline
+{\em power} & the exponent in the expression \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+
+
+Definition at line 26 of file iutils.\-c.
+
+
+\begin{DoxyCode}
+27 \{
+28         \textcolor{keywordflow}{if} (power == 0.) \textcolor{keywordflow}{return} 1.;
+29         \textcolor{keywordflow}{if} (base == 0) \textcolor{keywordflow}{return} 0;
+30         \textcolor{keywordflow}{if} (power < 0) \textcolor{keywordflow}{return} (1. / \hyperlink{iutils_8c_ad9b6aaf19fdac7482cc5e8bbb77cb796}{ifast\_bigpow}(base, \hyperlink{iutils_8h_a7f5fe1ad1f9cffade0a71678a8446532}{ifabs}((\textcolor{keywordtype}{int})power)))
+31                 * \hyperlink{iutils_8c_ac8fed0eb9501e0cdf9ee92fb58c0d8eb}{ifast\_smallpow}(base, power - (\textcolor{keywordtype}{float})((\textcolor{keywordtype}{int})power));
+32         \textcolor{keywordflow}{if} (power == 1.) \textcolor{keywordflow}{return} base;
+33         \textcolor{keywordtype}{float} big\_part = base * \hyperlink{iutils_8c_ac8fed0eb9501e0cdf9ee92fb58c0d8eb}{ifast\_smallpow}(base, power - (\textcolor{keywordtype}{float})( (\textcolor{keywordtype}{int}) power )); \textcolor{comment}{//
+       because base**power}
+34                                                                                       \textcolor{comment}{// is equal to the
+       small}
+35                                                                                       \textcolor{comment}{// part times the big}
+36                                                                                       \textcolor{comment}{// part}
+37         \textcolor{keywordtype}{int} big\_exponent = (int)power; \textcolor{comment}{// casting + truncation + ??? = profit}
+38         \textcolor{keywordflow}{for} ( ; big\_exponent > 1; --big\_exponent) \textcolor{comment}{// using prefix decrement because fuck you that's why}
+39                 big\_part *= base;
+40         \textcolor{keywordflow}{return} big\_part;
+41 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{iutils_8c_ad9b6aaf19fdac7482cc5e8bbb77cb796_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{iutils_8c_a1c96160b622425f63f2566171feda038}{\index{iutils.\-c@{iutils.\-c}!ifast\-\_\-rsqrt@{ifast\-\_\-rsqrt}}
+\index{ifast\-\_\-rsqrt@{ifast\-\_\-rsqrt}!iutils.c@{iutils.\-c}}
+\subsubsection[{ifast\-\_\-rsqrt}]{\setlength{\rightskip}{0pt plus 5cm}float ifast\-\_\-rsqrt (
+\begin{DoxyParamCaption}
+\item[{float}]{x}
+\end{DoxyParamCaption}
+)}}\label{iutils_8c_a1c96160b622425f63f2566171feda038}
+
+
+All credit the the authors of the Quake engine. 
+
+A fast reverse square root hack based on the public Quake I\-I Source. 
+\begin{DoxyParams}{Parameters}
+{\em x} & the value to be reverse root-\/ing. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+
+
+Definition at line 69 of file iutils.\-c.
+
+
+\begin{DoxyCode}
+70 \{
+71         \textcolor{keywordtype}{float} xhalf = 0.5f * x;
+72         \textcolor{keyword}{union }\{
+73                 \textcolor{keywordtype}{int} i;
+74                 \textcolor{keywordtype}{float} f;
+75         \} data = \{ .f = x \};
+76         \textcolor{comment}{//int i = *(int*)&x;         // evil floating point bit level hacking}
+77         data.i = 0x5f3759df - (data.i >> 1);  \textcolor{comment}{// what the fuck?}
+78         \textcolor{comment}{//x = *(float*)&i;}
+79         data.f = data.f*(1.5f-(xhalf*data.f*data.f));
+80         \textcolor{keywordflow}{return} data.f;
+81 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{iutils_8c_a1c96160b622425f63f2566171feda038_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{iutils_8c_ac8fed0eb9501e0cdf9ee92fb58c0d8eb}{\index{iutils.\-c@{iutils.\-c}!ifast\-\_\-smallpow@{ifast\-\_\-smallpow}}
+\index{ifast\-\_\-smallpow@{ifast\-\_\-smallpow}!iutils.c@{iutils.\-c}}
+\subsubsection[{ifast\-\_\-smallpow}]{\setlength{\rightskip}{0pt plus 5cm}float ifast\-\_\-smallpow (
+\begin{DoxyParamCaption}
+\item[{float}]{base, }
+\item[{float}]{power}
+\end{DoxyParamCaption}
+)}}\label{iutils_8c_ac8fed0eb9501e0cdf9ee92fb58c0d8eb}
+Computes the approximates result of the expression base $^\wedge$ power where power is between 1 and -\/1. 
+\begin{DoxyParams}{Parameters}
+{\em base} & the base of the expression \\
+\hline
+{\em power} & the power of the expression \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+
+
+Definition at line 48 of file iutils.\-c.
+
+
+\begin{DoxyCode}
+50 \{
+51         \textcolor{keywordflow}{if} (power == 0) \textcolor{keywordflow}{return} 1;
+52         \textcolor{keywordflow}{if} (power < 0) \{
+53                 \textcolor{keywordflow}{if} (power == -0.5) \textcolor{keywordflow}{return} \hyperlink{iutils_8c_a1c96160b622425f63f2566171feda038}{ifast\_rsqrt}(base);
+54                 \textcolor{keywordflow}{return} 1/\hyperlink{iutils_8c_ac8fed0eb9501e0cdf9ee92fb58c0d8eb}{ifast\_smallpow}(base, \hyperlink{iutils_8h_a7f5fe1ad1f9cffade0a71678a8446532}{ifabs}(power));
+55         \}
+56         \textcolor{keyword}{union }\{
+57                 \textcolor{keywordtype}{int} i;
+58                 \textcolor{keywordtype}{float} f;
+59         \} data = \{ .f = base \}; \textcolor{comment}{/* why do it in one line when you can do it in four? */}
+60         data.i = 0x3f7a3bea + power * (data.i - 0x3f7a3bea); \textcolor{comment}{// evil bit-level hack, it was hard to write
+       so it should}
+61                                                              \textcolor{comment}{// be hard to read too, bitch :)}
+62         \textcolor{keywordflow}{return} data.f;
+63 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{iutils_8c_ac8fed0eb9501e0cdf9ee92fb58c0d8eb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{iutils_8c_ac8fed0eb9501e0cdf9ee92fb58c0d8eb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{iutils_8c_a99799aeb9cb7fb340a3cec124d429764}{\index{iutils.\-c@{iutils.\-c}!ifast\-\_\-sqrt@{ifast\-\_\-sqrt}}
+\index{ifast\-\_\-sqrt@{ifast\-\_\-sqrt}!iutils.c@{iutils.\-c}}
+\subsubsection[{ifast\-\_\-sqrt}]{\setlength{\rightskip}{0pt plus 5cm}float ifast\-\_\-sqrt (
+\begin{DoxyParamCaption}
+\item[{float}]{x}
+\end{DoxyParamCaption}
+)}}\label{iutils_8c_a99799aeb9cb7fb340a3cec124d429764}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000003}{Todo}]get rid of all those gorram iterations of Newton's method, except we need them for now to get good levels of precision. 
+
+why is it more accurate to just take the magic number hack for rsqrt and inverse it?!? 
+
+I'm sure that rearranging the terms in my Newton's method approximation could kill at least one operation \end{DoxyRefDesc}
+Fuck, I was using the wrong Newton's method, I think... 
+
+Definition at line 93 of file iutils.\-c.
+
+
+\begin{DoxyCode}
+94 \{
+95         \textcolor{keywordflow}{if} (x == 0) \textcolor{keywordflow}{return} x;           \textcolor{comment}{// this is necessary to keep it from breaking when x is 0}
+96         \textcolor{keywordtype}{float} xt2 = 2*x;                \textcolor{comment}{// convenience constant for our Newton's Method calculations later}
+97         \textcolor{keyword}{union }\{
+98                 \textcolor{keywordtype}{int} i;
+99                 \textcolor{keywordtype}{float} f;
+100         \} data = \{ .f = x \};
+101         \textcolor{comment}{//int i = *(int*)&x;              // interpret bits as an int}
+102         data.i = 0x1fbd1df5 + (data.i >> 1);      \textcolor{comment}{// wtf magic number hack, no helpful comment for this, it
+       was hard}
+103                                         \textcolor{comment}{// to write so it should be hard to read}
+104         \textcolor{comment}{//float y = *(float*)&i;        // reinterpret as a single precision float}
+106 \textcolor{comment}{}        data.f = data.f - ((data.f * data.f) - x)/xt2;      \textcolor{comment}{// 1st iteration of Newton's method for
+       additional precision}
+107         data.f = data.f - ((data.f * data.f) - x)/xt2;      \textcolor{comment}{// 2nd iteration of Newton's method, can this
+       be removed?}
+108         \textcolor{keywordflow}{return} data.f;
+109 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{iutils_8c_a99799aeb9cb7fb340a3cec124d429764_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{iutils_8c_a758cf0f59ad81b8c8eb0b91ae6bf03a3}{\index{iutils.\-c@{iutils.\-c}!ifree\-\_\-linked@{ifree\-\_\-linked}}
+\index{ifree\-\_\-linked@{ifree\-\_\-linked}!iutils.c@{iutils.\-c}}
+\subsubsection[{ifree\-\_\-linked}]{\setlength{\rightskip}{0pt plus 5cm}void ifree\-\_\-linked (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ilinked\-\_\-t} $\ast$}]{list, }
+\item[{char}]{free\-\_\-contents}
+\end{DoxyParamCaption}
+)}}\label{iutils_8c_a758cf0f59ad81b8c8eb0b91ae6bf03a3}
+
+
+Definition at line 417 of file iutils.\-c.
+
+
+\begin{DoxyCode}
+419 \{
+420         \textcolor{keyword}{struct }\hyperlink{structilinked__t}{ilinked\_t} *tmp = NULL;
+421         \textcolor{keywordflow}{do} \{
+422                 tmp = list->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next};
+423                 \textcolor{keywordflow}{if} (free\_contents == 1 || free\_contents == \textcolor{charliteral}{'y'})
+424                 \textcolor{keywordflow}{switch} (free\_contents) \{
+425                         \textcolor{keywordflow}{case} 1: \textcolor{keywordflow}{case} \textcolor{charliteral}{'y'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'t'}:
+426                                 free(list->\hyperlink{structilinked__t_ac285ea385953cbd5a332b2cbab39b62b}{data});
+427                                 \textcolor{keywordflow}{break};
+428                         \textcolor{keywordflow}{case} 0: \textcolor{keywordflow}{case} \textcolor{charliteral}{'n'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'f'}: \textcolor{keywordflow}{default}:
+429                                 \textcolor{keywordflow}{break};
+430                 \}
+431                 free(list);
+432                 list = tmp;
+433         \} \textcolor{keywordflow}{while}(tmp != NULL);
+434 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{iutils_8c_a758cf0f59ad81b8c8eb0b91ae6bf03a3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{iutils_8c_a0f9358d11318a553a072c0384b8ed6d9}{\index{iutils.\-c@{iutils.\-c}!iget\-\_\-distance@{iget\-\_\-distance}}
+\index{iget\-\_\-distance@{iget\-\_\-distance}!iutils.c@{iutils.\-c}}
+\subsubsection[{iget\-\_\-distance}]{\setlength{\rightskip}{0pt plus 5cm}float iget\-\_\-distance (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ipoint\-\_\-t} $\ast$restrict}]{p1, }
+\item[{struct {\bf ipoint\-\_\-t} $\ast$restrict}]{p2}
+\end{DoxyParamCaption}
+)}}\label{iutils_8c_a0f9358d11318a553a072c0384b8ed6d9}
+
+
+Definition at line 266 of file iutils.\-c.
+
+
+\begin{DoxyCode}
+268 \{
+269         \textcolor{keywordtype}{float} dx = p1->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x} - p2->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x};
+270         \textcolor{keywordtype}{float} dy = p1->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y} - p2->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y};
+271         \textcolor{keywordtype}{int} dz   = p1->\hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z} - p2->\hyperlink{structipoint__t_ad1680bc07190dabf544e86824b82e44b}{z};
+272         \textcolor{keywordflow}{return} \hyperlink{iutils_8c_a99799aeb9cb7fb340a3cec124d429764}{ifast\_sqrt}(dx*dx + dy*dy + (\textcolor{keywordtype}{float}) (dz*dz));
+273 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{iutils_8c_a0f9358d11318a553a072c0384b8ed6d9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{iutils_8c_a0f9358d11318a553a072c0384b8ed6d9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{iutils_8c_afa917800755bb3e467deb597d34f674e}{\index{iutils.\-c@{iutils.\-c}!iget\-\_\-linked@{iget\-\_\-linked}}
+\index{iget\-\_\-linked@{iget\-\_\-linked}!iutils.c@{iutils.\-c}}
+\subsubsection[{iget\-\_\-linked}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf ilinked\-\_\-t}$\ast$ iget\-\_\-linked (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ilinked\-\_\-t} $\ast$}]{list, }
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{iutils_8c_afa917800755bb3e467deb597d34f674e}
+
+
+Definition at line 309 of file iutils.\-c.
+
+
+\begin{DoxyCode}
+311 \{
+312         \textcolor{keywordflow}{for} ( ; list->\hyperlink{structilinked__t_a6bace3c90bc1b272be7506fe4d259a71}{previous} != NULL; list = list->\hyperlink{structilinked__t_a6bace3c90bc1b272be7506fe4d259a71}{previous}) ;
+313         \textcolor{keywordtype}{int} i;
+314         \textcolor{keywordflow}{for} (i = 0; i < index; i++) \{
+315                 \textcolor{keywordflow}{if} (list->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next}==NULL) \textcolor{keywordflow}{return} NULL;
+316                 list = list->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next};
+317         \}
+318         \textcolor{keywordflow}{return} list;
+319 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{iutils_8c_afa917800755bb3e467deb597d34f674e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{iutils_8c_af19f54fefe2f16b8a7fba23fc7f67de5}{\index{iutils.\-c@{iutils.\-c}!igetclosest\-\_\-point\-\_\-linked@{igetclosest\-\_\-point\-\_\-linked}}
+\index{igetclosest\-\_\-point\-\_\-linked@{igetclosest\-\_\-point\-\_\-linked}!iutils.c@{iutils.\-c}}
+\subsubsection[{igetclosest\-\_\-point\-\_\-linked}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf ipoint\-\_\-t}$\ast$ igetclosest\-\_\-point\-\_\-linked (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ipoint\-\_\-t} $\ast$}]{p, }
+\item[{struct {\bf ilinked\-\_\-t} $\ast$}]{list, }
+\item[{float}]{epsilon}
+\end{DoxyParamCaption}
+)}}\label{iutils_8c_af19f54fefe2f16b8a7fba23fc7f67de5}
+
+
+Definition at line 275 of file iutils.\-c.
+
+
+\begin{DoxyCode}
+276 \{
+277         \textcolor{keywordtype}{float} cdist = epsilon + 1;
+278         list = \hyperlink{iutils_8c_acf8aca63685fbd6b4c995516baedab14}{igetfirst\_linked}(list);
+279         \textcolor{keyword}{struct }\hyperlink{structipoint__t}{ipoint\_t} *rval = NULL;
+280         \textcolor{keywordflow}{do} \{
+281                 \textcolor{keywordflow}{if} (list->\hyperlink{structilinked__t_ac285ea385953cbd5a332b2cbab39b62b}{data} == NULL)
+282                         \textcolor{keywordflow}{continue};
+283                 
+284                 \textcolor{keywordtype}{float} dist = \hyperlink{iutils_8c_a0f9358d11318a553a072c0384b8ed6d9}{iget\_distance}(p, list->\hyperlink{structilinked__t_ac285ea385953cbd5a332b2cbab39b62b}{data});
+285 
+286                 \textcolor{keywordflow}{if} (dist < cdist) \{
+287                         rval = list->\hyperlink{structilinked__t_ac285ea385953cbd5a332b2cbab39b62b}{data};
+288                         cdist = dist;
+289                 \}
+290         \} \textcolor{keywordflow}{while} ( (list = list->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next}) != NULL);
+291 
+292         \textcolor{keywordflow}{if} (cdist < epsilon) \textcolor{keywordflow}{return} rval;
+293         \textcolor{keywordflow}{return} NULL;
+294 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{iutils_8c_af19f54fefe2f16b8a7fba23fc7f67de5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{iutils_8c_acf8aca63685fbd6b4c995516baedab14}{\index{iutils.\-c@{iutils.\-c}!igetfirst\-\_\-linked@{igetfirst\-\_\-linked}}
+\index{igetfirst\-\_\-linked@{igetfirst\-\_\-linked}!iutils.c@{iutils.\-c}}
+\subsubsection[{igetfirst\-\_\-linked}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf ilinked\-\_\-t}$\ast$ igetfirst\-\_\-linked (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ilinked\-\_\-t} $\ast$}]{list}
+\end{DoxyParamCaption}
+)}}\label{iutils_8c_acf8aca63685fbd6b4c995516baedab14}
+
+
+Definition at line 354 of file iutils.\-c.
+
+
+\begin{DoxyCode}
+355 \{
+356         \textcolor{keywordflow}{if} (list == NULL) \{
+357                 \hyperlink{error_8c_ab10bea042bb9daa7a0e027197b8080e5}{ierror}(\hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55ba0155494d2502d24c87bdcab2830802de}{I\_NULL\_LINKED\_ERROR});
+358                 \textcolor{keywordflow}{return} NULL;
+359         \}
+360         \textcolor{keywordflow}{for} ( ; list->\hyperlink{structilinked__t_a6bace3c90bc1b272be7506fe4d259a71}{previous} != NULL; list = list->\hyperlink{structilinked__t_a6bace3c90bc1b272be7506fe4d259a71}{previous}) ;
+361         \textcolor{keywordflow}{return} list;
+362 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{iutils_8c_acf8aca63685fbd6b4c995516baedab14_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{iutils_8c_acf8aca63685fbd6b4c995516baedab14_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{iutils_8c_af8939cbd050e1b0099ca01f4ff127e9c}{\index{iutils.\-c@{iutils.\-c}!igetlast\-\_\-linked@{igetlast\-\_\-linked}}
+\index{igetlast\-\_\-linked@{igetlast\-\_\-linked}!iutils.c@{iutils.\-c}}
+\subsubsection[{igetlast\-\_\-linked}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf ilinked\-\_\-t}$\ast$ igetlast\-\_\-linked (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ilinked\-\_\-t} $\ast$}]{list}
+\end{DoxyParamCaption}
+)}}\label{iutils_8c_af8939cbd050e1b0099ca01f4ff127e9c}
+
+
+Definition at line 364 of file iutils.\-c.
+
+
+\begin{DoxyCode}
+365 \{
+366         \textcolor{keywordflow}{if} (list == NULL) \{
+367                 \hyperlink{error_8c_ab10bea042bb9daa7a0e027197b8080e5}{ierror}(\hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55ba0155494d2502d24c87bdcab2830802de}{I\_NULL\_LINKED\_ERROR});
+368                 \textcolor{keywordflow}{return} NULL;
+369         \}
+370         \textcolor{keywordflow}{for} ( ; list->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next} != NULL; list = list->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next}) ;
+371         \textcolor{keywordflow}{return} list;
+372 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{iutils_8c_af8939cbd050e1b0099ca01f4ff127e9c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{iutils_8c_af8939cbd050e1b0099ca01f4ff127e9c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{iutils_8c_a78c507c5fd82c0c4f5255213b3690b57}{\index{iutils.\-c@{iutils.\-c}!igetnext\-\_\-linked@{igetnext\-\_\-linked}}
+\index{igetnext\-\_\-linked@{igetnext\-\_\-linked}!iutils.c@{iutils.\-c}}
+\subsubsection[{igetnext\-\_\-linked}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf ilinked\-\_\-t}$\ast$ igetnext\-\_\-linked (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ilinked\-\_\-t} $\ast$restrict}]{list}
+\end{DoxyParamCaption}
+)}}\label{iutils_8c_a78c507c5fd82c0c4f5255213b3690b57}
+
+
+Definition at line 374 of file iutils.\-c.
+
+
+\begin{DoxyCode}
+375 \{
+376         \textcolor{keywordflow}{if} (list == NULL) \{
+377                 \hyperlink{error_8c_ab10bea042bb9daa7a0e027197b8080e5}{ierror}(\hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55ba0155494d2502d24c87bdcab2830802de}{I\_NULL\_LINKED\_ERROR});
+378                 \textcolor{keywordflow}{return} NULL;
+379         \}
+380         \textcolor{keywordflow}{return} list->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next};
+381 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{iutils_8c_a78c507c5fd82c0c4f5255213b3690b57_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{iutils_8c_a78c507c5fd82c0c4f5255213b3690b57_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{iutils_8c_a168fc457c8928038cb3c471bc5fdf170}{\index{iutils.\-c@{iutils.\-c}!inew\-\_\-linked@{inew\-\_\-linked}}
+\index{inew\-\_\-linked@{inew\-\_\-linked}!iutils.c@{iutils.\-c}}
+\subsubsection[{inew\-\_\-linked}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf ilinked\-\_\-t}$\ast$ inew\-\_\-linked (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{iutils_8c_a168fc457c8928038cb3c471bc5fdf170}
+
+
+Definition at line 296 of file iutils.\-c.
+
+
+\begin{DoxyCode}
+298 \{
+299         \textcolor{keyword}{struct }\hyperlink{structilinked__t}{ilinked\_t} *rval = malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \hyperlink{structilinked__t}{ilinked\_t}));
+300         \textcolor{keywordflow}{if} (rval == NULL) \{
+301                 \hyperlink{error_8c_ab10bea042bb9daa7a0e027197b8080e5}{ierror}(\hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55bac52ce3dc72e9de7cd173594b72138a02}{I\_INITIALIZATION\_ERROR});
+302         \}
+303         rval->\hyperlink{structilinked__t_ac285ea385953cbd5a332b2cbab39b62b}{data} = \hyperlink{structilinked__t_ac285ea385953cbd5a332b2cbab39b62b}{data};
+304         rval->\hyperlink{structilinked__t_a6bace3c90bc1b272be7506fe4d259a71}{previous} = NULL;
+305         rval->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next} = NULL;
+306         \textcolor{keywordflow}{return} rval;
+307 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{iutils_8c_a168fc457c8928038cb3c471bc5fdf170_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{iutils_8c_a168fc457c8928038cb3c471bc5fdf170_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{iutils_8c_ad0ad5e5cbedd00755591bbb6a2862d97}{\index{iutils.\-c@{iutils.\-c}!infastsort@{infastsort}}
+\index{infastsort@{infastsort}!iutils.c@{iutils.\-c}}
+\subsubsection[{infastsort}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ infastsort (
+\begin{DoxyParamCaption}
+\item[{int $\ast$restrict}]{arr, }
+\item[{unsigned int}]{len}
+\end{DoxyParamCaption}
+)}}\label{iutils_8c_ad0ad5e5cbedd00755591bbb6a2862d97}
+do a sane sorting algorithm
+
+God, please forgive me for this sin which I am about to commit
+
+(2), 1, (2), 0, (2)
+
+1, (2), 0, (2)
+
+1, 0, 2
+
+1, 2, 0
+
+2, 1, 0
+
+(2), 0, (2), 1, (2)
+
+0, (2), 1, (2)
+
+0, 1, 2
+
+0, 2, 1
+
+2, 0, 1 
+
+Definition at line 200 of file iutils.\-c.
+
+
+\begin{DoxyCode}
+201 \{
+202         \textcolor{keywordflow}{if} (len > 3) \{
+204                 \textcolor{keywordflow}{return} arr;
+205         \}
+207         \textcolor{keywordtype}{int} tmp;
+208         \textcolor{keywordflow}{switch} (len) \{
+209         \textcolor{keywordflow}{case} 1: \textcolor{keywordflow}{break};
+210         \textcolor{keywordflow}{case} 2:
+211                 \textcolor{keywordflow}{if} (arr[0] > arr[1]) \{
+212                         tmp = arr[0];
+213                         arr[0] = arr[1];
+214                         arr[1] = tmp;
+215                 \}
+216                 \textcolor{keywordflow}{break};
+217         \textcolor{keywordflow}{case} 3:
+218                 \textcolor{keywordflow}{if} (arr[0] > arr[1]) \{ 
+219                         \textcolor{keywordflow}{if} (arr[2] > arr[1]) \{  
+220                                 \textcolor{keywordflow}{if} (arr[2] > arr[0]) \{ 
+221                                         tmp = arr[0];
+222                                         arr[0] = arr[1];
+223                                         arr[1] = tmp;
+224                                         \textcolor{keywordflow}{break};
+225                                 \}
+227                                 tmp = arr[0];
+228                                 arr[0] = arr[1];
+229                                 arr[1] = arr[2];
+230                                 arr[2] = tmp;
+231                                 \textcolor{keywordflow}{break};
+232                         \} 
+233                         tmp = arr[0];
+234                         arr[0] = arr[2];
+235                         arr[2] = tmp;
+236                         \textcolor{keywordflow}{break};
+237                 \}
+239                 \textcolor{keywordflow}{if} (arr[2] > arr[0]) \{ 
+240                         \textcolor{keywordflow}{if} (arr[2] > arr[1]) \textcolor{keywordflow}{break}; 
+241                         tmp = arr[1];
+243                         arr[1] = arr[2];
+244                         arr[2] = tmp;
+245                         \textcolor{keywordflow}{break};
+246                 \}
+248                 tmp = arr[0];
+249                 \textcolor{keywordtype}{int} tmp2 = arr[1];
+250                 arr[0] = arr[2]; \textcolor{comment}{// 2, 1, 2}
+251                 arr[1] = tmp;    \textcolor{comment}{// 2, 0, 2}
+252                 arr[2] = tmp2;   \textcolor{comment}{// 2, 0, 1}
+253                 \textcolor{keywordflow}{break};
+254         \textcolor{comment}{/*case 4:}
+255 \textcolor{comment}{                int tmp;}
+256 \textcolor{comment}{                if (arr[0] < arr[1] && arr[0] < arr[2]) \{ /// 0, (1,2,3), (1,2,3), (1,2,3)}
+257 \textcolor{comment}{                        }
+258 \textcolor{comment}{                \}*/}
+259         \textcolor{keywordflow}{default}:
+260                 \hyperlink{error_8c_ab10bea042bb9daa7a0e027197b8080e5}{ierror}(\hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55ba5533863256dcb6d3efdfe981103a3120}{I\_IMPOSSIBLE\_ERROR});
+261                 \textcolor{keywordflow}{break};
+262         \}
+263         \textcolor{keywordflow}{return} arr;
+264 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{iutils_8c_ad0ad5e5cbedd00755591bbb6a2862d97_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{iutils_8c_a63f5dd85a7ce4fb2770c82a0b21cab09}{\index{iutils.\-c@{iutils.\-c}!inmax@{inmax}}
+\index{inmax@{inmax}!iutils.c@{iutils.\-c}}
+\subsubsection[{inmax}]{\setlength{\rightskip}{0pt plus 5cm}int inmax (
+\begin{DoxyParamCaption}
+\item[{int $\ast$restrict}]{arr, }
+\item[{unsigned int}]{length}
+\end{DoxyParamCaption}
+)}}\label{iutils_8c_a63f5dd85a7ce4fb2770c82a0b21cab09}
+
+
+Definition at line 145 of file iutils.\-c.
+
+
+\begin{DoxyCode}
+147 \{
+148         \textcolor{keywordtype}{int} len = length;
+149         \textcolor{keywordtype}{int} rval = arr[--len];
+150         \textcolor{keywordflow}{while} (len > 8) \{
+151                 \textcolor{keywordflow}{if} ( arr[len] > rval)
+152                         rval = arr[len];
+153                 \textcolor{keywordflow}{if} ( arr[len - 1] > rval)
+154                         rval = arr[len - 1];
+155                 \textcolor{keywordflow}{if} ( arr[len - 2] > rval)
+156                         rval = arr[len - 2];
+157                 \textcolor{keywordflow}{if} ( arr[len - 3] > rval)
+158                         rval = arr[len - 3];
+159                 \textcolor{keywordflow}{if} ( arr[len - 4] > rval)
+160                         rval = arr[len - 4];
+161                 \textcolor{keywordflow}{if} ( arr[len - 5] > rval)
+162                         rval = arr[len - 5];
+163                 \textcolor{keywordflow}{if} ( arr[len - 6] > rval)
+164                         rval = arr[len - 6];
+165                 \textcolor{keywordflow}{if} ( arr[len - 7] > rval)
+166                         rval = arr[len - 7];
+167                 len = len - 8;
+168         \}
+169 
+170         \textcolor{keywordflow}{for} (; len >= 0; --len)
+171                 \textcolor{keywordflow}{if} ( arr[len] > rval)
+172                         rval = arr[len];
+173         \textcolor{keywordflow}{return} rval;
+174 \}
+\end{DoxyCode}
+\hypertarget{iutils_8c_afd023cba92b054b0902b7e79b751e3cb}{\index{iutils.\-c@{iutils.\-c}!inmin@{inmin}}
+\index{inmin@{inmin}!iutils.c@{iutils.\-c}}
+\subsubsection[{inmin}]{\setlength{\rightskip}{0pt plus 5cm}int inmin (
+\begin{DoxyParamCaption}
+\item[{int $\ast$restrict}]{arr, }
+\item[{unsigned int}]{length}
+\end{DoxyParamCaption}
+)}}\label{iutils_8c_afd023cba92b054b0902b7e79b751e3cb}
+
+
+Definition at line 111 of file iutils.\-c.
+
+
+\begin{DoxyCode}
+114 \{
+115         \textcolor{keywordtype}{int} len = length;
+116         \textcolor{keywordtype}{int} rval = arr[--len];
+117         \textcolor{keywordflow}{while} (len > 8) \{
+118                 \textcolor{keywordflow}{if} ( arr[len] < rval)
+119                         rval = arr[len];
+120                 \textcolor{keywordflow}{if} ( arr[len - 1] < rval) \textcolor{comment}{// not using either decrement operator here because a decrement}
+121                                           \textcolor{comment}{// is actually a retrieval, subtraction, and an assignment, while}
+122                                           \textcolor{comment}{// this is just a retrieval and a subtraction.}
+123                         rval = arr[len - 1];
+124                 \textcolor{keywordflow}{if} ( arr[len - 2] < rval)
+125                         rval = arr[len - 2];
+126                 \textcolor{keywordflow}{if} ( arr[len - 3] < rval)
+127                         rval = arr[len - 3];
+128                 \textcolor{keywordflow}{if} ( arr[len - 4] < rval)
+129                         rval = arr[len - 4];
+130                 \textcolor{keywordflow}{if} ( arr[len - 5] < rval)
+131                         rval = arr[len - 5];
+132                 \textcolor{keywordflow}{if} ( arr[len - 6] < rval)
+133                         rval = arr[len - 6];
+134                 \textcolor{keywordflow}{if} ( arr[len - 7] < rval)
+135                         rval = arr[len - 7];
+136                 len = len - 8;
+137         \}
+138 
+139         \textcolor{keywordflow}{for} (; len >= 0; --len)
+140                 \textcolor{keywordflow}{if} ( arr[len] < rval)
+141                         rval = arr[len];
+142         \textcolor{keywordflow}{return} rval;
+143 \}
+\end{DoxyCode}
+\hypertarget{iutils_8c_ab23b2e52f032125daf0977aba08bc1e6}{\index{iutils.\-c@{iutils.\-c}!iremove\-\_\-linked@{iremove\-\_\-linked}}
+\index{iremove\-\_\-linked@{iremove\-\_\-linked}!iutils.c@{iutils.\-c}}
+\subsubsection[{iremove\-\_\-linked}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf ilinked\-\_\-t}$\ast$ iremove\-\_\-linked (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ilinked\-\_\-t} $\ast$}]{list}
+\end{DoxyParamCaption}
+)}}\label{iutils_8c_ab23b2e52f032125daf0977aba08bc1e6}
+
+
+Definition at line 383 of file iutils.\-c.
+
+
+\begin{DoxyCode}
+384 \{
+385         \textcolor{keywordflow}{if} (list == NULL) \{
+386                 \hyperlink{error_8c_ab10bea042bb9daa7a0e027197b8080e5}{ierror}(\hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55ba0155494d2502d24c87bdcab2830802de}{I\_NULL\_LINKED\_ERROR});
+387                 \textcolor{keywordflow}{return} NULL;
+388         \}
+389         \textcolor{keywordflow}{if} (list->\hyperlink{structilinked__t_a6bace3c90bc1b272be7506fe4d259a71}{previous} != NULL)
+390                 ((\textcolor{keyword}{struct }\hyperlink{structilinked__t}{ilinked\_t}*)(list->\hyperlink{structilinked__t_a6bace3c90bc1b272be7506fe4d259a71}{previous}))->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next} = list->
+      \hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next};
+391         if (list->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next} != NULL)
+392                 ((\textcolor{keyword}{struct }\hyperlink{structilinked__t}{ilinked\_t}*)(list->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next}))->\hyperlink{structilinked__t_a6bace3c90bc1b272be7506fe4d259a71}{previous} = list->
+      \hyperlink{structilinked__t_a6bace3c90bc1b272be7506fe4d259a71}{previous};
+393         \textcolor{keyword}{struct} \hyperlink{structilinked__t}{ilinked\_t} *rval = list->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next};
+394         free(list);
+395         \textcolor{keywordflow}{return} rval;
+396 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{iutils_8c_ab23b2e52f032125daf0977aba08bc1e6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{iutils_8c_a87ccc53b520060810c7be2e2243e6397}{\index{iutils.\-c@{iutils.\-c}!iset\-\_\-linked@{iset\-\_\-linked}}
+\index{iset\-\_\-linked@{iset\-\_\-linked}!iutils.c@{iutils.\-c}}
+\subsubsection[{iset\-\_\-linked}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf ilinked\-\_\-t}$\ast$ iset\-\_\-linked (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ilinked\-\_\-t} $\ast$restrict}]{list, }
+\item[{int}]{index, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{iutils_8c_a87ccc53b520060810c7be2e2243e6397}
+
+
+Definition at line 321 of file iutils.\-c.
+
+
+\begin{DoxyCode}
+322 \{
+323         \textcolor{keywordflow}{if} (list == NULL) \{
+324                 \hyperlink{error_8c_ab10bea042bb9daa7a0e027197b8080e5}{ierror}(\hyperlink{error_8h_a06fc87d81c62e9abb8790b6e5713c55ba0155494d2502d24c87bdcab2830802de}{I\_NULL\_LINKED\_ERROR});
+325                 \textcolor{keywordflow}{return} NULL;
+326         \}
+327         \textcolor{keyword}{struct }\hyperlink{structilinked__t}{ilinked\_t} *\textcolor{keyword}{get} = \hyperlink{iutils_8c_afa917800755bb3e467deb597d34f674e}{iget\_linked}(list, index);
+328         \textcolor{keyword}{get}->data = \hyperlink{structilinked__t_ac285ea385953cbd5a332b2cbab39b62b}{data};
+329         \textcolor{keywordflow}{return} \textcolor{keyword}{get};
+330 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{iutils_8c_a87ccc53b520060810c7be2e2243e6397_cgraph}
+\end{center}
+\end{figure}
+
+

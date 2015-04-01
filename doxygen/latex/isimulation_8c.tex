@@ -1,0 +1,272 @@
+\hypertarget{isimulation_8c}{\section{src/isimulation.c File Reference}
+\label{isimulation_8c}\index{src/isimulation.\-c@{src/isimulation.\-c}}
+}
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}isimulation.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}iutils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}icoordinates.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}iprimitives.\-h\char`\"{}}\\*
+Include dependency graph for isimulation.\-c\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{isimulation_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{isimulation_8c_abd8ca81c6f851ca923e5aa3ed0ad2def}{idetectcollision\-\_\-aabb} (\hyperlink{isimulation_8h_ac1bdf36d6765690a1f403383a816ea63}{aabb\-\_\-t} hb1, \hyperlink{isimulation_8h_ac1bdf36d6765690a1f403383a816ea63}{aabb\-\_\-t} hb2)
+\item 
+int \hyperlink{isimulation_8c_a1eeaf5788ce94de493d5d99b1a79d0cb}{idetectcollision\-\_\-object} (struct \hyperlink{structiobject__t}{iobject\-\_\-t} $\ast$o1, struct \hyperlink{structiobject__t}{iobject\-\_\-t} $\ast$o2)
+\item 
+\hyperlink{isimulation_8h_ac1bdf36d6765690a1f403383a816ea63}{aabb\-\_\-t} \hyperlink{isimulation_8c_a7d249146aa3d158dd0a7ef5889fa1f7b}{icomputeaabb\-\_\-object} (struct \hyperlink{structiobject__t}{iobject\-\_\-t} $\ast$o)
+\item 
+\hyperlink{isimulation_8h_ac1bdf36d6765690a1f403383a816ea63}{aabb\-\_\-t} \hyperlink{isimulation_8c_a9cb63af153849b8ca250a38228dadee7}{icomputeaabb\-\_\-coloredtriplet} (struct \hyperlink{structicoloredtriplet__t}{icoloredtriplet\-\_\-t} $\ast$t)
+\item 
+void \hyperlink{isimulation_8c_a63a59584a9716f306dddfb0e4eb66cd5}{iprint\-\_\-aabb} (\hyperlink{isimulation_8h_ac1bdf36d6765690a1f403383a816ea63}{aabb\-\_\-t} aabb)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{isimulation_8c_a9cb63af153849b8ca250a38228dadee7}{\index{isimulation.\-c@{isimulation.\-c}!icomputeaabb\-\_\-coloredtriplet@{icomputeaabb\-\_\-coloredtriplet}}
+\index{icomputeaabb\-\_\-coloredtriplet@{icomputeaabb\-\_\-coloredtriplet}!isimulation.c@{isimulation.\-c}}
+\subsubsection[{icomputeaabb\-\_\-coloredtriplet}]{\setlength{\rightskip}{0pt plus 5cm}{\bf aabb\-\_\-t} icomputeaabb\-\_\-coloredtriplet (
+\begin{DoxyParamCaption}
+\item[{struct {\bf icoloredtriplet\-\_\-t} $\ast$}]{t}
+\end{DoxyParamCaption}
+)}}\label{isimulation_8c_a9cb63af153849b8ca250a38228dadee7}
+
+
+Definition at line 85 of file isimulation.\-c.
+
+
+\begin{DoxyCode}
+86 \{
+87         \hyperlink{struct__aabb}{aabb\_t} hb;
+88 
+89         \textcolor{keyword}{struct }\hyperlink{structipoint__t}{ipoint\_t} **pts = t->\hyperlink{structicoloredtriplet__t_aa599939c78c387bc80a763f3e3728fee}{vertices};
+90         \textcolor{keyword}{struct }\hyperlink{structipoint__t}{ipoint\_t} *pnt = pts[0];
+91         hb.\hyperlink{struct__aabb_a14157451738716a8fb2d71664a01e210}{x} = pnt->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x};
+92         hb.\hyperlink{struct__aabb_a65b0be633481856576e82098405fc9ac}{y} = pnt->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y};
+93         hb.\hyperlink{struct__aabb_af9871006b65a3a58bd13a40e589e25b1}{width} = pnt->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x};
+94         hb.\hyperlink{struct__aabb_a212344ad875dfafbed336f052f2817da}{height} = pnt->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y};
+95         \textcolor{keywordtype}{int} i;
+96         \textcolor{keywordflow}{for} (i = 1; i < 3; ++i) \{
+97                 pnt = pts[i];
+98                 \textcolor{keywordflow}{if} (pnt->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x} < hb.\hyperlink{struct__aabb_a14157451738716a8fb2d71664a01e210}{x})
+99                         hb.\hyperlink{struct__aabb_a14157451738716a8fb2d71664a01e210}{x} = pnt->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x};
+100                 \textcolor{keywordflow}{if} (pnt->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y} < hb.\hyperlink{struct__aabb_a65b0be633481856576e82098405fc9ac}{y})
+101                         hb.\hyperlink{struct__aabb_a65b0be633481856576e82098405fc9ac}{y} = pnt->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y};
+102                 \textcolor{keywordflow}{if} (pnt->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x} > hb.\hyperlink{struct__aabb_af9871006b65a3a58bd13a40e589e25b1}{width})
+103                         hb.\hyperlink{struct__aabb_af9871006b65a3a58bd13a40e589e25b1}{width} = pnt->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x};
+104                 \textcolor{keywordflow}{if} (pnt->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y} > hb.\hyperlink{struct__aabb_a212344ad875dfafbed336f052f2817da}{height})
+105                         hb.\hyperlink{struct__aabb_a212344ad875dfafbed336f052f2817da}{height} = pnt->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y};
+106         \}
+107         hb.\hyperlink{struct__aabb_a212344ad875dfafbed336f052f2817da}{height} -= hb.\hyperlink{struct__aabb_a65b0be633481856576e82098405fc9ac}{y};
+108         hb.\hyperlink{struct__aabb_af9871006b65a3a58bd13a40e589e25b1}{width}  -= hb.\hyperlink{struct__aabb_a14157451738716a8fb2d71664a01e210}{x};
+109 
+110         \textcolor{keywordflow}{return} hb;
+111 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{isimulation_8c_a9cb63af153849b8ca250a38228dadee7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{isimulation_8c_a7d249146aa3d158dd0a7ef5889fa1f7b}{\index{isimulation.\-c@{isimulation.\-c}!icomputeaabb\-\_\-object@{icomputeaabb\-\_\-object}}
+\index{icomputeaabb\-\_\-object@{icomputeaabb\-\_\-object}!isimulation.c@{isimulation.\-c}}
+\subsubsection[{icomputeaabb\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf aabb\-\_\-t} icomputeaabb\-\_\-object (
+\begin{DoxyParamCaption}
+\item[{struct {\bf iobject\-\_\-t} $\ast$}]{o}
+\end{DoxyParamCaption}
+)}}\label{isimulation_8c_a7d249146aa3d158dd0a7ef5889fa1f7b}
+
+
+Definition at line 58 of file isimulation.\-c.
+
+
+\begin{DoxyCode}
+59 \{
+60         \hyperlink{struct__aabb}{aabb\_t} hb;
+61 
+62         \textcolor{keyword}{struct }\hyperlink{structilinkedpoint__t}{ilinkedpoint\_t} *pts = o->\hyperlink{structiobject__t_aaf44cb85cf392a8ac7e30ab6971be2ad}{points};
+63         \textcolor{keyword}{struct }\hyperlink{structipoint__t}{ipoint\_t} *pnt = pts->\hyperlink{structilinkedpoint__t_ad679b26e2151ec3a4ad7b062679fd3c3}{point};
+64         hb.\hyperlink{struct__aabb_a14157451738716a8fb2d71664a01e210}{x} = pnt->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x};
+65         hb.\hyperlink{struct__aabb_a65b0be633481856576e82098405fc9ac}{y} = pnt->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y};
+66         hb.\hyperlink{struct__aabb_af9871006b65a3a58bd13a40e589e25b1}{width} = pnt->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x};
+67         hb.\hyperlink{struct__aabb_a212344ad875dfafbed336f052f2817da}{height} = pnt->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y};
+68         \textcolor{keywordflow}{for} ( ; pts != NULL; pts = pts->\hyperlink{structilinkedpoint__t_a3af3bf37f168b5b11fce11262286d6c4}{next}) \{ \textcolor{comment}{// find the AABB for o1}
+69                 pnt = pts->\hyperlink{structilinkedpoint__t_ad679b26e2151ec3a4ad7b062679fd3c3}{point};
+70                 \textcolor{keywordflow}{if} (pnt->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x} < hb.\hyperlink{struct__aabb_a14157451738716a8fb2d71664a01e210}{x})
+71                         hb.\hyperlink{struct__aabb_a14157451738716a8fb2d71664a01e210}{x} = pnt->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x};
+72                 \textcolor{keywordflow}{if} (pnt->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y} < hb.\hyperlink{struct__aabb_a65b0be633481856576e82098405fc9ac}{y})
+73                         hb.\hyperlink{struct__aabb_a65b0be633481856576e82098405fc9ac}{y} = pnt->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y};
+74                 \textcolor{keywordflow}{if} (pnt->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x} > hb.\hyperlink{struct__aabb_af9871006b65a3a58bd13a40e589e25b1}{width})
+75                         hb.\hyperlink{struct__aabb_af9871006b65a3a58bd13a40e589e25b1}{width} = pnt->\hyperlink{structipoint__t_a345608e139b0709cc281139e3ed6328d}{x};
+76                 \textcolor{keywordflow}{if} (pnt->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y} > hb.\hyperlink{struct__aabb_a212344ad875dfafbed336f052f2817da}{height})
+77                         hb.\hyperlink{struct__aabb_a212344ad875dfafbed336f052f2817da}{height} = pnt->\hyperlink{structipoint__t_a88ca543f1508de060b4738cfebb51b04}{y};
+78         \}
+79         hb.\hyperlink{struct__aabb_a212344ad875dfafbed336f052f2817da}{height} -= hb.\hyperlink{struct__aabb_a65b0be633481856576e82098405fc9ac}{y};
+80         hb.\hyperlink{struct__aabb_af9871006b65a3a58bd13a40e589e25b1}{width}  -= hb.\hyperlink{struct__aabb_a14157451738716a8fb2d71664a01e210}{x};
+81 
+82         \textcolor{keywordflow}{return} hb;
+83 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{isimulation_8c_a7d249146aa3d158dd0a7ef5889fa1f7b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{isimulation_8c_abd8ca81c6f851ca923e5aa3ed0ad2def}{\index{isimulation.\-c@{isimulation.\-c}!idetectcollision\-\_\-aabb@{idetectcollision\-\_\-aabb}}
+\index{idetectcollision\-\_\-aabb@{idetectcollision\-\_\-aabb}!isimulation.c@{isimulation.\-c}}
+\subsubsection[{idetectcollision\-\_\-aabb}]{\setlength{\rightskip}{0pt plus 5cm}int idetectcollision\-\_\-aabb (
+\begin{DoxyParamCaption}
+\item[{{\bf aabb\-\_\-t}}]{hb1, }
+\item[{{\bf aabb\-\_\-t}}]{hb2}
+\end{DoxyParamCaption}
+)}}\label{isimulation_8c_abd8ca81c6f851ca923e5aa3ed0ad2def}
+
+
+Definition at line 8 of file isimulation.\-c.
+
+
+\begin{DoxyCode}
+9 \{
+10         \textcolor{keywordtype}{int} rval = 0;
+11 
+12         \textcolor{keywordflow}{if} ((hb2.\hyperlink{struct__aabb_a14157451738716a8fb2d71664a01e210}{x} >= hb1.\hyperlink{struct__aabb_a14157451738716a8fb2d71664a01e210}{x} && hb2.\hyperlink{struct__aabb_a14157451738716a8fb2d71664a01e210}{x} <= hb1.\hyperlink{struct__aabb_a14157451738716a8fb2d71664a01e210}{x} + hb1.\hyperlink{struct__aabb_af9871006b65a3a58bd13a40e589e25b1}{width}) || (hb2.\hyperlink{struct__aabb_a14157451738716a8fb2d71664a01e210}{x} < hb1.
+      \hyperlink{struct__aabb_a14157451738716a8fb2d71664a01e210}{x} && hb2.\hyperlink{struct__aabb_a14157451738716a8fb2d71664a01e210}{x} + hb2.\hyperlink{struct__aabb_af9871006b65a3a58bd13a40e589e25b1}{width} >= hb1.\hyperlink{struct__aabb_a14157451738716a8fb2d71664a01e210}{x}))
+13                 rval++; \textcolor{comment}{// because they collide on the x axis}
+14         \textcolor{keywordflow}{if} ((hb2.\hyperlink{struct__aabb_a65b0be633481856576e82098405fc9ac}{y} >= hb1.\hyperlink{struct__aabb_a65b0be633481856576e82098405fc9ac}{y} && hb2.\hyperlink{struct__aabb_a65b0be633481856576e82098405fc9ac}{y} <= hb1.\hyperlink{struct__aabb_a65b0be633481856576e82098405fc9ac}{y} + hb1.\hyperlink{struct__aabb_a212344ad875dfafbed336f052f2817da}{height}) || (hb2.\hyperlink{struct__aabb_a65b0be633481856576e82098405fc9ac}{y} < hb1.
+      \hyperlink{struct__aabb_a65b0be633481856576e82098405fc9ac}{y} && hb2.\hyperlink{struct__aabb_a65b0be633481856576e82098405fc9ac}{y} + hb2.\hyperlink{struct__aabb_a212344ad875dfafbed336f052f2817da}{height} >= hb1.\hyperlink{struct__aabb_a65b0be633481856576e82098405fc9ac}{y}))
+15                 rval++; \textcolor{comment}{// because they collide on the y axis}
+16 
+17         \textcolor{keywordflow}{return} rval / 2; \textcolor{comment}{// because of integer division, this will return}
+18                          \textcolor{comment}{// 1 only if they collide on both axes}
+19 
+20 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{isimulation_8c_abd8ca81c6f851ca923e5aa3ed0ad2def_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{isimulation_8c_a1eeaf5788ce94de493d5d99b1a79d0cb}{\index{isimulation.\-c@{isimulation.\-c}!idetectcollision\-\_\-object@{idetectcollision\-\_\-object}}
+\index{idetectcollision\-\_\-object@{idetectcollision\-\_\-object}!isimulation.c@{isimulation.\-c}}
+\subsubsection[{idetectcollision\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}int idetectcollision\-\_\-object (
+\begin{DoxyParamCaption}
+\item[{struct {\bf iobject\-\_\-t} $\ast$}]{o1, }
+\item[{struct {\bf iobject\-\_\-t} $\ast$}]{o2}
+\end{DoxyParamCaption}
+)}}\label{isimulation_8c_a1eeaf5788ce94de493d5d99b1a79d0cb}
+T\-O\-D\-O\-: Finish implementing this.
+
+generate recursive A\-A\-B\-B's for object 1
+
+generate recursive A\-A\-B\-B's for object 2
+
+walk through the already-\/generated list for recursive A\-A\-B\-B's for object 1 and look for collisions 
+
+Definition at line 22 of file isimulation.\-c.
+
+
+\begin{DoxyCode}
+23 \{
+24         \textcolor{keywordflow}{if} (((\textcolor{keyword}{struct} \hyperlink{structipoint__t}{ipoint\_t}*)(o1->\hyperlink{structiobject__t_aaf44cb85cf392a8ac7e30ab6971be2ad}{points}->\hyperlink{structilinkedpoint__t_ad679b26e2151ec3a4ad7b062679fd3c3}{point}))->z != ((\textcolor{keyword}{struct} 
+      \hyperlink{structipoint__t}{ipoint\_t}*)(o2->\hyperlink{structiobject__t_aaf44cb85cf392a8ac7e30ab6971be2ad}{points}->\hyperlink{structilinkedpoint__t_ad679b26e2151ec3a4ad7b062679fd3c3}{point}))->z)
+25                 \textcolor{keywordflow}{return} 0;
+26         \hyperlink{struct__aabb}{aabb\_t} hb\_o1 = \hyperlink{isimulation_8c_a7d249146aa3d158dd0a7ef5889fa1f7b}{icomputeaabb\_object}(o1);
+27         \hyperlink{struct__aabb}{aabb\_t} hb\_o2 = \hyperlink{isimulation_8c_a7d249146aa3d158dd0a7ef5889fa1f7b}{icomputeaabb\_object}(o2);
+28         
+29         \textcolor{keywordflow}{if} (\hyperlink{isimulation_8c_abd8ca81c6f851ca923e5aa3ed0ad2def}{idetectcollision\_aabb}(hb\_o1, hb\_o2)) \{
+30                 \textcolor{keyword}{struct }\hyperlink{structilinked__t}{ilinked\_t} *triplets = o1->\hyperlink{structiobject__t_ae5c7b9d49120fc7003f01fcf7055b425}{triplets}; 
+31                 \hyperlink{struct__aabb}{aabb\_t} *hbs\_o1 = malloc(o1->\hyperlink{structiobject__t_aa2cbae39b6848c1036afebae90a0bd8c}{num\_triplets} * \textcolor{keyword}{sizeof}(
+      \hyperlink{struct__aabb}{aabb\_t}));
+32                 \textcolor{keywordtype}{int} i;
+33                 \textcolor{keywordflow}{for} (i = 0; triplets != NULL; triplets = triplets->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next}, ++i) \{ 
+34                         \textcolor{keyword}{struct }\hyperlink{structicoloredtriplet__t}{icoloredtriplet\_t} *t = triplets->
+      \hyperlink{structilinked__t_ac285ea385953cbd5a332b2cbab39b62b}{data};
+36                         hbs\_o1[i] = \hyperlink{isimulation_8c_a9cb63af153849b8ca250a38228dadee7}{icomputeaabb\_coloredtriplet}(t);
+37                 \}
+38 
+39                 triplets = o2->\hyperlink{structiobject__t_ae5c7b9d49120fc7003f01fcf7055b425}{triplets};
+40                 \hyperlink{struct__aabb}{aabb\_t} *hbs\_o2 = malloc(o2->\hyperlink{structiobject__t_aa2cbae39b6848c1036afebae90a0bd8c}{num\_triplets} * \textcolor{keyword}{sizeof}(
+      \hyperlink{struct__aabb}{aabb\_t}));
+41                 \textcolor{keywordflow}{for} (i = 0; triplets != NULL; triplets = triplets->\hyperlink{structilinked__t_ad3f173c464d58934b12da4eca2ff83f8}{next}, ++i) \{ 
+42                         \textcolor{keyword}{struct }\hyperlink{structicoloredtriplet__t}{icoloredtriplet\_t} *t = triplets->
+      \hyperlink{structilinked__t_ac285ea385953cbd5a332b2cbab39b62b}{data};
+44                         hbs\_o2[i] = \hyperlink{isimulation_8c_a9cb63af153849b8ca250a38228dadee7}{icomputeaabb\_coloredtriplet}(t);
+45                         
+46                         \textcolor{keywordtype}{int} j;
+47                         \textcolor{keywordflow}{for} (j = 0; j < o1->\hyperlink{structiobject__t_aa2cbae39b6848c1036afebae90a0bd8c}{num\_triplets}; ++j) \{ 
+48                                 \textcolor{keywordflow}{if} (\hyperlink{isimulation_8c_abd8ca81c6f851ca923e5aa3ed0ad2def}{idetectcollision\_aabb}(hbs\_o2[i], hbs\_o1[j]))
+51                                         \textcolor{keywordflow}{return} 1;
+52                         \}
+53                 \}
+54         \}
+55         \textcolor{keywordflow}{return} 0;
+56 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{isimulation_8c_a1eeaf5788ce94de493d5d99b1a79d0cb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{isimulation_8c_a1eeaf5788ce94de493d5d99b1a79d0cb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{isimulation_8c_a63a59584a9716f306dddfb0e4eb66cd5}{\index{isimulation.\-c@{isimulation.\-c}!iprint\-\_\-aabb@{iprint\-\_\-aabb}}
+\index{iprint\-\_\-aabb@{iprint\-\_\-aabb}!isimulation.c@{isimulation.\-c}}
+\subsubsection[{iprint\-\_\-aabb}]{\setlength{\rightskip}{0pt plus 5cm}void iprint\-\_\-aabb (
+\begin{DoxyParamCaption}
+\item[{{\bf aabb\-\_\-t}}]{aabb}
+\end{DoxyParamCaption}
+)}}\label{isimulation_8c_a63a59584a9716f306dddfb0e4eb66cd5}
+
+
+Definition at line 114 of file isimulation.\-c.
+
+
+\begin{DoxyCode}
+115 \{
+116         printf(\textcolor{stringliteral}{"Axis Aligned Bounding Box, lower left-hand corner at (%f, %f),"},
+117                 aabb.\hyperlink{struct__aabb_a14157451738716a8fb2d71664a01e210}{x}, aabb.\hyperlink{struct__aabb_a65b0be633481856576e82098405fc9ac}{y});
+118         printf(\textcolor{stringliteral}{" upper right-hand corner at (%f, %f). width = %f, height = %f.\(\backslash\)n"},
+119                 aabb.\hyperlink{struct__aabb_a14157451738716a8fb2d71664a01e210}{x} + aabb.\hyperlink{struct__aabb_af9871006b65a3a58bd13a40e589e25b1}{width}, aabb.\hyperlink{struct__aabb_a65b0be633481856576e82098405fc9ac}{y} + aabb.\hyperlink{struct__aabb_a212344ad875dfafbed336f052f2817da}{height}, aabb.
+      \hyperlink{struct__aabb_af9871006b65a3a58bd13a40e589e25b1}{width}, aabb.\hyperlink{struct__aabb_a212344ad875dfafbed336f052f2817da}{height});
+120 \}
+\end{DoxyCode}

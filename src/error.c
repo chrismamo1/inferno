@@ -7,8 +7,12 @@ int ishowerrors = 1;
 
 int idie(int error);
 
-///local
-void print_error(int error, char *message, int iswarning)
+/** Handles printing of errors. Static function, only to be called by ierror
+ * @param error the integer code of the error to be printed
+ * @param *message the message to tell the user
+ * @param iswarning bool, determines the message prefix and its color
+ */
+static void print_error(int error, char *message, int iswarning)
 {
         if (iswarning)
                 fprintf(stderr, KYEL "WARNING %d" RESET, error);
@@ -18,6 +22,10 @@ void print_error(int error, char *message, int iswarning)
         return;
 }
 
+/** Inferno's error handling function
+ * @param error the error code that has been encountered
+ * @return an integer specifying the severity of the error
+ */
 int ierror(int error)
 {
         switch (error) {
